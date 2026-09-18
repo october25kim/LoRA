@@ -96,6 +96,7 @@ def main():
         max_steps=args.max_steps if args.max_steps > 0 else -1,
         seed=args.seed,
         remove_unused_columns=False,
+        dataloader_pin_memory=False,
     )
     trainer = Trainer(
         model=model,

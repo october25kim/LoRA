@@ -38,6 +38,10 @@ def parse_args(argv=None):
     p.add_argument("--n-layers", type=int, default=12, help="Synthetic layer count for dry-run")
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--device", default="cpu")
+    p.add_argument("--lora2-num-labels", type=int, default=2,
+                   help="Classifier size for second adapter (3 for MNLI seed pair)")
+    p.add_argument("--eval-tasks", default="mnli,sst2",
+                   help="Comma list: mnli and/or sst2")
     return p.parse_args(argv)
 
 
@@ -198,7 +202,7 @@ def run_real(args) -> dict:
     model_mnli = PeftModel.from_pretrained(base1, args.lora_mnli)
 
     print(f"Loading base {args.base_model} + SST-2 adapter {args.lora_sst2} ...")
-    base2 = AutoModelForSequenceClassification.from_pretrained(args.base_model, num_labels=2)
+    base2 = AutoModelForSequenceClassification.from_pretrained(args.base_model, num_labels=args.lora2_num_labels)
     # For merge we only need LoRA A/B weights; label count mismatch is OK for weight extract
     model_sst2 = PeftModel.from_pretrained(base2, args.lora_sst2)
 
@@ -244,31 +248,27 @@ def run_real(args) -> dict:
             apply_deltas_to_base(base, deltas)
             return base.to(device)
 
-        mnli_arith = _build_merged(3, model_mnli, arith_deltas)
-        mnli_cert_m = _build_merged(3, model_mnli, merged_deltas)
-        sst_arith = _build_merged(2, model_sst2, arith_deltas)
-        sst_cert_m = _build_merged(2, model_sst2, merged_deltas)
-
-        r_mnli_a = evaluate_glue(mnli_arith, tok, "mnli", device=device, num_samples=n_eval)
-        r_mnli_c = evaluate_glue(mnli_cert_m, tok, "mnli", device=device, num_samples=n_eval)
-        r_sst_a = evaluate_glue(sst_arith, tok, "sst2", device=device, num_samples=n_eval)
-        r_sst_c = evaluate_glue(sst_cert_m, tok, "sst2", device=device, num_samples=n_eval)
-
-        eval_results = {
-            "fake": False,
-            "available": True,
-            "num_samples": n_eval,
-            "mnli_arithmetic": r_mnli_a,
-            "mnli_certificate": r_mnli_c,
-            "sst2_arithmetic": r_sst_a,
-            "sst2_certificate": r_sst_c,
-            "headline": {
-                "mnli_sum": r_mnli_a["accuracy"],
-                "mnli_corrected": r_mnli_c["accuracy"],
-                "sst2_sum": r_sst_a["accuracy"],
-                "sst2_corrected": r_sst_c["accuracy"],
-            },
-        }
+        tasks = [x.strip() for x in args.eval_tasks.split(",") if x.strip()]
+        eval_results = {"fake": False, "available": True, "num_samples": n_eval, "headline": {}}
+        if "mnli" in tasks:
+            mnli_arith = _build_merged(3, model_mnli, arith_deltas)
+            mnli_cert_m = _build_merged(3, model_mnli, merged_deltas)
+            r_mnli_a = evaluate_glue(mnli_arith, tok, "mnli", device=device, num_samples=n_eval)
+            r_mnli_c = evaluate_glue(mnli_cert_m, tok, "mnli", device=device, num_samples=n_eval)
+            eval_results["mnli_arithmetic"] = r_mnli_a
+            eval_results["mnli_certificate"] = r_mnli_c
+            eval_results["headline"]["mnli_sum"] = r_mnli_a["accuracy"]
+            eval_results["headline"]["mnli_corrected"] = r_mnli_c["accuracy"]
+        if "sst2" in tasks:
+            nlab = args.lora2_num_labels
+            sst_arith = _build_merged(nlab, model_sst2, arith_deltas)
+            sst_cert_m = _build_merged(nlab, model_sst2, merged_deltas)
+            r_sst_a = evaluate_glue(sst_arith, tok, "sst2", device=device, num_samples=n_eval)
+            r_sst_c = evaluate_glue(sst_cert_m, tok, "sst2", device=device, num_samples=n_eval)
+            eval_results["sst2_arithmetic"] = r_sst_a
+            eval_results["sst2_certificate"] = r_sst_c
+            eval_results["headline"]["sst2_sum"] = r_sst_a["accuracy"]
+            eval_results["headline"]["sst2_corrected"] = r_sst_c["accuracy"]
     except Exception as e:
         import traceback
         eval_results = {
@@ -296,12 +296,10 @@ def run_real(args) -> dict:
         "device": str(device),
     }
     if eval_results.get("headline"):
-        summary.update({
-            "mnli_sum": eval_results["headline"]["mnli_sum"],
-            "mnli_corrected": eval_results["headline"]["mnli_corrected"],
-            "sst2_sum": eval_results["headline"]["sst2_sum"],
-            "sst2_corrected": eval_results["headline"]["sst2_corrected"],
-        })
+        h = eval_results["headline"]
+        for k in ("mnli_sum", "mnli_corrected", "sst2_sum", "sst2_corrected"):
+            if k in h:
+                summary[k] = h[k]
     # Scatter with fake proxy if no real per-layer drops
     fake = fake_eval_from_certificates(certs)
     _write_scatter(certs, fake, out / "theta_vs_mnli_drop.png")
