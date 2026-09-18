@@ -10,14 +10,14 @@ import torch.nn as nn
 
 TASK_CONFIG = {
     "mnli": {
-        "dataset": "glue",
+        "dataset": "nyu-mll/glue",
         "subset": "mnli",
         "validation_split": "validation_matched",
         "text_fields": ("premise", "hypothesis"),
         "num_labels": 3,
     },
     "sst2": {
-        "dataset": "glue",
+        "dataset": "nyu-mll/glue",
         "subset": "sst2",
         "validation_split": "validation",
         "text_fields": ("sentence",),

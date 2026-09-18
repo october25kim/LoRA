@@ -212,11 +212,12 @@ def run_real(args) -> dict:
     )
     _write_certificate_table(certs, out / "certificate_table.csv")
 
-    # Also compute arithmetic-only certs for comparison logging
-    _, _ = merge_lora_models(
+    # Arithmetic-only deltas for comparison
+    arith_deltas, _ = merge_lora_models(
         model_mnli, model_sst2,
         subspace=args.subspace,
         theta_star_deg=args.theta_star_deg,
+        resvd_rank=2 * args.rank,
         use_certificate=False,
     )
 
@@ -224,26 +225,57 @@ def run_real(args) -> dict:
     try:
         from lora_merge_cert.eval import evaluate_glue
         from lora_merge_cert.merge import apply_deltas_to_base
+        import copy
 
         tok = AutoTokenizer.from_pretrained(args.base_model)
-        # Certificate-merged model on MNLI head (anchor task)
-        base_cert = AutoModelForSequenceClassification.from_pretrained(
-            args.base_model, num_labels=3
-        )
-        # Map PEFT module names → base module names by stripping common prefixes
-        apply_deltas_to_base(base_cert, merged_deltas)
-        base_cert.to(device)
-        mnli_cert = evaluate_glue(base_cert, tok, "mnli", device=device, num_samples=512)
+        n_eval = 512  # CPU-friendly subset; still real GLUE metrics
+
+        def _copy_classifier(src_peft, dst_base):
+            src_clf = src_peft.base_model.model.classifier
+            with torch.no_grad():
+                dst_base.classifier.weight.copy_(src_clf.weight.data)
+                dst_base.classifier.bias.copy_(src_clf.bias.data)
+
+        def _build_merged(num_labels, clf_src, deltas):
+            base = AutoModelForSequenceClassification.from_pretrained(
+                args.base_model, num_labels=num_labels
+            )
+            _copy_classifier(clf_src, base)
+            apply_deltas_to_base(base, deltas)
+            return base.to(device)
+
+        mnli_arith = _build_merged(3, model_mnli, arith_deltas)
+        mnli_cert_m = _build_merged(3, model_mnli, merged_deltas)
+        sst_arith = _build_merged(2, model_sst2, arith_deltas)
+        sst_cert_m = _build_merged(2, model_sst2, merged_deltas)
+
+        r_mnli_a = evaluate_glue(mnli_arith, tok, "mnli", device=device, num_samples=n_eval)
+        r_mnli_c = evaluate_glue(mnli_cert_m, tok, "mnli", device=device, num_samples=n_eval)
+        r_sst_a = evaluate_glue(sst_arith, tok, "sst2", device=device, num_samples=n_eval)
+        r_sst_c = evaluate_glue(sst_cert_m, tok, "sst2", device=device, num_samples=n_eval)
+
         eval_results = {
             "fake": False,
             "available": True,
-            "mnli_certificate": mnli_cert,
+            "num_samples": n_eval,
+            "mnli_arithmetic": r_mnli_a,
+            "mnli_certificate": r_mnli_c,
+            "sst2_arithmetic": r_sst_a,
+            "sst2_certificate": r_sst_c,
+            "headline": {
+                "mnli_sum": r_mnli_a["accuracy"],
+                "mnli_corrected": r_mnli_c["accuracy"],
+                "sst2_sum": r_sst_a["accuracy"],
+                "sst2_corrected": r_sst_c["accuracy"],
+            },
         }
     except Exception as e:
+        import traceback
         eval_results = {
             "fake": False,
             "available": False,
             "error": str(e),
+            "traceback": traceback.format_exc(),
             "note": "Datasets/eval skipped; certificate table still written.",
         }
 
@@ -261,7 +293,15 @@ def run_real(args) -> dict:
         "n_fail": n_fail,
         "n_merged_deltas": len(merged_deltas),
         "eval": eval_results,
+        "device": str(device),
     }
+    if eval_results.get("headline"):
+        summary.update({
+            "mnli_sum": eval_results["headline"]["mnli_sum"],
+            "mnli_corrected": eval_results["headline"]["mnli_corrected"],
+            "sst2_sum": eval_results["headline"]["sst2_sum"],
+            "sst2_corrected": eval_results["headline"]["sst2_corrected"],
+        })
     # Scatter with fake proxy if no real per-layer drops
     fake = fake_eval_from_certificates(certs)
     _write_scatter(certs, fake, out / "theta_vs_mnli_drop.png")

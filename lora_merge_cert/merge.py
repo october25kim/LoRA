@@ -178,7 +178,12 @@ def apply_deltas_to_base(
     for lora_name, dW in deltas.items():
         target_name = name_map.get(lora_name, lora_name)
         # Strip peft wrapper suffixes if present
-        candidates = [target_name, target_name.replace(".base_layer", "")]
+        candidates = [
+            target_name,
+            target_name.replace(".base_layer", ""),
+            target_name.replace("base_model.model.", ""),
+            target_name.replace("base_model.", ""),
+        ]
         # Also try without trailing adapter path quirks
         mod = None
         for c in candidates:

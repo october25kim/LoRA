@@ -1,0 +1,48 @@
+{
+  "mode": "real",
+  "base_model": "bert-base-uncased",
+  "lora_mnli": "prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001",
+  "lora_sst2": "prateeky2806/bert-base-uncased-sst2-lora-epochs-2-lr-0.0005",
+  "subspace": "B",
+  "theta_star_deg": 30.0,
+  "n_layers_certified": 73,
+  "n_pass": 73,
+  "n_fail": 0,
+  "n_merged_deltas": 73,
+  "eval": {
+    "fake": false,
+    "available": true,
+    "num_samples": 512,
+    "mnli_arithmetic": {
+      "task": "mnli",
+      "accuracy": 0.796875,
+      "n": 512
+    },
+    "mnli_certificate": {
+      "task": "mnli",
+      "accuracy": 0.796875,
+      "n": 512
+    },
+    "sst2_arithmetic": {
+      "task": "sst2",
+      "accuracy": 0.876953125,
+      "n": 512
+    },
+    "sst2_certificate": {
+      "task": "sst2",
+      "accuracy": 0.876953125,
+      "n": 512
+    },
+    "headline": {
+      "mnli_sum": 0.796875,
+      "mnli_corrected": 0.796875,
+      "sst2_sum": 0.876953125,
+      "sst2_corrected": 0.876953125
+    }
+  },
+  "device": "cpu",
+  "mnli_sum": 0.796875,
+  "mnli_corrected": 0.796875,
+  "sst2_sum": 0.876953125,
+  "sst2_corrected": 0.876953125
+}
