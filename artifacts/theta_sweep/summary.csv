@@ -1,0 +1,11 @@
+pair,subspace,theta_star_deg,n_pass,n_fail,min_theta_min,mean_theta_min,mnli_sum,mnli_corrected,sst2_sum,sst2_corrected,angle_metric_gap,lora1,lora2,num_samples,metrics_note
+original_mnli_sst2,A,20.0,73,0,65.84419839146017,78.0284548673453,0.796875,0.796875,0.876953125,0.876953125,False,prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001,prateeky2806/bert-base-uncased-sst2-lora-epochs-2-lr-0.0005,512,
+original_mnli_sst2,A,30.0,73,0,65.84419839146017,78.0284548673453,0.796875,0.796875,0.876953125,0.876953125,False,prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001,prateeky2806/bert-base-uncased-sst2-lora-epochs-2-lr-0.0005,512,
+original_mnli_sst2,A,45.0,73,0,65.84419839146017,78.0284548673453,0.796875,0.796875,0.876953125,0.876953125,False,prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001,prateeky2806/bert-base-uncased-sst2-lora-epochs-2-lr-0.0005,512,
+original_mnli_sst2,A,60.0,73,0,65.84419839146017,78.0284548673453,0.796875,0.796875,0.876953125,0.876953125,False,prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001,prateeky2806/bert-base-uncased-sst2-lora-epochs-2-lr-0.0005,512,
+original_mnli_sst2,A,75.0,61,12,65.84419839146017,78.0284548673453,0.796875,0.794921875,0.876953125,0.876953125,True,prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001,prateeky2806/bert-base-uncased-sst2-lora-epochs-2-lr-0.0005,512,
+conflict_constructed,A,20.0,0,73,0.0,0.0017778302972382067,0.818359375,0.814453125,0.60546875,0.615234375,True,adapters/conflict_mnli,adapters/conflict_sst2_shared,512,reused_from_conflict_A_theta30
+conflict_constructed,A,30.0,0,73,0.0,0.0017778302972382067,0.818359375,0.814453125,0.60546875,0.615234375,True,adapters/conflict_mnli,adapters/conflict_sst2_shared,512,reused_from_conflict_A_theta30
+conflict_constructed,A,45.0,0,73,0.0,0.0017778302972382067,0.818359375,0.814453125,0.60546875,0.615234375,True,adapters/conflict_mnli,adapters/conflict_sst2_shared,512,reused_from_conflict_A_theta30
+conflict_constructed,A,60.0,0,73,0.0,0.0017778302972382067,0.818359375,0.814453125,0.60546875,0.615234375,True,adapters/conflict_mnli,adapters/conflict_sst2_shared,512,reused_from_conflict_A_theta30
+conflict_constructed,A,75.0,0,73,0.0,0.0017778302972382067,0.818359375,0.814453125,0.60546875,0.615234375,True,adapters/conflict_mnli,adapters/conflict_sst2_shared,512,reused_from_conflict_A_theta30

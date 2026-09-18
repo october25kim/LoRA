@@ -1,0 +1,107 @@
+{
+  "mnli_rte": {
+    "pair": "mnli_rte",
+    "lora1": "prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001",
+    "lora2": "prateeky2806/bert-base-uncased-rte-lora-epochs-10-lr-0.0005",
+    "n_layers": 73,
+    "n_pass": 73,
+    "n_fail": 0,
+    "theta_min_global": 69.8617976235317,
+    "theta_min_mean": 78.45962103789671,
+    "theta_min_p10": 75.39226326619355,
+    "n_below_30": 0,
+    "n_below_45": 0,
+    "n_below_60": 0,
+    "lowest5": [
+      69.8617976235317,
+      71.31340406745618,
+      72.70790329973016,
+      72.85242327237846,
+      74.2279618995165
+    ]
+  },
+  "mnli_qnli": {
+    "pair": "mnli_qnli",
+    "lora1": "prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001",
+    "lora2": "prateeky2806/bert-base-uncased-qnli-lora-epochs-2-lr-0.0005",
+    "n_layers": 73,
+    "n_pass": 73,
+    "n_fail": 0,
+    "theta_min_global": 66.50200025004575,
+    "theta_min_mean": 77.32879068577247,
+    "theta_min_p10": 72.62346167102129,
+    "n_below_30": 0,
+    "n_below_45": 0,
+    "n_below_60": 0,
+    "lowest5": [
+      66.50200025004575,
+      66.52432813844253,
+      68.7446109017494,
+      69.43593532878141,
+      69.63660628659638
+    ]
+  },
+  "mnli_qqp": {
+    "pair": "mnli_qqp",
+    "lora1": "prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001",
+    "lora2": "prateeky2806/bert-base-uncased-qqp-lora-epochs-2-lr-0.0005",
+    "n_layers": 73,
+    "n_pass": 73,
+    "n_fail": 0,
+    "theta_min_global": 59.69288904381166,
+    "theta_min_mean": 77.03579952282315,
+    "theta_min_p10": 72.4588022025863,
+    "n_below_30": 0,
+    "n_below_45": 0,
+    "n_below_60": 1,
+    "lowest5": [
+      59.69288904381166,
+      64.36646647396039,
+      67.25739185149249,
+      70.75099946100815,
+      71.05185563356888
+    ]
+  },
+  "qnli_rte": {
+    "pair": "qnli_rte",
+    "lora1": "prateeky2806/bert-base-uncased-qnli-lora-epochs-2-lr-0.0005",
+    "lora2": "prateeky2806/bert-base-uncased-rte-lora-epochs-10-lr-0.0005",
+    "n_layers": 73,
+    "n_pass": 73,
+    "n_fail": 0,
+    "theta_min_global": 53.67907823434468,
+    "theta_min_mean": 74.67962191232618,
+    "theta_min_p10": 69.9988494673415,
+    "n_below_30": 0,
+    "n_below_45": 0,
+    "n_below_60": 1,
+    "lowest5": [
+      53.67907823434468,
+      62.225577829565744,
+      63.353201080399835,
+      65.33340952456993,
+      66.20949056865078
+    ]
+  },
+  "sst2_cola": {
+    "pair": "sst2_cola",
+    "lora1": "prateeky2806/bert-base-uncased-sst2-lora-epochs-2-lr-0.0005",
+    "lora2": "prateeky2806/bert-base-uncased-cola-lora-epochs-10-lr-0.0005",
+    "n_layers": 73,
+    "n_pass": 73,
+    "n_fail": 0,
+    "theta_min_global": 57.96765839154731,
+    "theta_min_mean": 75.55661726611345,
+    "theta_min_p10": 69.46297194959199,
+    "n_below_30": 0,
+    "n_below_45": 0,
+    "n_below_60": 2,
+    "lowest5": [
+      57.96765839154731,
+      58.850719888959915,
+      68.81483890679547,
+      69.03147884688993,
+      69.037748960548
+    ]
+  }
+}

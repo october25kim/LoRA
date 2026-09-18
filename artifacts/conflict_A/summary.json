@@ -1,0 +1,69 @@
+{
+  "mode": "real",
+  "base_model": "bert-base-uncased",
+  "lora_mnli": "adapters/conflict_mnli",
+  "lora_sst2": "adapters/conflict_sst2_shared",
+  "subspace": "A",
+  "theta_star_deg": 30.0,
+  "n_layers_certified": 73,
+  "n_pass": 0,
+  "n_fail": 73,
+  "n_merged_deltas": 73,
+  "eval": {
+    "fake": false,
+    "available": true,
+    "num_samples": 512,
+    "mnli_arithmetic": {
+      "task": "mnli",
+      "accuracy": 0.818359375,
+      "n": 512
+    },
+    "mnli_certificate": {
+      "task": "mnli",
+      "accuracy": 0.814453125,
+      "n": 512
+    },
+    "sst2_arithmetic": {
+      "task": "sst2",
+      "accuracy": 0.60546875,
+      "n": 512
+    },
+    "sst2_certificate": {
+      "task": "sst2",
+      "accuracy": 0.615234375,
+      "n": 512
+    },
+    "headline": {
+      "mnli_sum": 0.818359375,
+      "mnli_corrected": 0.814453125,
+      "sst2_sum": 0.60546875,
+      "sst2_corrected": 0.615234375
+    }
+  },
+  "device": "cpu",
+  "mnli_sum": 0.818359375,
+  "mnli_corrected": 0.814453125,
+  "sst2_sum": 0.60546875,
+  "sst2_corrected": 0.615234375,
+  "pair_kind": "constructed_share_B_columns",
+  "pair_meta": {
+    "method": "construct_share_B_columns",
+    "lora1_src": "prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001",
+    "lora2_src": "prateeky2806/bert-base-uncased-sst2-lora-epochs-2-lr-0.0005",
+    "n_shared": 3,
+    "n_layers_rewritten": 73,
+    "out1": "adapters/conflict_mnli",
+    "out2": "adapters/conflict_sst2_shared",
+    "note": "Task2 B columns 0..n_shared-1 aligned to orth(B1); guarantees \u03b8_min~0 (subspace A)."
+  },
+  "theta_min_distribution": {
+    "min": 0.0,
+    "max": 0.0342640208323925,
+    "mean": 0.0017778302972382043,
+    "std": 0.006761142543790742,
+    "n_below_30": 73,
+    "n_below_1": 73
+  },
+  "why": "Hub GLUE LoRA pairs (MNLI+SST2/RTE/QNLI/QQP) all had \u03b8_min\u227353\u00b0. Constructed conflict by aligning n_shared=3 B-columns of SST-2 adapter to MNLI orth(B) \u2192 \u03b8_min\u22480 on all 73 layers \u2192 73 FAIL at \u03b8\u2605=30\u00b0. Certificate correction \u2260 arithmetic sum on both MNLI and SST-2 (n=512).",
+  "angle_metric_gap": true
+}

@@ -1,0 +1,10 @@
+{
+  "method": "construct_share_B_columns",
+  "lora1_src": "prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001",
+  "lora2_src": "prateeky2806/bert-base-uncased-sst2-lora-epochs-2-lr-0.0005",
+  "n_shared": 3,
+  "n_layers_rewritten": 73,
+  "out1": "adapters/conflict_mnli",
+  "out2": "adapters/conflict_sst2_shared",
+  "note": "Task2 B columns 0..n_shared-1 aligned to orth(B1); guarantees \u03b8_min~0 (subspace A)."
+}

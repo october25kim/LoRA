@@ -7,3 +7,7 @@ dist/
 build/
 .DS_Store
 adapters/
+
+# keep constructed conflict adapters for reproducibility
+!adapters/conflict_mnli/
+!adapters/conflict_sst2_shared/
