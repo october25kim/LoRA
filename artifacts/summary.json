@@ -1,0 +1,22 @@
+{
+  "mode": "dry-run",
+  "base_model": "bert-base-uncased",
+  "subspace": "A",
+  "theta_star_deg": 30.0,
+  "rank": 8,
+  "n_layers_certified": 48,
+  "n_pass": 11,
+  "n_fail": 37,
+  "eval": {
+    "mnli_arithmetic": 0.7904927697909585,
+    "mnli_certificate": 0.8276231924477396,
+    "sst2_arithmetic": 0.8952463848954793,
+    "sst2_certificate": 0.9138115962238699,
+    "mnli_drop_arithmetic": 0.04950723020904152,
+    "mnli_drop_certificate": 0.01237680755226038,
+    "fake": true
+  },
+  "arithmetic_mnli": 0.7904927697909585,
+  "certificate_mnli": 0.8276231924477396,
+  "note": "Synthetic LoRAs; accuracies are heuristic proxies (fake=True)."
+}

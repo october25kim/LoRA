@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lora-merge-cert"
+version = "0.1.0"
+description = "LoRA Merge Certificate — principal-angle PASS/FAIL merge for two LoRA adapters"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "LoRA Merge Certificate Week-1" }]
+dependencies = [
+  "torch",
+  "numpy",
+  "matplotlib",
+  "transformers",
+  "peft",
+  "datasets",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+lora-merge-week1 = "scripts.week1_run:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["lora_merge_cert*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
