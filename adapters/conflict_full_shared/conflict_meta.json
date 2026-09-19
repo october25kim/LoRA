@@ -1,0 +1,10 @@
+{
+  "method": "construct_share_B_columns",
+  "lora1_src": "adapters/mnli_seed7_full",
+  "lora2_src": "adapters/mnli_seed42_full",
+  "n_shared": 3,
+  "n_layers_rewritten": 73,
+  "out1": "adapters/conflict_full_mnli",
+  "out2": "adapters/conflict_full_shared",
+  "note": "Task2 B columns 0..n_shared-1 aligned to orth(B1); guarantees \u03b8_min~0 (subspace A)."
+}
