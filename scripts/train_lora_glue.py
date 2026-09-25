@@ -104,6 +104,12 @@ def main():
     trainer.train()
     model.save_pretrained(args.output_dir)
     tok.save_pretrained(args.output_dir)
+    # record the segment-id convention (tokenizer token_type_ids are kept by DataCollatorWithPadding)
+    import sys as _sys
+    from pathlib import Path as _P
+    _sys.path.insert(0, str(_P(__file__).resolve().parents[1]))
+    from lora_merge_cert.eval import write_segment_meta
+    write_segment_meta(args.output_dir, "bert", "trained by scripts/train_lora_glue.py with standard BERT token_type_ids")
     print(f"Saved LoRA adapter to {args.output_dir}")
 
 

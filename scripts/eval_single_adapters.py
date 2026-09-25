@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 from peft import PeftModel
-from lora_merge_cert.eval import evaluate_glue
+from lora_merge_cert.eval import evaluate_glue, resolve_segment_ids
 
 
 def main():
@@ -23,16 +23,19 @@ def main():
     p.add_argument("--num-samples", type=int, default=512)
     p.add_argument("--also-full-val", action="store_true")
     p.add_argument("--output", required=True)
+    p.add_argument("--segment-ids", choices=["auto", "bert", "none"], default="auto",
+                   help="token_type_ids convention: auto = per adapter via lora_merge_cert.eval.resolve_segment_ids")
     args = p.parse_args()
     device = torch.device(args.device if torch.cuda.is_available() else "cpu")
     tok = AutoTokenizer.from_pretrained(args.base_model)
     out = {"device": str(device), "base_model": args.base_model, "runs": []}
 
     base = AutoModelForSequenceClassification.from_pretrained(args.base_model, num_labels=3).to(device)
-    r = evaluate_glue(base, tok, "mnli", device=device, num_samples=args.num_samples)
+    base_seg = "bert" if args.segment_ids == "auto" else args.segment_ids  # plain BERT convention
+    r = evaluate_glue(base, tok, "mnli", device=device, num_samples=args.num_samples, segment_ids=base_seg)
     entry = {"name": "base_no_adapter", "n": args.num_samples, **r}
     if args.also_full_val:
-        entry["full_val"] = evaluate_glue(base, tok, "mnli", device=device, num_samples=None)
+        entry["full_val"] = evaluate_glue(base, tok, "mnli", device=device, num_samples=None, segment_ids=base_seg)
     out["runs"].append(entry)
     del base
     if device.type == "cuda":
@@ -41,10 +44,11 @@ def main():
     for path in args.adapters:
         base = AutoModelForSequenceClassification.from_pretrained(args.base_model, num_labels=3)
         model = PeftModel.from_pretrained(base, path).to(device)
-        r = evaluate_glue(model, tok, "mnli", device=device, num_samples=args.num_samples)
+        seg = resolve_segment_ids(path, args.segment_ids)
+        r = evaluate_glue(model, tok, "mnli", device=device, num_samples=args.num_samples, segment_ids=seg)
         entry = {"name": path, "n": args.num_samples, **r}
         if args.also_full_val:
-            entry["full_val"] = evaluate_glue(model, tok, "mnli", device=device, num_samples=None)
+            entry["full_val"] = evaluate_glue(model, tok, "mnli", device=device, num_samples=None, segment_ids=seg)
         out["runs"].append(entry)
         del model, base
         if device.type == "cuda":

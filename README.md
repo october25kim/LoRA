@@ -115,3 +115,16 @@ from lora_merge_cert import (
 ## 라이선스
 
 MIT (연구용 Week-1 패키지)
+
+## Segment-ID (token_type_ids) convention — important for evaluation
+
+Evaluate every adapter with the segment-id convention it was **trained** with. `lora_merge_cert.eval.evaluate_glue(..., segment_ids=...)` takes the mode explicitly:
+
+| mode | meaning | adapters |
+|---|---|---|
+| `"bert"` | pass the tokenizer's `token_type_ids` | trained with `scripts/train_lora_glue.py` (`adapters/*_hubish`, `adapters/mnli_seed*`, `conflict_full_*`) |
+| `"none"` | drop `token_type_ids` (all-zero segments) | `prateeky2806/*` Hub adapters and `conflict_mnli` / `conflict_sst2_shared` built from them |
+
+`resolve_segment_ids(adapter)` picks the mode in this order: a `segment_ids.json` file in the adapter dir (`train_lora_glue.py` now writes one), then `SEGMENT_ID_REGISTRY`, then `conflict_meta.json` provenance. If none of these apply, it falls back to `"bert"` and issues a loud warning. Calling with `segment_ids=None` keeps the legacy behaviour (`"none"`) and also warns. The scripts accept `--segment-ids {auto,bert,none}`.
+
+Before this fix (2026-09-25), the evaluator always used `"none"`. The locally trained adapters were therefore mis-evaluated (mnli_s7_hubish 0.452 → 0.821, mnli_s42_hubish 0.490 → 0.824, rte_s42_hubish 0.433 → 0.675). Details: `artifacts/seed_fix_segid/`, `artifacts/e1_predictive/diag/`.

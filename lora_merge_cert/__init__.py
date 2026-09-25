@@ -17,7 +17,13 @@ from .certificate import (
     certify_and_merge_layer,
     project_out,
 )
-from .eval import evaluate_glue, fake_eval_from_certificates
+from .eval import (
+    SEGMENT_ID_REGISTRY,
+    evaluate_glue,
+    fake_eval_from_certificates,
+    resolve_pair_segment_ids,
+    resolve_segment_ids,
+)
 from .merge import (
     apply_deltas_to_base,
     collect_lora_pairs,
@@ -35,6 +41,7 @@ __all__ = [
     "build_shared_basis",
     "certify_and_merge_layer",
     "collect_lora_pairs",
+    "SEGMENT_ID_REGISTRY",
     "evaluate_glue",
     "extract_basis",
     "fake_eval_from_certificates",
@@ -44,6 +51,8 @@ __all__ = [
     "overlap_frobenius",
     "principal_angles",
     "project_out",
+    "resolve_pair_segment_ids",
+    "resolve_segment_ids",
     "resvd_to_rank",
     "select_shared_indices",
     "synthetic_lora_pair",

@@ -3,7 +3,9 @@ set -euo pipefail
 cd ~/Desktop/Workspace/LoRA
 mkdir -p adapters/logs artifacts/paper scripts
 
-cat > scripts/run_paper_pack_4070.py << 'PY'
+# Historical embedded copy (pre segment-id fix). It is no longer written to disk; the maintained script is
+# scripts/run_paper_pack_4070.py, which resolves the segment-id convention per adapter.
+cat > /dev/null << 'PY'
 #!/usr/bin/env python3
 from __future__ import annotations
 import json, csv

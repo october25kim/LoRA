@@ -1,0 +1,82 @@
+[
+ {
+  "task": "mnli",
+  "accuracy": 0.822265625,
+  "n": 512,
+  "segment_ids": "bert",
+  "adapter": "adapters/mnli_s7_hubish",
+  "requested": "auto"
+ },
+ {
+  "task": "mnli",
+  "accuracy": 0.8209882832399389,
+  "n": 9815,
+  "segment_ids": "bert",
+  "adapter": "adapters/mnli_s7_hubish",
+  "requested": "auto"
+ },
+ {
+  "task": "mnli",
+  "accuracy": 0.4609375,
+  "n": 512,
+  "segment_ids": "none",
+  "adapter": "adapters/mnli_s7_hubish",
+  "requested": "none"
+ },
+ {
+  "task": "mnli",
+  "accuracy": 0.4524707080998472,
+  "n": 9815,
+  "segment_ids": "none",
+  "adapter": "adapters/mnli_s7_hubish",
+  "requested": "none"
+ },
+ {
+  "task": "mnli",
+  "accuracy": 0.810546875,
+  "n": 512,
+  "segment_ids": "none",
+  "adapter": "prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001",
+  "requested": "auto"
+ },
+ {
+  "task": "mnli",
+  "accuracy": 0.8071319409067753,
+  "n": 9815,
+  "segment_ids": "none",
+  "adapter": "prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001",
+  "requested": "auto"
+ },
+ {
+  "task": "mnli",
+  "accuracy": 0.69921875,
+  "n": 512,
+  "segment_ids": "bert",
+  "adapter": "prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001",
+  "requested": "bert"
+ },
+ {
+  "task": "mnli",
+  "accuracy": 0.7047376464595008,
+  "n": 9815,
+  "segment_ids": "bert",
+  "adapter": "prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001",
+  "requested": "bert"
+ },
+ {
+  "task": "rte",
+  "accuracy": 0.6750902527075813,
+  "n": 277,
+  "segment_ids": "bert",
+  "adapter": "adapters/rte_s42_hubish",
+  "requested": "auto"
+ },
+ {
+  "task": "rte",
+  "accuracy": 0.6750902527075813,
+  "n": 277,
+  "segment_ids": "bert",
+  "adapter": "adapters/rte_s42_hubish",
+  "requested": "auto"
+ }
+]

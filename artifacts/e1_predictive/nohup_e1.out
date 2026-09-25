@@ -1,0 +1,162 @@
+2026-09-25 19:36:08 KST | === e1.py stage=stage1 argv=['artifacts/e1_predictive/e1.py', '--out', 'artifacts/e1_predictive', '--stage', 'stage1', '--repo-root', '.']
+2026-09-25 19:36:51 KST | stage1 done; frozen predictors.sha256:
+c7e981979f5238b3d3fce6e0cbb94c798b4a7f319ab51944727d4b9f8b18bd40  predictors.csv
+f2c97aaf8f92277f1bc5e2a13e6e3574d129af12b19b87a783f7ecb10daef9df  predictors_layers.csv
+1a31a8dc1fbcd1647d9bf5f6df33734297ab1bfaf5581a1b8e44269046d0c807  predictors_null.json
+
+predictors.csv: OK
+predictors_layers.csv: OK
+predictors_null.json: OK
+2026-09-25 19:36:51 KST | === e1.py stage=stage2 argv=['artifacts/e1_predictive/e1.py', '--out', 'artifacts/e1_predictive', '--stage', 'stage2', '--repo-root', '.']
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 18520.98it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-09-25 19:36:57 KST | stage2 cola-sst2: lam*=1.0 merged=(0.7833,0.8865) D=0.0488 [3s]
+2026-09-25 19:37:01 KST | stage2 cola-mrpc: lam*=0.7 merged=(0.7862,0.8064) D=0.0628 [4s]
+2026-09-25 19:37:51 KST | stage2 cola-qqp: lam*=0.7 merged=(0.7498,0.8762) D=0.0633 [50s]
+2026-09-25 19:38:09 KST | stage2 cola-mnli: lam*=1.0 merged=(0.7220,0.7934) D=0.0782 [18s]
+2026-09-25 19:38:24 KST | stage2 cola-qnli: lam*=1.0 merged=(0.7881,0.8929) D=0.0387 [14s]
+2026-09-25 19:38:29 KST | stage2 cola-rte: lam*=1.0 merged=(0.8351,0.5668) D=0.0405 [5s]
+2026-09-25 19:38:34 KST | stage2 sst2-mrpc: lam*=0.7 merged=(0.9060,0.7941) D=0.0435 [5s]
+2026-09-25 19:39:25 KST | stage2 sst2-qqp: lam*=1.0 merged=(0.8750,0.8827) D=0.0284 [52s]
+2026-09-25 19:39:44 KST | stage2 sst2-mnli: lam*=0.7 merged=(0.8991,0.7795) D=0.0259 [19s]
+2026-09-25 19:39:59 KST | stage2 sst2-qnli: lam*=1.0 merged=(0.9025,0.8975) D=0.0127 [15s]
+2026-09-25 19:40:05 KST | stage2 sst2-rte: lam*=0.7 merged=(0.9140,0.5993) D=0.0124 [6s]
+2026-09-25 19:40:58 KST | stage2 mrpc-qqp: lam*=0.5 merged=(0.7819,0.8433) D=0.0741 [54s]
+2026-09-25 19:41:19 KST | stage2 mrpc-mnli: lam*=0.7 merged=(0.7843,0.7972) D=0.0503 [20s]
+2026-09-25 19:41:35 KST | stage2 mrpc-qnli: lam*=0.7 merged=(0.7966,0.8947) D=0.0444 [17s]
+2026-09-25 19:41:43 KST | stage2 mrpc-rte: lam*=0.7 merged=(0.8162,0.5523) D=0.0756 [7s]
+2026-09-25 19:42:50 KST | stage2 qqp-mnli: lam*=0.7 merged=(0.8101,0.7797) D=0.0640 [67s]
+2026-09-25 19:43:54 KST | stage2 qqp-qnli: lam*=0.5 merged=(0.8454,0.6731) D=0.1567 [64s]
+2026-09-25 19:44:48 KST | stage2 qqp-rte: lam*=0.7 merged=(0.8733,0.5776) D=0.0412 [54s]
+2026-09-25 19:45:18 KST | stage2 mnli-qnli: lam*=0.5 merged=(0.7566,0.7009) D=0.1454 [30s]
+2026-09-25 19:45:39 KST | stage2 mnli-rte: lam*=1.0 merged=(0.8036,0.6751) D=-0.0478 [21s]
+2026-09-25 19:45:57 KST | stage2 qnli-rte: lam*=1.0 merged=(0.9026,0.5451) D=0.0589 [17s]
+2026-09-25 19:45:57 KST | stage2 done: 21 pairs; excluded=[]
+2026-09-25 19:45:57 KST | === e1.py stage=stage3 argv=['artifacts/e1_predictive/e1.py', '--out', 'artifacts/e1_predictive', '--stage', 'stage3', '--repo-root', '.']
+/home/sanghoon/miniconda3/envs/torch/lib/python3.11/site-packages/numpy/lib/_nanfunctions_impl.py:1396: RuntimeWarning: All-NaN slice encountered
+  return _nanquantile_unchecked(
+2026-09-25 19:46:02 KST | stage3 O_A: rho=0.1675 p1=0.2572 p2=0.5577 ci=[-0.4874334784712144, 0.9377431906614788]
+2026-09-25 19:46:04 KST | stage3 O_B: rho=0.1675 p1=0.2520 p2=0.5601 ci=[-0.4874334784712144, 0.9377431906614788]
+2026-09-25 19:46:05 KST | stage3 mean_theta_min_A_deg: rho=-0.2403 p1=0.7943 p2=0.3948 ci=[-0.9610894941634242, 0.450064850843061]
+2026-09-25 19:46:07 KST | stage3 null_z_O_A: rho=0.1675 p1=0.2584 p2=0.5560 ci=[-0.4874334784712144, 0.9377431906614788]
+2026-09-25 19:46:09 KST | stage3 tv_cosine: rho=0.4351 p1=0.0278 p2=0.0539 ci=[-0.47034533584298605, 0.9487179487179488]
+2026-09-25 19:46:11 KST | stage3 sign_conflict_top20: rho=-0.4273 p1=0.9666 p2=0.0624 ci=[-0.9299610894941636, 0.4157716026723446]
+2026-09-25 19:46:11 KST | stage3 n_layers_theta_min_lt30_A: rho=nan p1=0.0001 p2=0.0001 ci=[nan, nan]
+2026-09-25 19:46:13 KST | stage3 min_theta_min_A_deg: rho=-0.0974 p1=0.6637 p2=0.7311 ci=[-0.6566775567138977, 0.6186913589310624]
+2026-09-25 19:46:15 KST | stage3 sign_conflict_all: rho=-0.4519 p1=0.9797 p2=0.0371 ci=[-0.9622641509433962, 0.6186770428015566]
+2026-09-25 19:46:17 KST | stage3 norm_ratio: rho=-0.0974 p1=0.6609 p2=0.7061 ci=[-0.7812109683315563, 0.557003891050584]
+/home/sanghoon/Desktop/Workspace/LoRA/artifacts/e1_predictive/e1.py:804: RuntimeWarning: All-NaN axis encountered
+  L.append(f"| {c}{' (primary)' if c == 'O_A' else ''}{' (extra, uncorrected)' if c in extra else ''} | {s['rho']:.3f} | [{s['task_block_bootstrap_95ci'][0]:.2f}, {s['task_block_bootstrap_95ci'][1]:.2f}] | {s['perm_p_two_sided_10000']:.4f} | {s.get('holm_p', float('nan')):.4f} | [{np.nanmin(lv):.2f}, {np.nanmax(lv):.2f}] |")
+2026-09-25 19:46:19 KST | stage3 done verdict=INVALID (stat=INCONCLUSIVE)
+# E1 VERDICT: **INVALID**
+
+Generated 2026-09-25 19:46 KST on NVIDIA GeForce RTX 4070 Ti SUPER. Pre-registered question: does per-layer principal-angle overlap (O_A) predict task-arithmetic merge loss D?
+
+INVALID reasons: ["single-adapter >2pp below card: ['cola', 'sst2', 'qqp', 'mnli']"]. Statistical verdict that would otherwise apply: **INCONCLUSIVE**.
+
+## Primary (pre-registered)
+
+- Pairs: 21 (tasks: cola, sst2, mrpc, qqp, mnli, qnli, rte; STS-B excluded: no public adapter)
+- Spearman rho(O_A, D) = **0.1675**
+- Task-block bootstrap 95% CI (2000 reps): [-0.4874, 0.9377]
+- Task-label permutation p (10000 reps): one-sided (rho>=obs) = 0.2572; two-sided = 0.5577; exact over 7!=5040 relabelings: one-sided 0.2587, two-sided 0.5611
+- Example-level bootstrap 95% CI (1000 reps): [-0.07798701298701298, 0.36633116883116873]
+- Leave-one-task-out rho: cola: 0.418, sst2: 0.000, mrpc: 0.082, qqp: 0.239, mnli: 0.521, qnli: 0.161, rte: -0.061  -> 2/7 > 0.3 (required 6)
+- Criteria: {'rho_ge_0.5': False, 'perm_p_lt_0.05': False, 'loto_ge_6of7': False}
+- D: mean 0.0532, range [-0.0478, 0.1567]; lam selected counts {'0.7': 10, '1.0': 8, '0.5': 3}
+
+## Secondary predictors (exploratory; Holm over the 5 pre-listed; two-sided task-permutation p)
+
+| predictor | rho | 95% task-block CI | perm p (2-sided) | Holm p | LOTO rho range |
+|---|---:|---|---:|---:|---|
+| O_A (primary) | 0.168 | [-0.49, 0.94] | 0.5577 | nan | [-0.06, 0.52] |
+| O_B | 0.168 | [-0.49, 0.94] | 0.5601 | 1.0000 | [-0.06, 0.52] |
+| mean_theta_min_A_deg | -0.240 | [-0.96, 0.45] | 0.3948 | 1.0000 | [-0.59, -0.04] |
+| null_z_O_A | 0.168 | [-0.49, 0.94] | 0.5560 | 1.0000 | [-0.06, 0.52] |
+| tv_cosine | 0.435 | [-0.47, 0.95] | 0.0539 | 0.2695 | [0.17, 0.77] |
+| sign_conflict_top20 | -0.427 | [-0.93, 0.42] | 0.0624 | 0.2695 | [-0.75, -0.17] |
+| n_layers_theta_min_lt30_A (extra, uncorrected) | nan | [nan, nan] | 0.0001 | nan | [nan, nan] |
+| min_theta_min_A_deg (extra, uncorrected) | -0.097 | [-0.66, 0.62] | 0.7311 | nan | [-0.31, 0.02] |
+| sign_conflict_all (extra, uncorrected) | -0.452 | [-0.96, 0.62] | 0.0371 | nan | [-0.86, -0.18] |
+| norm_ratio (extra, uncorrected) | -0.097 | [-0.78, 0.56] | 0.7061 | nan | [-0.28, 0.27] |
+
+Delta rho (O_A - task-vector cosine) = -0.268, task-block 95% CI [-0.825, 0.336]
+
+Exploratory (not pre-registered) rho(O_A, D) at fixed lam on validation: {'lam0.3': -0.6155844155844156, 'lam0.5': 0.1909090909090909, 'lam0.7': 0.20909090909090908, 'lam1.0': 0.22467532467532467}; tv-cosine: {'lam0.3': 0.0025974025974025974, 'lam0.5': 0.3233766233766234, 'lam0.7': 0.3948051948051948, 'lam1.0': 0.4506493506493507}
+
+## Single-adapter scores (full GLUE validation; accuracy is the pre-registered metric)
+
+| task | repo@rev | head saved | val acc | extra | seed-0 train1k acc | card (100-ex train hold-out) | full-val shortfall vs card |
+|---|---|---|---:|---|---:|---|---:|
+| cola | bert-base-uncased-cola-lora-epochs-10-lr-0.0005@04c81291 | True | 0.8389 | mcc=0.6058, f1=0.8901 | 0.9930 | {'mcc': 0.6347} | 2.89 pp FLAG |
+| sst2 | bert-base-uncased-sst2-lora-epochs-2-lr-0.0005@b29cf707 | True | 0.9151 | mcc=0.8307, f1=0.9181 | 0.9810 | {'accuracy': 0.98} | 6.49 pp FLAG |
+| mrpc | bert-base-uncased-mrpc-lora-epochs-10-lr-0.0005@519fa53a | True | 0.8603 | mcc=0.6684, f1=0.9009 | 0.9930 | {'accuracy': 0.8, 'f1': 0.8611} | -6.03 pp |
+| qqp | bert-base-uncased-qqp-lora-epochs-2-lr-0.0005@3055be41 | True | 0.8943 | mcc=0.7752, f1=0.8594 | 0.9230 | {'accuracy': 0.95, 'f1': 0.9333} | 5.57 pp FLAG |
+| mnli | bert-base-uncased-mnli-lora-epochs-2-lr-0.001@7b635f33 | True | 0.8071 |  | 0.8220 | {'accuracy': 0.85} | 4.29 pp FLAG |
+| qnli | bert-base-uncased-qnli-lora-epochs-2-lr-0.0005@2af1d25d | True | 0.9081 | mcc=0.8163, f1=0.9084 | 0.9380 | {'accuracy': 0.92} | 1.19 pp |
+| rte | bert-base-uncased-rte-lora-epochs-10-lr-0.0005@eb4723da | True | 0.6137 | mcc=0.2229, f1=0.5158 | 0.7840 | {'accuracy': 0.63} | 1.63 pp |
+
+## Pair results
+
+| pair | lam* | merged t1 | merged t2 | norm t1 | norm t2 | D | O_A | tv cos |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| cola-sst2 | 1.0 | 0.7833 | 0.8865 | 0.9337 | 0.9687 | 0.0488 | 0.02145 | 0.0010 |
+| cola-mrpc | 0.7 | 0.7862 | 0.8064 | 0.9371 | 0.9373 | 0.0628 | 0.02567 | 0.0012 |
+| cola-qqp | 0.7 | 0.7498 | 0.8762 | 0.8937 | 0.9797 | 0.0633 | 0.01667 | 0.0004 |
+| cola-mnli | 1.0 | 0.7220 | 0.7934 | 0.8606 | 0.9830 | 0.0782 | 0.01284 | 0.0001 |
+| cola-qnli | 1.0 | 0.7881 | 0.8929 | 0.9394 | 0.9833 | 0.0387 | 0.01942 | 0.0008 |
+| cola-rte | 1.0 | 0.8351 | 0.5668 | 0.9954 | 0.9235 | 0.0405 | 0.02221 | 0.0008 |
+| sst2-mrpc | 0.7 | 0.9060 | 0.7941 | 0.9900 | 0.9231 | 0.0435 | 0.02048 | 0.0005 |
+| sst2-qqp | 1.0 | 0.8750 | 0.8827 | 0.9561 | 0.9870 | 0.0284 | 0.01634 | 0.0011 |
+| sst2-mnli | 0.7 | 0.8991 | 0.7795 | 0.9825 | 0.9658 | 0.0259 | 0.01413 | 0.0015 |
+| sst2-qnli | 1.0 | 0.9025 | 0.8975 | 0.9862 | 0.9883 | 0.0127 | 0.01783 | 0.0009 |
+| sst2-rte | 0.7 | 0.9140 | 0.5993 | 0.9987 | 0.9765 | 0.0124 | 0.01848 | 0.0008 |
+| mrpc-qqp | 0.5 | 0.7819 | 0.8433 | 0.9088 | 0.9429 | 0.0741 | 0.02015 | 0.0016 |
+| mrpc-mnli | 0.7 | 0.7843 | 0.7972 | 0.9117 | 0.9878 | 0.0503 | 0.01383 | 0.0007 |
+| mrpc-qnli | 0.7 | 0.7966 | 0.8947 | 0.9259 | 0.9853 | 0.0444 | 0.02369 | 0.0015 |
+| mrpc-rte | 0.7 | 0.8162 | 0.5523 | 0.9487 | 0.9000 | 0.0756 | 0.03180 | 0.0032 |
+| qqp-mnli | 0.7 | 0.8101 | 0.7797 | 0.9059 | 0.9660 | 0.0640 | 0.01572 | 0.0028 |
+| qqp-qnli | 0.5 | 0.8454 | 0.6731 | 0.9453 | 0.7412 | 0.1567 | 0.02098 | 0.0029 |
+| qqp-rte | 0.7 | 0.8733 | 0.5776 | 0.9765 | 0.9412 | 0.0412 | 0.01933 | 0.0009 |
+| mnli-qnli | 0.5 | 0.7566 | 0.7009 | 0.9374 | 0.7718 | 0.1454 | 0.01571 | 0.0020 |
+| mnli-rte | 1.0 | 0.8036 | 0.6751 | 0.9956 | 1.1000 | -0.0478 | 0.01327 | 0.0006 |
+| qnli-rte | 1.0 | 0.9026 | 0.5451 | 0.9940 | 0.8882 | 0.0589 | 0.02338 | 0.0019 |
+
+## Deviations from protocol
+
+# E1 protocol deviations and pre-declared decisions
+
+Written 2026-09-25 ~19:40 KST, **after Stage 0 and before Stage 1 (predictors) and Stage 2 (merges)**. Not edited after any merge result was seen. Machine-readable copy: `protocol_decisions.json`.
+
+1. **Hardware: GPU, not CPU.** E1 runs on ubuntu-4070 (RTX 4070 Ti SUPER 16 GB, conda env `torch`: torch 2.11.0+cu128, transformers 5.17.0, peft 0.21.0, datasets 5.0.1), not on the box CPU. So **full GLUE validation is used for every task (no 5000-example cap)**, and the CPU-budget cap plan is dropped. (A CPU venv was installed on the box at /workspace/lora-paper/e1/.venv before the plan changed; install log: /workspace/lora-paper/e1/install.log. It was not used for any result.)
+2. **7 tasks, 21 pairs, not 8 tasks and 28 pairs.** The Hub user prateeky2806 has **no STS-B LoRA adapter** (the full bert-base-uncased listing is in stage0.json: cola, mnli, mrpc, qnli, qqp, rte, sst2, wnli; no stsb). Section 6 says the "actual list is fixed in Stage 0", so STS-B and its 7 pairs are left out. WNLI was **not** used as a substitute because it is not in the pre-registered task list. Because of this, the Spearman-on-STS-B metric rule never applies.
+3. **LOTO threshold adapted from 6 of 8 to 6 of 7.** With 7 tasks there are 7 leave-one-task-out rhos. PASS needs **at least 6 of 7 > 0.3**. This keeps the pre-registered fraction of at least 75% (5.25, rounded up to 6), so it is slightly stricter than 6 of 8.
+4. **Permutation test sidedness:** the verdict uses the **two-sided** task-label permutation p (10000 random relabelings, seed 0). This is the conservative choice. The one-sided p and the exact p over all 7! = 5040 relabelings are also reported. With 7 tasks, only 5040 distinct relabelings exist, so the 10000 random draws include repeats.
+5. **Segment (token_type) ids are all zeros (Stage-0 integrity fix).** With standard BERT segment ids, the pair-input adapters scored far below their cards and below this repo's own earlier numbers (MNLI 0.705, MRPC 0.716, RTE 0.560 with F1 0.13). With all-zero segment ids they give MNLI 0.807, MRPC 0.860, QNLI 0.908, QQP 0.894, RTE 0.614. Single-sentence tasks do not change. With zero segment ids, MNLI matches the repo's earlier self-reproduction (first 512 val: 0.8105 vs 0.811). Conclusion: the adapters were trained without segment ids. The earlier repo pipeline (`lora_merge_cert/eval.py`) also sends no token_type_ids. The diagnostic is kept in `diag/diag_tt.json`, and the superseded Stage-0 run is kept in `diag/stage0_with_bert_segment_ids/`. This choice was made before any predictor or merge was computed.
+6. **Model-card comparison (section 6 INVALID rule) is applied literally, as instructed.** Full-val shortfalls over 2pp vs the card: **CoLA (MCC 0.606 vs 0.6347, 2.9pp), SST-2 (0.915 vs 0.98, 6.5pp), QQP (0.894 vs 0.95, 5.6pp), MNLI (0.807 vs 0.85, 4.3pp)**. So the pre-registered verdict label is **INVALID**. Stage 3 still reports the statistical verdict (PASS/FAIL/INCONCLUSIVE) separately. Caveat: this is not a like-for-like comparison. Each card's "evaluation set" is a **100-example hold-out carved from GLUE train**, not GLUE validation. Evidence: steps/epoch = ceil((n_train - 100)/32) for cola 265, mrpc 112, rte 75, mnli 12269, and the metrics come in 2-decimal steps. That exact hold-out could not be identified: train[:100], train[-100:], and train_test_split(100, seed in {28, 42, 0}) do not reproduce the cards, and the seed-0 split is clearly training data. The binomial SE with n=100 is about 2 to 3.6pp. The pipeline itself is validated by (a) logit equivalence to `PeftModel` (max |diff| < 1e-5 for all 7 adapters, which confirms the saved heads are loaded) and (b) the MNLI self-reproduction within 0.05pp.
+7. **Metric = accuracy for every task**, as pre-registered, including CoLA (MCC is recorded as extra) and MRPC/QQP (F1 recorded as extra).
+8. **Merge details:** each merged encoder uses W0 + lam*(dW1 + dW2) for all 73 LoRA layers (12 x {query, key, value, attention.output.dense, intermediate.dense, output.dense} + pooler.dense). dW = (alpha/r)*B@A = 2*B@A. Each task is evaluated with its **own saved classifier head**. No adapter saves a separate pooler (modules_to_save = null; PEFT SEQ_CLS stores the classifier). The pooler is updated only through its LoRA delta.
+9. **lam selection ties** go to the smallest lam. Selection uses seed-0 1000-example TRAIN subsets, as pre-registered. These subsets overlap the adapters' own training data (for example, single MRPC train1k accuracy is 0.993). This is inherent to the protocol.
+10. **Exploratory additions (not used for selection or the verdict):** validation scores for all 4 lam values, which give an exploratory rho at each fixed lam. Extra uncorrected predictors: count of layers with theta_min < 30 deg, minimum theta_min, untrimmed sign-conflict rate, norm ratio. The example-level bootstrap (1000 reps) from section 6 is reported for the primary rho.
+11. **Known properties of predictors, stated in advance:** (a) def B (top-r left singular vectors of B@A) spans the same space as def A (orth(B)) whenever A has full row rank, so O_B should equal O_A up to numerics. (b) Every pair shares the same layer shapes, so the random-subspace null is the same for all pairs. That makes the null z-score a linear transform of O_A, with the same rho.
+12. **Sign-conflict definition (TIES):** trim each flattened encoder task vector to its top 20% |entries|, then take the fraction of coordinates kept in both vectors that have opposite signs.
+13. **Task-block bootstrap:** 2000 reps (seed 0). A rep is skipped if it yields fewer than 4 distinct task pairs. The skip count is reported.
+
+
+## Compute
+
+timing (s): {"stage0_gpu_wall_s": 69.2, "stage1_gpu_wall_s": 41.5, "stage2_gpu_wall_s": 543.7, "stage3_wall_s": 22.0}; total GPU wall ~ 0.18 h
+
+E1 FINISHED Fri Sep 25 07:46:19 PM KST 2026

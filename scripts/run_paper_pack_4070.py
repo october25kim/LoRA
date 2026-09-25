@@ -6,7 +6,7 @@ import torch
 from transformers import AutoModelForSequenceClassification, AutoTokenizer
 from peft import PeftModel
 from lora_merge_cert.merge import merge_lora_models, apply_deltas_to_base, collect_lora_pairs
-from lora_merge_cert.eval import evaluate_glue
+from lora_merge_cert.eval import evaluate_glue, resolve_pair_segment_ids
 
 def ties_lite_sum(d1, d2, densify=0.7):
     out = {}
@@ -49,7 +49,9 @@ def main():
         ("seed_hubish", "adapters/mnli_s7_hubish", "adapters/mnli_s42_hubish", 3, 3, "mnli", False),
     ]
     for name, l1, l2, n1, n2, task, do_ties in configs:
-        print("LOAD", name, flush=True)
+        # segment-id convention of the head adapter (hub: "none", local hubish: "bert"); see lora_merge_cert/eval.py
+        seg = resolve_pair_segment_ids([l1, l2])
+        print("LOAD", name, "segment_ids =", seg, flush=True)
         m1 = PeftModel.from_pretrained(AutoModelForSequenceClassification.from_pretrained(base_id, num_labels=n1), l1)
         m2 = PeftModel.from_pretrained(AutoModelForSequenceClassification.from_pretrained(base_id, num_labels=n2), l2)
         for subspace in ("A", "B"):
@@ -58,13 +60,13 @@ def main():
             arith_d, _ = merge_lora_models(m1, m2, subspace=subspace, theta_star_deg=30.0, use_certificate=False)
             ma = build_model(base_id, n1, m1, arith_d, device)
             mc = build_model(base_id, n1, m1, cert_d, device)
-            ra = evaluate_glue(ma, tok, task, device=device, num_samples=None)
-            rc = evaluate_glue(mc, tok, task, device=device, num_samples=None)
+            ra = evaluate_glue(ma, tok, task, device=device, num_samples=None, segment_ids=seg)
+            rc = evaluate_glue(mc, tok, task, device=device, num_samples=None, segment_ids=seg)
             ths = [c.theta_min_deg for c in certs]
             n_fail = sum(1 for c in certs if c.status == "FAIL")
             rec = {"pair": name, "method": f"cert_{subspace}", "subspace": subspace,
                    "n_fail": n_fail, "theta_min": min(ths), "theta_median": sorted(ths)[len(ths)//2],
-                   "retain_sum": ra["accuracy"], "retain_corr": rc["accuracy"], "n": ra.get("n")}
+                   "retain_sum": ra["accuracy"], "retain_corr": rc["accuracy"], "n": ra.get("n"), "segment_ids": seg}
             print(rec, flush=True); rows.append(rec)
             dest = out_dir / f"{name}_{subspace}_th30"; dest.mkdir(parents=True, exist_ok=True)
             with open(dest / "certificate_table.csv", "w", newline="") as f:
@@ -82,7 +84,7 @@ def main():
                 dd2 = {nm: (B2 @ A2).detach().cpu() for nm, B1, A1, B2, A2 in pairs}
                 ties_d = ties_lite_sum(dd1, dd2, 0.7)
                 mt = build_model(base_id, n1, m1, ties_d, device)
-                try: rt = evaluate_glue(mt, tok, task, device=device, num_samples=None)
+                try: rt = evaluate_glue(mt, tok, task, device=device, num_samples=None, segment_ids=seg)
                 except Exception as e: rt = {"accuracy": None, "error": str(e)}
                 cert_trim = {}
                 for k, t in cert_d.items():
@@ -90,7 +92,7 @@ def main():
                     thresh = torch.kthvalue(flat, min(kth, flat.numel())).values
                     cert_trim[k] = torch.where(t.abs() >= thresh, t, torch.zeros_like(t))
                 mct = build_model(base_id, n1, m1, cert_trim, device)
-                rct = evaluate_glue(mct, tok, task, device=device, num_samples=None)
+                rct = evaluate_glue(mct, tok, task, device=device, num_samples=None, segment_ids=seg)
                 for method, rr in [("ties_lite", rt), ("cert_then_trim", rct), ("arithmetic", ra)]:
                     rows.append({"pair": name, "method": method, "subspace": "A",
                                  "retain_acc": rr.get("accuracy") if isinstance(rr, dict) else None,

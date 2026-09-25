@@ -40,6 +40,8 @@ def parse_args(argv=None):
     p.add_argument("--device", default="cpu")
     p.add_argument("--lora2-num-labels", type=int, default=2,
                    help="Classifier size for second adapter (3 for MNLI seed pair)")
+    p.add_argument("--segment-ids", choices=["auto", "bert", "none"], default="auto",
+                   help="token_type_ids convention: auto = per adapter via lora_merge_cert.eval.resolve_segment_ids")
     p.add_argument("--eval-tasks", default="mnli,sst2",
                    help="Comma list: mnli and/or sst2")
     return p.parse_args(argv)
@@ -227,7 +229,7 @@ def run_real(args) -> dict:
 
     eval_results = {"fake": False, "available": False}
     try:
-        from lora_merge_cert.eval import evaluate_glue
+        from lora_merge_cert.eval import evaluate_glue, resolve_pair_segment_ids
         from lora_merge_cert.merge import apply_deltas_to_base
         import copy
 
@@ -249,12 +251,14 @@ def run_real(args) -> dict:
             return base.to(device)
 
         tasks = [x.strip() for x in args.eval_tasks.split(",") if x.strip()]
+        seg_mnli = resolve_pair_segment_ids([args.lora_mnli, args.lora_sst2], args.segment_ids)
+        seg_sst2 = resolve_pair_segment_ids([args.lora_sst2, args.lora_mnli], args.segment_ids)
         eval_results = {"fake": False, "available": True, "num_samples": n_eval, "headline": {}}
         if "mnli" in tasks:
             mnli_arith = _build_merged(3, model_mnli, arith_deltas)
             mnli_cert_m = _build_merged(3, model_mnli, merged_deltas)
-            r_mnli_a = evaluate_glue(mnli_arith, tok, "mnli", device=device, num_samples=n_eval)
-            r_mnli_c = evaluate_glue(mnli_cert_m, tok, "mnli", device=device, num_samples=n_eval)
+            r_mnli_a = evaluate_glue(mnli_arith, tok, "mnli", device=device, num_samples=n_eval, segment_ids=seg_mnli)
+            r_mnli_c = evaluate_glue(mnli_cert_m, tok, "mnli", device=device, num_samples=n_eval, segment_ids=seg_mnli)
             eval_results["mnli_arithmetic"] = r_mnli_a
             eval_results["mnli_certificate"] = r_mnli_c
             eval_results["headline"]["mnli_sum"] = r_mnli_a["accuracy"]
@@ -263,8 +267,8 @@ def run_real(args) -> dict:
             nlab = args.lora2_num_labels
             sst_arith = _build_merged(nlab, model_sst2, arith_deltas)
             sst_cert_m = _build_merged(nlab, model_sst2, merged_deltas)
-            r_sst_a = evaluate_glue(sst_arith, tok, "sst2", device=device, num_samples=n_eval)
-            r_sst_c = evaluate_glue(sst_cert_m, tok, "sst2", device=device, num_samples=n_eval)
+            r_sst_a = evaluate_glue(sst_arith, tok, "sst2", device=device, num_samples=n_eval, segment_ids=seg_sst2)
+            r_sst_c = evaluate_glue(sst_cert_m, tok, "sst2", device=device, num_samples=n_eval, segment_ids=seg_sst2)
             eval_results["sst2_arithmetic"] = r_sst_a
             eval_results["sst2_certificate"] = r_sst_c
             eval_results["headline"]["sst2_sum"] = r_sst_a["accuracy"]
