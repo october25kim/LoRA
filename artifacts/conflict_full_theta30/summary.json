@@ -1,0 +1,34 @@
+{
+  "mode": "real",
+  "base_model": "bert-base-uncased",
+  "lora_mnli": "adapters/conflict_full_mnli",
+  "lora_sst2": "adapters/conflict_full_shared",
+  "subspace": "A",
+  "theta_star_deg": 30.0,
+  "n_layers_certified": 73,
+  "n_pass": 0,
+  "n_fail": 73,
+  "n_merged_deltas": 73,
+  "eval": {
+    "fake": false,
+    "available": true,
+    "num_samples": 512,
+    "headline": {
+      "mnli_sum": 0.3984375,
+      "mnli_corrected": 0.509765625
+    },
+    "mnli_arithmetic": {
+      "task": "mnli",
+      "accuracy": 0.3984375,
+      "n": 512
+    },
+    "mnli_certificate": {
+      "task": "mnli",
+      "accuracy": 0.509765625,
+      "n": 512
+    }
+  },
+  "device": "cuda",
+  "mnli_sum": 0.3984375,
+  "mnli_corrected": 0.509765625
+}

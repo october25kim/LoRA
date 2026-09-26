@@ -12,5 +12,14 @@ adapters/
 !adapters/conflict_mnli/
 !adapters/conflict_sst2_shared/
 
+!adapters/mnli_seed7/
+!adapters/mnli_seed42/
+
+!adapters/mnli_seed7_full/
+!adapters/mnli_seed42_full/
+
+!adapters/conflict_full_mnli/
+!adapters/conflict_full_shared/
+
 # regenerable tokenized-dataset caches
 artifacts/*/cache/
