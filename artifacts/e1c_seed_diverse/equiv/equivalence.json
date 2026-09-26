@@ -1,0 +1,32 @@
+{
+ "n_ref": 91,
+ "n_matched": 91,
+ "max_rel_diff": {
+  "O_A": 0.0,
+  "O_B": 0.0,
+  "tv_cosine": 0.0,
+  "mean_theta_min_A_deg": 0.0,
+  "min_theta_min_A_deg": 0.0,
+  "n_layers_theta_min_lt30_A": 0.0,
+  "mean_theta_min_B_deg": 0.0,
+  "null_z_O_A": 0.0,
+  "sign_conflict_top20": 0.0,
+  "sign_conflict_all": 0.0,
+  "norm_ratio": 0.0,
+  "tvnorm_t1": 0.0,
+  "tvnorm_t2": 0.0
+ },
+ "stage1_ok": true,
+ "stage2": {
+  "cola-sst2": {
+   "max_abs_diff": 4.899336492059092e-11,
+   "lam_equal": true
+  },
+  "rte-wic": {
+   "max_abs_diff": 4.2599257454867256e-11,
+   "lam_equal": true
+  }
+ },
+ "stage2_ok": true,
+ "ok": true
+}

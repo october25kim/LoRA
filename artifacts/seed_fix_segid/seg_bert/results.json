@@ -1,0 +1,356 @@
+{
+  "segment_ids": "bert",
+  "runs": [
+    {
+      "pair": "single",
+      "method": "mnli_s7_hubish",
+      "task": "mnli",
+      "head": "mnli_s7_hubish",
+      "accuracy": 0.8209882832399389,
+      "n": 9815,
+      "head_maxdiff_vs_file": 0.0
+    },
+    {
+      "pair": "single",
+      "method": "mnli_s42_hubish",
+      "task": "mnli",
+      "head": "mnli_s42_hubish",
+      "accuracy": 0.8239429444727457,
+      "n": 9815,
+      "head_maxdiff_vs_file": 0.0
+    },
+    {
+      "pair": "single",
+      "method": "rte_s42_hubish",
+      "task": "rte",
+      "head": "rte_s42_hubish",
+      "accuracy": 0.6750902527075813,
+      "n": 277,
+      "head_maxdiff_vs_file": 0.0
+    },
+    {
+      "pair": "seed_hubish",
+      "method": "arith_sum",
+      "task": "mnli",
+      "head": "mnli_s7_hubish",
+      "accuracy": 0.6931227712684667,
+      "n": 9815
+    },
+    {
+      "pair": "seed_hubish",
+      "method": "cert_A",
+      "task": "mnli",
+      "head": "mnli_s7_hubish",
+      "accuracy": 0.6910850738665308,
+      "n": 9815
+    },
+    {
+      "pair": "seed_hubish",
+      "method": "arith_sum",
+      "task": "mnli",
+      "head": "mnli_s42_hubish",
+      "accuracy": 0.697809475292919,
+      "n": 9815
+    },
+    {
+      "pair": "seed_hubish",
+      "method": "cert_A",
+      "task": "mnli",
+      "head": "mnli_s42_hubish",
+      "accuracy": 0.6955680081507896,
+      "n": 9815
+    },
+    {
+      "pair": "seed_hubish",
+      "method": "cert_B",
+      "task": "mnli",
+      "head": "mnli_s7_hubish",
+      "accuracy": 0.6910850738665308,
+      "n": 9815
+    },
+    {
+      "pair": "seed_hubish",
+      "method": "cert_B",
+      "task": "mnli",
+      "head": "mnli_s42_hubish",
+      "accuracy": 0.6955680081507896,
+      "n": 9815
+    },
+    {
+      "pair": "seed_hubish",
+      "method": "ties_lite",
+      "task": "mnli",
+      "head": "mnli_s7_hubish",
+      "accuracy": 0.7073866530820173,
+      "n": 9815
+    },
+    {
+      "pair": "seed_hubish",
+      "method": "cert_then_trim",
+      "task": "mnli",
+      "head": "mnli_s7_hubish",
+      "accuracy": 0.7048395313295975,
+      "n": 9815
+    },
+    {
+      "pair": "seed_hubish",
+      "method": "arith_lam0.3",
+      "task": "mnli",
+      "head": "mnli_s7_hubish",
+      "accuracy": 0.732348446255731,
+      "n": 9815
+    },
+    {
+      "pair": "seed_hubish",
+      "method": "arith_lam0.5",
+      "task": "mnli",
+      "head": "mnli_s7_hubish",
+      "accuracy": 0.8250636780438105,
+      "n": 9815
+    },
+    {
+      "pair": "seed_hubish",
+      "method": "arith_lam0.7",
+      "task": "mnli",
+      "head": "mnli_s7_hubish",
+      "accuracy": 0.7760570555272542,
+      "n": 9815
+    },
+    {
+      "pair": "seed_hubish",
+      "method": "ties_lite",
+      "task": "mnli",
+      "head": "mnli_s42_hubish",
+      "accuracy": 0.704635761589404,
+      "n": 9815
+    },
+    {
+      "pair": "seed_hubish",
+      "method": "cert_then_trim",
+      "task": "mnli",
+      "head": "mnli_s42_hubish",
+      "accuracy": 0.7054508405501783,
+      "n": 9815
+    },
+    {
+      "pair": "seed_hubish",
+      "method": "arith_lam0.3",
+      "task": "mnli",
+      "head": "mnli_s42_hubish",
+      "accuracy": 0.7213448802852777,
+      "n": 9815
+    },
+    {
+      "pair": "seed_hubish",
+      "method": "arith_lam0.5",
+      "task": "mnli",
+      "head": "mnli_s42_hubish",
+      "accuracy": 0.8291390728476821,
+      "n": 9815
+    },
+    {
+      "pair": "seed_hubish",
+      "method": "arith_lam0.7",
+      "task": "mnli",
+      "head": "mnli_s42_hubish",
+      "accuracy": 0.7794192562404483,
+      "n": 9815
+    },
+    {
+      "pair": "mnli_rte_hubish",
+      "method": "arith_sum",
+      "task": "mnli",
+      "head": "mnli_s7_hubish",
+      "accuracy": 0.7695364238410596,
+      "n": 9815
+    },
+    {
+      "pair": "mnli_rte_hubish",
+      "method": "cert_A",
+      "task": "mnli",
+      "head": "mnli_s7_hubish",
+      "accuracy": 0.7695364238410596,
+      "n": 9815
+    },
+    {
+      "pair": "mnli_rte_hubish",
+      "method": "arith_sum",
+      "task": "rte",
+      "head": "rte_s42_hubish",
+      "accuracy": 0.6534296028880866,
+      "n": 277
+    },
+    {
+      "pair": "mnli_rte_hubish",
+      "method": "cert_A",
+      "task": "rte",
+      "head": "rte_s42_hubish",
+      "accuracy": 0.6534296028880866,
+      "n": 277
+    },
+    {
+      "pair": "mnli_rte_hubish",
+      "method": "cert_B",
+      "task": "mnli",
+      "head": "mnli_s7_hubish",
+      "accuracy": 0.7695364238410596,
+      "n": 9815
+    },
+    {
+      "pair": "mnli_rte_hubish",
+      "method": "cert_B",
+      "task": "rte",
+      "head": "rte_s42_hubish",
+      "accuracy": 0.6534296028880866,
+      "n": 277
+    },
+    {
+      "pair": "mnli_rte_hubish",
+      "method": "ties_lite",
+      "task": "mnli",
+      "head": "mnli_s7_hubish",
+      "accuracy": 0.795618950585838,
+      "n": 9815
+    },
+    {
+      "pair": "mnli_rte_hubish",
+      "method": "cert_then_trim",
+      "task": "mnli",
+      "head": "mnli_s7_hubish",
+      "accuracy": 0.7821701477330616,
+      "n": 9815
+    },
+    {
+      "pair": "mnli_rte_hubish",
+      "method": "arith_lam0.3",
+      "task": "mnli",
+      "head": "mnli_s7_hubish",
+      "accuracy": 0.5159449821701477,
+      "n": 9815
+    },
+    {
+      "pair": "mnli_rte_hubish",
+      "method": "arith_lam0.5",
+      "task": "mnli",
+      "head": "mnli_s7_hubish",
+      "accuracy": 0.760570555272542,
+      "n": 9815
+    },
+    {
+      "pair": "mnli_rte_hubish",
+      "method": "arith_lam0.7",
+      "task": "mnli",
+      "head": "mnli_s7_hubish",
+      "accuracy": 0.7973509933774835,
+      "n": 9815
+    },
+    {
+      "pair": "mnli_rte_hubish",
+      "method": "ties_lite",
+      "task": "rte",
+      "head": "rte_s42_hubish",
+      "accuracy": 0.6931407942238267,
+      "n": 277
+    },
+    {
+      "pair": "mnli_rte_hubish",
+      "method": "cert_then_trim",
+      "task": "rte",
+      "head": "rte_s42_hubish",
+      "accuracy": 0.6931407942238267,
+      "n": 277
+    },
+    {
+      "pair": "mnli_rte_hubish",
+      "method": "arith_lam0.3",
+      "task": "rte",
+      "head": "rte_s42_hubish",
+      "accuracy": 0.631768953068592,
+      "n": 277
+    },
+    {
+      "pair": "mnli_rte_hubish",
+      "method": "arith_lam0.5",
+      "task": "rte",
+      "head": "rte_s42_hubish",
+      "accuracy": 0.7364620938628159,
+      "n": 277
+    },
+    {
+      "pair": "mnli_rte_hubish",
+      "method": "arith_lam0.7",
+      "task": "rte",
+      "head": "rte_s42_hubish",
+      "accuracy": 0.6823104693140795,
+      "n": 277
+    }
+  ],
+  "certs": {
+    "seed_hubish_A": {
+      "n_fail": 2,
+      "n_layers": 73,
+      "theta_min": 20.59858353666742,
+      "theta_median": 69.99669385963945,
+      "fail_layers": [
+        [
+          "base_model.model.bert.encoder.layer.11.output.dense",
+          26.455443429196674,
+          1
+        ],
+        [
+          "base_model.model.bert.pooler.dense",
+          20.59858353666742,
+          1
+        ]
+      ]
+    },
+    "seed_hubish_B": {
+      "n_fail": 2,
+      "n_layers": 73,
+      "theta_min": 20.598622810255147,
+      "theta_median": 69.99669385963945,
+      "fail_layers": [
+        [
+          "base_model.model.bert.encoder.layer.11.output.dense",
+          26.455513438635666,
+          1
+        ],
+        [
+          "base_model.model.bert.pooler.dense",
+          20.598622810255147,
+          1
+        ]
+      ]
+    },
+    "mnli_rte_hubish_A": {
+      "n_fail": 0,
+      "n_layers": 73,
+      "theta_min": 66.31480525546321,
+      "theta_median": 78.38628351905781,
+      "fail_layers": []
+    },
+    "mnli_rte_hubish_B": {
+      "n_fail": 0,
+      "n_layers": 73,
+      "theta_min": 66.31480525546321,
+      "theta_median": 78.38628351905781,
+      "fail_layers": []
+    }
+  },
+  "singles": {
+    "mnli_s7_hubish": 0.8209882832399389,
+    "mnli_s42_hubish": 0.8239429444727457,
+    "rte_s42_hubish": 0.6750902527075813
+  },
+  "head_copy_check": {
+    "seed_hubish": {
+      "mnli_s7_hubish": 0.0,
+      "mnli_s42_hubish": 0.0
+    },
+    "mnli_rte_hubish": {
+      "mnli_s7_hubish": 0.0,
+      "rte_s42_hubish": 0.0
+    }
+  },
+  "wall_s": 360.3353214263916
+}

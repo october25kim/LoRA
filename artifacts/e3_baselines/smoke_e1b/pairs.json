@@ -1,0 +1,21 @@
+{
+ "tasks": [
+  "cola",
+  "sst2",
+  "mrpc",
+  "stsb",
+  "mnli",
+  "qnli",
+  "rte",
+  "wic",
+  "snli",
+  "scitail",
+  "ag_news",
+  "imdb",
+  "trec",
+  "yelp_polarity"
+ ],
+ "pairs": [
+  "cola-sst2"
+ ]
+}

@@ -1,0 +1,438 @@
+{
+ "cola": {
+  "ok": true,
+  "n_train": 8551,
+  "n_eval": 1043,
+  "cols": [
+   "sentence",
+   "label",
+   "idx"
+  ],
+  "ex_a": "Our friends won't buy this analysis, let alone the next one we propose.",
+  "ex_b": null,
+  "train_label_counts": {
+   "1": 6023,
+   "0": 2528
+  },
+  "eval_label_counts": {
+   "1": 721,
+   "0": 322
+  },
+  "majority_label_train": 1,
+  "majority_baseline_eval_full": 0.6912751677852349,
+  "labels_in_range": true
+ },
+ "sst2": {
+  "ok": true,
+  "n_train": 67349,
+  "n_eval": 872,
+  "cols": [
+   "sentence",
+   "label",
+   "idx"
+  ],
+  "ex_a": "hide new secretions from the parental units ",
+  "ex_b": null,
+  "train_label_counts": {
+   "0": 29780,
+   "1": 37569
+  },
+  "eval_label_counts": {
+   "1": 444,
+   "0": 428
+  },
+  "majority_label_train": 1,
+  "majority_baseline_eval_full": 0.5091743119266054,
+  "labels_in_range": true
+ },
+ "mrpc": {
+  "ok": true,
+  "n_train": 3668,
+  "n_eval": 408,
+  "cols": [
+   "sentence1",
+   "sentence2",
+   "label",
+   "idx"
+  ],
+  "ex_a": "Amrozi accused his brother , whom he called \" the witness \" , of deliberately distorting his evidence .",
+  "ex_b": "Referring to him as only \" the witness \" , Amrozi accused his brother of deliberately distorting his evidence .",
+  "train_label_counts": {
+   "1": 2474,
+   "0": 1194
+  },
+  "eval_label_counts": {
+   "1": 279,
+   "0": 129
+  },
+  "majority_label_train": 1,
+  "majority_baseline_eval_full": 0.6838235294117647,
+  "labels_in_range": true
+ },
+ "qqp": {
+  "ok": true,
+  "n_train": 363846,
+  "n_eval": 40430,
+  "cols": [
+   "question1",
+   "question2",
+   "label",
+   "idx"
+  ],
+  "ex_a": "How is the life of a math student? Could you describe your own experiences?",
+  "ex_b": "Which level of prepration is enough for the exam jlpt5?",
+  "train_label_counts": {
+   "0": 229468,
+   "1": 134378
+  },
+  "eval_label_counts": {
+   "0": 25545,
+   "1": 14885
+  },
+  "majority_label_train": 0,
+  "majority_baseline_eval_full": 0.6318327974276527,
+  "labels_in_range": true
+ },
+ "stsb": {
+  "ok": true,
+  "n_train": 5749,
+  "n_eval": 1500,
+  "cols": [
+   "sentence1",
+   "sentence2",
+   "label",
+   "idx"
+  ],
+  "ex_a": "A plane is taking off.",
+  "ex_b": "An air plane is taking off.",
+  "label_range": [
+   0.0,
+   5.0
+  ]
+ },
+ "mnli": {
+  "ok": true,
+  "n_train": 392702,
+  "n_eval": 9815,
+  "cols": [
+   "premise",
+   "hypothesis",
+   "label",
+   "idx"
+  ],
+  "ex_a": "Conceptually cream skimming has two basic dimensions - product and geography.",
+  "ex_b": "Product and geography are what make cream skimming work. ",
+  "train_label_counts": {
+   "1": 130900,
+   "0": 130899,
+   "2": 130903
+  },
+  "eval_label_counts": {
+   "1": 3123,
+   "2": 3213,
+   "0": 3479
+  },
+  "majority_label_train": 2,
+  "majority_baseline_eval_full": 0.3273560876209883,
+  "labels_in_range": true
+ },
+ "qnli": {
+  "ok": true,
+  "n_train": 104743,
+  "n_eval": 5463,
+  "cols": [
+   "question",
+   "sentence",
+   "label",
+   "idx"
+  ],
+  "ex_a": "When did the third Digimon series begin?",
+  "ex_b": "Unlike the two seasons before it and most of the seasons that followed, Digimon Tamers takes a darker and more realistic",
+  "train_label_counts": {
+   "1": 52366,
+   "0": 52377
+  },
+  "eval_label_counts": {
+   "0": 2702,
+   "1": 2761
+  },
+  "majority_label_train": 0,
+  "majority_baseline_eval_full": 0.4946000366099213,
+  "labels_in_range": true
+ },
+ "rte": {
+  "ok": true,
+  "n_train": 2490,
+  "n_eval": 277,
+  "cols": [
+   "sentence1",
+   "sentence2",
+   "label",
+   "idx"
+  ],
+  "ex_a": "No Weapons of Mass Destruction Found in Iraq Yet.",
+  "ex_b": "Weapons of Mass Destruction Found in Iraq.",
+  "train_label_counts": {
+   "1": 1241,
+   "0": 1249
+  },
+  "eval_label_counts": {
+   "1": 131,
+   "0": 146
+  },
+  "majority_label_train": 0,
+  "majority_baseline_eval_full": 0.5270758122743683,
+  "labels_in_range": true
+ },
+ "boolq": {
+  "ok": true,
+  "n_train": 9427,
+  "n_eval": 3270,
+  "cols": [
+   "question",
+   "passage",
+   "idx",
+   "label"
+  ],
+  "ex_a": "do iran and afghanistan speak the same language",
+  "ex_b": "Persian language -- Persian (/\u02c8p\u025c\u02d0r\u0292\u0259n, -\u0283\u0259n/), also known by its endonym Farsi (\u0641\u0627\u0631\u0633\u06cc f\u0101rsi (f\u0252\u02d0\u027e\u02c8si\u02d0) ( listen)), is o",
+  "train_label_counts": {
+   "1": 5874,
+   "0": 3553
+  },
+  "eval_label_counts": {
+   "0": 1237,
+   "1": 2033
+  },
+  "majority_label_train": 1,
+  "majority_baseline_eval_full": 0.6217125382262997,
+  "labels_in_range": true
+ },
+ "wic": {
+  "ok": true,
+  "n_train": 5428,
+  "n_eval": 638,
+  "cols": [
+   "word",
+   "sentence1",
+   "sentence2",
+   "start1",
+   "start2",
+   "end1",
+   "end2",
+   "idx",
+   "label"
+  ],
+  "ex_a": "place: Do you want to come over to my place later?",
+  "ex_b": "A political system with no place for the less prominent groups.",
+  "train_label_counts": {
+   "0": 2714,
+   "1": 2714
+  },
+  "eval_label_counts": {
+   "0": 319,
+   "1": 319
+  },
+  "majority_label_train": 0,
+  "majority_baseline_eval_full": 0.5,
+  "labels_in_range": true
+ },
+ "snli": {
+  "ok": true,
+  "n_train": 549367,
+  "n_eval": 9842,
+  "cols": [
+   "premise",
+   "hypothesis",
+   "label"
+  ],
+  "ex_a": "A person on a horse jumps over a broken down airplane.",
+  "ex_b": "A person is training his horse for a competition.",
+  "train_label_counts": {
+   "1": 182764,
+   "2": 183187,
+   "0": 183416
+  },
+  "eval_label_counts": {
+   "1": 3235,
+   "0": 3329,
+   "2": 3278
+  },
+  "majority_label_train": 0,
+  "majority_baseline_eval_full": 0.3382442592968909,
+  "labels_in_range": true
+ },
+ "scitail": {
+  "ok": true,
+  "n_train": 23097,
+  "n_eval": 1304,
+  "cols": [
+   "premise",
+   "hypothesis",
+   "label"
+  ],
+  "ex_a": "Pluto rotates once on its axis every 6.39 Earth days;",
+  "ex_b": "Earth rotates on its axis once times in one day.",
+  "train_label_counts": {
+   "0": 14625,
+   "1": 8472
+  },
+  "eval_label_counts": {
+   "0": 647,
+   "1": 657
+  },
+  "majority_label_train": 0,
+  "majority_baseline_eval_full": 0.49616564417177916,
+  "labels_in_range": true
+ },
+ "ag_news": {
+  "ok": true,
+  "n_train": 120000,
+  "n_eval": 7600,
+  "cols": [
+   "text",
+   "label"
+  ],
+  "ex_a": "Wall St. Bears Claw Back Into the Black (Reuters) Reuters - Short-sellers, Wall Street's dwindling\\band of ultra-cynics,",
+  "ex_b": null,
+  "train_label_counts": {
+   "2": 30000,
+   "3": 30000,
+   "1": 30000,
+   "0": 30000
+  },
+  "eval_label_counts": {
+   "2": 1900,
+   "3": 1900,
+   "1": 1900,
+   "0": 1900
+  },
+  "majority_label_train": 2,
+  "majority_baseline_eval_full": 0.25,
+  "labels_in_range": true
+ },
+ "imdb": {
+  "ok": true,
+  "n_train": 25000,
+  "n_eval": 25000,
+  "cols": [
+   "text",
+   "label"
+  ],
+  "ex_a": "I rented I AM CURIOUS-YELLOW from my video store because of all the controversy that surrounded it when it was first rel",
+  "ex_b": null,
+  "train_label_counts": {
+   "0": 12500,
+   "1": 12500
+  },
+  "eval_label_counts": {
+   "0": 12500,
+   "1": 12500
+  },
+  "majority_label_train": 0,
+  "majority_baseline_eval_full": 0.5,
+  "labels_in_range": true
+ },
+ "trec": {
+  "ok": false,
+  "error": "RuntimeError('Dataset scripts are no longer supported, but found trec.py')"
+ },
+ "yelp_polarity": {
+  "ok": true,
+  "n_train": 560000,
+  "n_eval": 38000,
+  "cols": [
+   "text",
+   "label"
+  ],
+  "ex_a": "Unfortunately, the frustration of being Dr. Goldberg's patient is a repeat of the experience I've had with so many other",
+  "ex_b": null,
+  "train_label_counts": {
+   "0": 280000,
+   "1": 280000
+  },
+  "eval_label_counts": {
+   "1": 19000,
+   "0": 19000
+  },
+  "majority_label_train": 0,
+  "majority_baseline_eval_full": 0.5,
+  "labels_in_range": true
+ },
+ "rotten_tomatoes": {
+  "ok": true,
+  "n_train": 8530,
+  "n_eval": 1066,
+  "cols": [
+   "text",
+   "label"
+  ],
+  "ex_a": "the rock is destined to be the 21st century's new \" conan \" and that he's going to make a splash even greater than arnol",
+  "ex_b": null,
+  "train_label_counts": {
+   "1": 4265,
+   "0": 4265
+  },
+  "eval_label_counts": {
+   "1": 533,
+   "0": 533
+  },
+  "majority_label_train": 1,
+  "majority_baseline_eval_full": 0.5,
+  "labels_in_range": true
+ },
+ "emotion": {
+  "ok": true,
+  "n_train": 16000,
+  "n_eval": 2000,
+  "cols": [
+   "text",
+   "label"
+  ],
+  "ex_a": "i didnt feel humiliated",
+  "ex_b": null,
+  "train_label_counts": {
+   "0": 4666,
+   "3": 2159,
+   "2": 1304,
+   "5": 572,
+   "4": 1937,
+   "1": 5362
+  },
+  "eval_label_counts": {
+   "0": 581,
+   "1": 695,
+   "4": 224,
+   "3": 275,
+   "2": 159,
+   "5": 66
+  },
+  "majority_label_train": 1,
+  "majority_baseline_eval_full": 0.3475,
+  "labels_in_range": true
+ },
+ "paws": {
+  "ok": true,
+  "n_train": 49401,
+  "n_eval": 8000,
+  "cols": [
+   "id",
+   "sentence1",
+   "sentence2",
+   "label"
+  ],
+  "ex_a": "In Paris , in October 1560 , he secretly met the English ambassador , Nicolas Throckmorton , asking him for a passport t",
+  "ex_b": "In October 1560 , he secretly met with the English ambassador , Nicolas Throckmorton , in Paris , and asked him for a pa",
+  "train_label_counts": {
+   "0": 27572,
+   "1": 21829
+  },
+  "eval_label_counts": {
+   "0": 4464,
+   "1": 3536
+  },
+  "majority_label_train": 0,
+  "majority_baseline_eval_full": 0.558,
+  "labels_in_range": true
+ }
+}

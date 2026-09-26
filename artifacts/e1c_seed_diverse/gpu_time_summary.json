@@ -1,0 +1,6 @@
+{"equivalence_gates": "05:39:47-05:41:09 KST (82 s, before training)",
+ "first_training_launch": "2026-09-26 05:41:26 KST", "training_end": "2026-09-26 06:32:25 KST (mnli 06:30:19, queue B 06:32:25)",
+ "stage0": "06:32:29-06:34:22", "stage1_predictors_frozen": "06:35:50",
+ "merges": "06:35:50-09:13:38 (2 concurrent processes: P 06:35-08:45:49; S2 -> e3same 06:56-07:30:48 -> S1 07:30:48-09:13:38)",
+ "last_gpu_job_end": "2026-09-26 09:13:38 KST",
+ "wall_clock_first_training_to_last_gpu_job_h": 3.537, "cap_h": 8, "within_cap": true}

@@ -1,0 +1,449 @@
+{
+ "n_rep": 1000,
+ "seed": 0,
+ "r": 8,
+ "null_O_A_mean": 0.009127824290784969,
+ "null_O_A_sd": 0.00019439958823745418,
+ "null_O_A_p5": 0.008804885594528498,
+ "null_O_A_p95": 0.009440126133682862,
+ "per_layer": {
+  "encoder.layer.0.attention.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.828554033776,
+   "theta_min_p50": 79.90544647587541,
+   "theta_min_p95": 81.56612516742273
+  },
+  "encoder.layer.0.attention.self.key": {
+   "d": 768,
+   "theta_min_p5": 77.79652582964115,
+   "theta_min_p50": 79.87466078265824,
+   "theta_min_p95": 81.5188361133032
+  },
+  "encoder.layer.0.attention.self.query": {
+   "d": 768,
+   "theta_min_p5": 77.68943834234105,
+   "theta_min_p50": 79.87716965591582,
+   "theta_min_p95": 81.61113110403421
+  },
+  "encoder.layer.0.attention.self.value": {
+   "d": 768,
+   "theta_min_p5": 77.81880768631635,
+   "theta_min_p50": 79.91231667257934,
+   "theta_min_p95": 81.60215178036071
+  },
+  "encoder.layer.0.intermediate.dense": {
+   "d": 3072,
+   "theta_min_p5": 83.95481052385755,
+   "theta_min_p50": 84.92856738469987,
+   "theta_min_p95": 85.77996547262941
+  },
+  "encoder.layer.0.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.87189513642492,
+   "theta_min_p50": 79.85325670111969,
+   "theta_min_p95": 81.48583241578227
+  },
+  "encoder.layer.1.attention.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.64782300429925,
+   "theta_min_p50": 79.86003350028166,
+   "theta_min_p95": 81.47631501690066
+  },
+  "encoder.layer.1.attention.self.key": {
+   "d": 768,
+   "theta_min_p5": 77.72279319956814,
+   "theta_min_p50": 79.84590949829713,
+   "theta_min_p95": 81.5186742451549
+  },
+  "encoder.layer.1.attention.self.query": {
+   "d": 768,
+   "theta_min_p5": 77.95135739428223,
+   "theta_min_p50": 79.88048613004446,
+   "theta_min_p95": 81.53444374699285
+  },
+  "encoder.layer.1.attention.self.value": {
+   "d": 768,
+   "theta_min_p5": 77.88170206541491,
+   "theta_min_p50": 79.8730181394383,
+   "theta_min_p95": 81.53571647863005
+  },
+  "encoder.layer.1.intermediate.dense": {
+   "d": 3072,
+   "theta_min_p5": 83.91375110624328,
+   "theta_min_p50": 84.96472331812015,
+   "theta_min_p95": 85.80153297993265
+  },
+  "encoder.layer.1.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.87375361283378,
+   "theta_min_p50": 79.78553109674563,
+   "theta_min_p95": 81.53691825038464
+  },
+  "encoder.layer.10.attention.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.86633315926386,
+   "theta_min_p50": 79.83115634221448,
+   "theta_min_p95": 81.56613980361537
+  },
+  "encoder.layer.10.attention.self.key": {
+   "d": 768,
+   "theta_min_p5": 77.85735109993274,
+   "theta_min_p50": 79.81286417510219,
+   "theta_min_p95": 81.59120695823063
+  },
+  "encoder.layer.10.attention.self.query": {
+   "d": 768,
+   "theta_min_p5": 77.7264077712774,
+   "theta_min_p50": 79.80380742444228,
+   "theta_min_p95": 81.50148617088945
+  },
+  "encoder.layer.10.attention.self.value": {
+   "d": 768,
+   "theta_min_p5": 77.82550371650765,
+   "theta_min_p50": 79.85323501599007,
+   "theta_min_p95": 81.50516858536673
+  },
+  "encoder.layer.10.intermediate.dense": {
+   "d": 3072,
+   "theta_min_p5": 83.97649534842155,
+   "theta_min_p50": 84.94428282209515,
+   "theta_min_p95": 85.80871770727752
+  },
+  "encoder.layer.10.output.dense": {
+   "d": 768,
+   "theta_min_p5": 78.01903120751165,
+   "theta_min_p50": 79.8974859953066,
+   "theta_min_p95": 81.58770190162161
+  },
+  "encoder.layer.11.attention.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.82970440250843,
+   "theta_min_p50": 79.84106239417109,
+   "theta_min_p95": 81.61750662700166
+  },
+  "encoder.layer.11.attention.self.key": {
+   "d": 768,
+   "theta_min_p5": 77.90853944526397,
+   "theta_min_p50": 79.85528386619492,
+   "theta_min_p95": 81.56741207490445
+  },
+  "encoder.layer.11.attention.self.query": {
+   "d": 768,
+   "theta_min_p5": 77.89837972577087,
+   "theta_min_p50": 79.81634088441837,
+   "theta_min_p95": 81.54349775885203
+  },
+  "encoder.layer.11.attention.self.value": {
+   "d": 768,
+   "theta_min_p5": 77.70936570399975,
+   "theta_min_p50": 79.7909472492388,
+   "theta_min_p95": 81.48304221012992
+  },
+  "encoder.layer.11.intermediate.dense": {
+   "d": 3072,
+   "theta_min_p5": 83.93908264748032,
+   "theta_min_p50": 84.9409843119619,
+   "theta_min_p95": 85.80403731972642
+  },
+  "encoder.layer.11.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.90672746668167,
+   "theta_min_p50": 79.80904908398458,
+   "theta_min_p95": 81.48814577051003
+  },
+  "encoder.layer.2.attention.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.68415640967137,
+   "theta_min_p50": 79.82976246843458,
+   "theta_min_p95": 81.52161307398785
+  },
+  "encoder.layer.2.attention.self.key": {
+   "d": 768,
+   "theta_min_p5": 77.84850927452062,
+   "theta_min_p50": 79.86001340256627,
+   "theta_min_p95": 81.66294467012159
+  },
+  "encoder.layer.2.attention.self.query": {
+   "d": 768,
+   "theta_min_p5": 77.73297521314082,
+   "theta_min_p50": 79.78214865803021,
+   "theta_min_p95": 81.55426340250176
+  },
+  "encoder.layer.2.attention.self.value": {
+   "d": 768,
+   "theta_min_p5": 77.87196904530164,
+   "theta_min_p50": 79.77274101904231,
+   "theta_min_p95": 81.5764265943299
+  },
+  "encoder.layer.2.intermediate.dense": {
+   "d": 3072,
+   "theta_min_p5": 83.94374867144353,
+   "theta_min_p50": 84.89368539327504,
+   "theta_min_p95": 85.78606524794154
+  },
+  "encoder.layer.2.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.77718737280345,
+   "theta_min_p50": 79.84033072029663,
+   "theta_min_p95": 81.56493671083015
+  },
+  "encoder.layer.3.attention.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.80206074589852,
+   "theta_min_p50": 79.81545433818329,
+   "theta_min_p95": 81.63049261581465
+  },
+  "encoder.layer.3.attention.self.key": {
+   "d": 768,
+   "theta_min_p5": 77.77323236625313,
+   "theta_min_p50": 79.8759061820544,
+   "theta_min_p95": 81.46573016827162
+  },
+  "encoder.layer.3.attention.self.query": {
+   "d": 768,
+   "theta_min_p5": 77.71327188652381,
+   "theta_min_p50": 79.81651253913569,
+   "theta_min_p95": 81.45208694333627
+  },
+  "encoder.layer.3.attention.self.value": {
+   "d": 768,
+   "theta_min_p5": 77.81165601557429,
+   "theta_min_p50": 79.84379131948145,
+   "theta_min_p95": 81.55694893352971
+  },
+  "encoder.layer.3.intermediate.dense": {
+   "d": 3072,
+   "theta_min_p5": 83.89637706345343,
+   "theta_min_p50": 84.94409799455133,
+   "theta_min_p95": 85.78903198588712
+  },
+  "encoder.layer.3.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.76377834110343,
+   "theta_min_p50": 79.88592685237678,
+   "theta_min_p95": 81.54718744430183
+  },
+  "encoder.layer.4.attention.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.8611276414803,
+   "theta_min_p50": 79.78916266307616,
+   "theta_min_p95": 81.71111511052617
+  },
+  "encoder.layer.4.attention.self.key": {
+   "d": 768,
+   "theta_min_p5": 78.00601451313919,
+   "theta_min_p50": 79.81369091312371,
+   "theta_min_p95": 81.56096245469868
+  },
+  "encoder.layer.4.attention.self.query": {
+   "d": 768,
+   "theta_min_p5": 77.69644440224947,
+   "theta_min_p50": 79.9469444050373,
+   "theta_min_p95": 81.58875973751685
+  },
+  "encoder.layer.4.attention.self.value": {
+   "d": 768,
+   "theta_min_p5": 77.67145511421097,
+   "theta_min_p50": 79.84042827844439,
+   "theta_min_p95": 81.60558254835543
+  },
+  "encoder.layer.4.intermediate.dense": {
+   "d": 3072,
+   "theta_min_p5": 83.89304622322241,
+   "theta_min_p50": 84.95794229389703,
+   "theta_min_p95": 85.80138611023234
+  },
+  "encoder.layer.4.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.61540210853232,
+   "theta_min_p50": 79.84314575039309,
+   "theta_min_p95": 81.52560994800157
+  },
+  "encoder.layer.5.attention.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.8114414945325,
+   "theta_min_p50": 79.83529515962472,
+   "theta_min_p95": 81.56717944091986
+  },
+  "encoder.layer.5.attention.self.key": {
+   "d": 768,
+   "theta_min_p5": 77.86144745599697,
+   "theta_min_p50": 79.88579902808206,
+   "theta_min_p95": 81.61560562649991
+  },
+  "encoder.layer.5.attention.self.query": {
+   "d": 768,
+   "theta_min_p5": 77.86488528022542,
+   "theta_min_p50": 79.87470939385622,
+   "theta_min_p95": 81.46407733124596
+  },
+  "encoder.layer.5.attention.self.value": {
+   "d": 768,
+   "theta_min_p5": 77.80798693231078,
+   "theta_min_p50": 79.85887762423394,
+   "theta_min_p95": 81.61938319005785
+  },
+  "encoder.layer.5.intermediate.dense": {
+   "d": 3072,
+   "theta_min_p5": 83.9367961967527,
+   "theta_min_p50": 84.93873311869888,
+   "theta_min_p95": 85.81410775090728
+  },
+  "encoder.layer.5.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.85733629388524,
+   "theta_min_p50": 79.78337252763896,
+   "theta_min_p95": 81.5120171904957
+  },
+  "encoder.layer.6.attention.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.91786875011226,
+   "theta_min_p50": 79.91928672910836,
+   "theta_min_p95": 81.52203421300631
+  },
+  "encoder.layer.6.attention.self.key": {
+   "d": 768,
+   "theta_min_p5": 77.85956813610974,
+   "theta_min_p50": 79.80983094898085,
+   "theta_min_p95": 81.51726218781226
+  },
+  "encoder.layer.6.attention.self.query": {
+   "d": 768,
+   "theta_min_p5": 77.93042292332595,
+   "theta_min_p50": 79.79376693717067,
+   "theta_min_p95": 81.5323220191693
+  },
+  "encoder.layer.6.attention.self.value": {
+   "d": 768,
+   "theta_min_p5": 77.78138354643013,
+   "theta_min_p50": 79.79989823447225,
+   "theta_min_p95": 81.57967946038283
+  },
+  "encoder.layer.6.intermediate.dense": {
+   "d": 3072,
+   "theta_min_p5": 83.89617373530115,
+   "theta_min_p50": 84.94531632568618,
+   "theta_min_p95": 85.7410206937271
+  },
+  "encoder.layer.6.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.571043620924,
+   "theta_min_p50": 79.9181753921182,
+   "theta_min_p95": 81.63316777439715
+  },
+  "encoder.layer.7.attention.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.75574328214964,
+   "theta_min_p50": 79.82463088350957,
+   "theta_min_p95": 81.62104901862169
+  },
+  "encoder.layer.7.attention.self.key": {
+   "d": 768,
+   "theta_min_p5": 77.80149407467653,
+   "theta_min_p50": 79.79639257962108,
+   "theta_min_p95": 81.4353310857187
+  },
+  "encoder.layer.7.attention.self.query": {
+   "d": 768,
+   "theta_min_p5": 77.72958476655725,
+   "theta_min_p50": 79.83374433437587,
+   "theta_min_p95": 81.5841642456157
+  },
+  "encoder.layer.7.attention.self.value": {
+   "d": 768,
+   "theta_min_p5": 77.84536820836074,
+   "theta_min_p50": 79.79152857079146,
+   "theta_min_p95": 81.65429871888819
+  },
+  "encoder.layer.7.intermediate.dense": {
+   "d": 3072,
+   "theta_min_p5": 83.96281021237974,
+   "theta_min_p50": 84.94614008286308,
+   "theta_min_p95": 85.78628206543672
+  },
+  "encoder.layer.7.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.74948967376852,
+   "theta_min_p50": 79.879642457085,
+   "theta_min_p95": 81.57610841814419
+  },
+  "encoder.layer.8.attention.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.86258088374386,
+   "theta_min_p50": 79.80841006825517,
+   "theta_min_p95": 81.59542638177936
+  },
+  "encoder.layer.8.attention.self.key": {
+   "d": 768,
+   "theta_min_p5": 77.79290393576034,
+   "theta_min_p50": 79.79594959220655,
+   "theta_min_p95": 81.56156232516616
+  },
+  "encoder.layer.8.attention.self.query": {
+   "d": 768,
+   "theta_min_p5": 77.88393941609317,
+   "theta_min_p50": 79.84459619096296,
+   "theta_min_p95": 81.50500242900902
+  },
+  "encoder.layer.8.attention.self.value": {
+   "d": 768,
+   "theta_min_p5": 77.76434967078012,
+   "theta_min_p50": 79.83954219657585,
+   "theta_min_p95": 81.49429800337212
+  },
+  "encoder.layer.8.intermediate.dense": {
+   "d": 3072,
+   "theta_min_p5": 83.9254850943257,
+   "theta_min_p50": 84.95508765535158,
+   "theta_min_p95": 85.73523961190595
+  },
+  "encoder.layer.8.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.69207697624083,
+   "theta_min_p50": 79.81805757656674,
+   "theta_min_p95": 81.59352902267547
+  },
+  "encoder.layer.9.attention.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.88698918686758,
+   "theta_min_p50": 79.81790065454288,
+   "theta_min_p95": 81.52391272425531
+  },
+  "encoder.layer.9.attention.self.key": {
+   "d": 768,
+   "theta_min_p5": 77.94175974930164,
+   "theta_min_p50": 79.7682688899703,
+   "theta_min_p95": 81.51916114788591
+  },
+  "encoder.layer.9.attention.self.query": {
+   "d": 768,
+   "theta_min_p5": 77.81649967554374,
+   "theta_min_p50": 79.87051768137752,
+   "theta_min_p95": 81.51427864313312
+  },
+  "encoder.layer.9.attention.self.value": {
+   "d": 768,
+   "theta_min_p5": 77.81126721304712,
+   "theta_min_p50": 79.80906712402108,
+   "theta_min_p95": 81.5367829817481
+  },
+  "encoder.layer.9.intermediate.dense": {
+   "d": 3072,
+   "theta_min_p5": 83.87696025395311,
+   "theta_min_p50": 84.89454773105709,
+   "theta_min_p95": 85.7355755671002
+  },
+  "encoder.layer.9.output.dense": {
+   "d": 768,
+   "theta_min_p5": 77.78211040006288,
+   "theta_min_p50": 79.85324954710131,
+   "theta_min_p95": 81.59750442400822
+  },
+  "pooler.dense": {
+   "d": 768,
+   "theta_min_p5": 77.95069543134638,
+   "theta_min_p50": 79.84194441375266,
+   "theta_min_p95": 81.48746958516433
+  }
+ }
+}

@@ -1,0 +1,14 @@
+{
+ "tasks": [
+  "cola",
+  "sst2",
+  "mrpc",
+  "qqp",
+  "mnli",
+  "qnli",
+  "rte"
+ ],
+ "pairs": [
+  "cola-sst2"
+ ]
+}

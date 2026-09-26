@@ -1,0 +1,21 @@
+{
+  "arith": {
+    "task": "mnli",
+    "accuracy": 0.7798267957208355,
+    "n": 9815
+  },
+  "cert": {
+    "task": "mnli",
+    "accuracy": 0.7798267957208355,
+    "n": 9815
+  },
+  "pair": "hub_mnli_sst2",
+  "method": "cert_A",
+  "subspace": "A",
+  "n_fail": 0,
+  "theta_min": 65.84419839146017,
+  "theta_median": 78.10937398972716,
+  "retain_sum": 0.7798267957208355,
+  "retain_corr": 0.7798267957208355,
+  "n": 9815
+}

@@ -1,0 +1,113 @@
+2026-09-25 19:26:55 KST | === e1.py stage=stage0 argv=['artifacts/e1_predictive/e1.py', '--out', 'artifacts/e1_predictive', '--stage', 'stage0', '--repo-root', '.']
+2026-09-25 19:28:12 KST | === e1.py stage=stage0 argv=['artifacts/e1_predictive/e1.py', '--out', 'artifacts/e1_predictive', '--stage', 'stage0', '--repo-root', '.']
+2026-09-25 19:28:22 KST | stage0 peft-equivalence cola: maxdiff=5.45e-06
+2026-09-25 19:28:30 KST | stage0 peft-equivalence sst2: maxdiff=2.03e-06
+2026-09-25 19:28:37 KST | stage0 peft-equivalence mrpc: maxdiff=5.01e-06
+2026-09-25 19:28:51 KST | stage0 peft-equivalence qqp: maxdiff=2.03e-06
+2026-09-25 19:28:53 KST | stage0 peft-equivalence mnli: maxdiff=5.54e-06
+2026-09-25 19:29:03 KST | stage0 peft-equivalence qnli: maxdiff=4.29e-06
+2026-09-25 19:29:05 KST | stage0 peft-equivalence rte: maxdiff=1.61e-06
+2026-09-25 19:29:07 KST | stage0 single cola: val={'accuracy': 0.8389261744966443, 'n': 1043, 'f1': 0.8900523560209425, 'mcc': 0.605839001376474} sel={'accuracy': 0.993, 'n': 1000, 'f1': 0.9951287404314544, 'mcc': 0.9826983720330358}
+2026-09-25 19:29:09 KST | stage0 single sst2: val={'accuracy': 0.9151376146788991, 'n': 872, 'f1': 0.918141592920354, 'mcc': 0.830664274872183} sel={'accuracy': 0.981, 'n': 1000, 'f1': 0.983435047951177, 'mcc': 0.9611627699148907}
+2026-09-25 19:29:11 KST | stage0 single mrpc: val={'accuracy': 0.7156862745098039, 'n': 408, 'f1': 0.827893175074184, 'mcc': 0.2667966516678637} sel={'accuracy': 0.754, 'n': 1000, 'f1': 0.8472049689440994, 'mcc': 0.40791613819142675}
+2026-09-25 19:29:24 KST | stage0 single qqp: val={'accuracy': 0.8810784071234232, 'n': 40430, 'f1': 0.8448331504550443, 'mcc': 0.7501877541583006} sel={'accuracy': 0.89, 'n': 1000, 'f1': 0.8571428571428571, 'mcc': 0.769035990206304}
+2026-09-25 19:29:30 KST | stage0 single mnli: val={'accuracy': 0.7047376464595008, 'n': 9815} sel={'accuracy': 0.729, 'n': 1000}
+2026-09-25 19:29:35 KST | stage0 single qnli: val={'accuracy': 0.8738788211605345, 'n': 5463, 'f1': 0.8636993076162216, 'mcc': 0.7593343952532056} sel={'accuracy': 0.889, 'n': 1000, 'f1': 0.8773480662983425, 'mcc': 0.7867546085897704}
+2026-09-25 19:29:38 KST | stage0 single rte: val={'accuracy': 0.5595667870036101, 'n': 277, 'f1': 0.12857142857142856, 'mcc': 0.19346153876645475} sel={'accuracy': 0.545, 'n': 1000, 'f1': 0.11992263056092843, 'mcc': 0.16833849796503628}
+2026-09-25 19:29:39 KST | stage0 card cola: card={'mcc': 0.6347} fullval_short=2.89pp exact=[]
+2026-09-25 19:29:40 KST | stage0 card sst2: card={'accuracy': 0.98} fullval_short=6.49pp exact=['train_test_split(test_size=100,seed=0)']
+2026-09-25 19:29:42 KST | stage0 card mrpc: card={'accuracy': 0.8, 'f1': 0.8611} fullval_short=8.43pp exact=[]
+2026-09-25 19:29:44 KST | stage0 card qqp: card={'accuracy': 0.95, 'f1': 0.9333} fullval_short=6.89pp exact=[]
+2026-09-25 19:29:46 KST | stage0 card mnli: card={'accuracy': 0.85} fullval_short=14.53pp exact=[]
+2026-09-25 19:29:48 KST | stage0 card qnli: card={'accuracy': 0.92} fullval_short=4.61pp exact=[]
+2026-09-25 19:29:49 KST | stage0 card rte: card={'accuracy': 0.63} fullval_short=7.04pp exact=[]
+2026-09-25 19:29:49 KST | stage0 done pass=True fail=[] card_flags=['cola', 'sst2', 'mrpc', 'qqp', 'mnli', 'qnli', 'rte']
+2026-09-25 19:31:50 KST | === e1.py stage=stage0 argv=['artifacts/e1_predictive/e1.py', '--out', 'artifacts/e1_predictive', '--stage', 'stage0', '--repo-root', '.']
+2026-09-25 19:32:00 KST | stage0 peft-equivalence cola: maxdiff=5.45e-06
+2026-09-25 19:32:02 KST | stage0 peft-equivalence sst2: maxdiff=2.03e-06
+2026-09-25 19:32:04 KST | stage0 peft-equivalence mrpc: maxdiff=7.09e-06
+2026-09-25 19:32:08 KST | stage0 peft-equivalence qqp: maxdiff=3.34e-06
+2026-09-25 19:32:10 KST | stage0 peft-equivalence mnli: maxdiff=5.96e-06
+2026-09-25 19:32:13 KST | stage0 peft-equivalence qnli: maxdiff=4.17e-06
+2026-09-25 19:32:15 KST | stage0 peft-equivalence rte: maxdiff=1.25e-06
+2026-09-25 19:32:17 KST | stage0 single cola: val={'accuracy': 0.8389261744966443, 'n': 1043, 'f1': 0.8900523560209425, 'mcc': 0.605839001376474} sel={'accuracy': 0.993, 'n': 1000, 'f1': 0.9951287404314544, 'mcc': 0.9826983720330358}
+2026-09-25 19:32:18 KST | stage0 single sst2: val={'accuracy': 0.9151376146788991, 'n': 872, 'f1': 0.918141592920354, 'mcc': 0.830664274872183} sel={'accuracy': 0.981, 'n': 1000, 'f1': 0.983435047951177, 'mcc': 0.9611627699148907}
+2026-09-25 19:32:20 KST | stage0 single mrpc: val={'accuracy': 0.8602941176470589, 'n': 408, 'f1': 0.9008695652173913, 'mcc': 0.6683969971351622} sel={'accuracy': 0.993, 'n': 1000, 'f1': 0.9948642699926632, 'mcc': 0.9838778879343125}
+2026-09-25 19:32:36 KST | stage0 single qqp: val={'accuracy': 0.8942864209745238, 'n': 40430, 'f1': 0.8594171436089731, 'mcc': 0.7752017248611419} sel={'accuracy': 0.923, 'n': 1000, 'f1': 0.8974700399467377, 'mcc': 0.8359224001019351}
+2026-09-25 19:32:42 KST | stage0 single mnli: val={'accuracy': 0.8071319409067753, 'n': 9815} sel={'accuracy': 0.822, 'n': 1000}
+2026-09-25 19:32:47 KST | stage0 single qnli: val={'accuracy': 0.9081090975654402, 'n': 5463, 'f1': 0.9083607155896313, 'mcc': 0.8163346366271459} sel={'accuracy': 0.938, 'n': 1000, 'f1': 0.9356846473029046, 'mcc': 0.8764485839491741}
+2026-09-25 19:32:50 KST | stage0 single rte: val={'accuracy': 0.6137184115523465, 'n': 277, 'f1': 0.5158371040723982, 'mcc': 0.22289343154360475} sel={'accuracy': 0.784, 'n': 1000, 'f1': 0.7458823529411764, 'mcc': 0.580962900228105}
+2026-09-25 19:32:50 KST | stage0 self-reproduction: {'mnli': {'n_first_val': 512, 'accuracy': 0.811, 'source': "lora-paper/hubish_report.md 'Hub MNLI control' n=512 (4070 pipeline)", 'ours': 0.810546875, 'shortfall_pp': 0.04531250000000542, 'flag_gt2pp': False}}
+2026-09-25 19:32:51 KST | stage0 card cola: card={'mcc': 0.6347} fullval_short=2.89pp exact=[]
+2026-09-25 19:32:53 KST | stage0 card sst2: card={'accuracy': 0.98} fullval_short=6.49pp exact=['train_test_split(test_size=100,seed=0)']
+2026-09-25 19:32:54 KST | stage0 card mrpc: card={'accuracy': 0.8, 'f1': 0.8611} fullval_short=-6.03pp exact=[]
+2026-09-25 19:32:56 KST | stage0 card qqp: card={'accuracy': 0.95, 'f1': 0.9333} fullval_short=5.57pp exact=[]
+2026-09-25 19:32:58 KST | stage0 card mnli: card={'accuracy': 0.85} fullval_short=4.29pp exact=[]
+2026-09-25 19:33:00 KST | stage0 card qnli: card={'accuracy': 0.92} fullval_short=1.19pp exact=[]
+2026-09-25 19:33:02 KST | stage0 card rte: card={'accuracy': 0.63} fullval_short=1.63pp exact=[]
+2026-09-25 19:33:02 KST | stage0 done pass=True fail=[] card_flags=['cola', 'sst2', 'qqp', 'mnli']
+2026-09-25 19:36:08 KST | === e1.py stage=stage1 argv=['artifacts/e1_predictive/e1.py', '--out', 'artifacts/e1_predictive', '--stage', 'stage1', '--repo-root', '.']
+2026-09-25 19:36:51 KST | stage1 done; frozen predictors.sha256:
+c7e981979f5238b3d3fce6e0cbb94c798b4a7f319ab51944727d4b9f8b18bd40  predictors.csv
+f2c97aaf8f92277f1bc5e2a13e6e3574d129af12b19b87a783f7ecb10daef9df  predictors_layers.csv
+1a31a8dc1fbcd1647d9bf5f6df33734297ab1bfaf5581a1b8e44269046d0c807  predictors_null.json
+
+2026-09-25 19:36:51 KST | === e1.py stage=stage2 argv=['artifacts/e1_predictive/e1.py', '--out', 'artifacts/e1_predictive', '--stage', 'stage2', '--repo-root', '.']
+2026-09-25 19:36:57 KST | stage2 cola-sst2: lam*=1.0 merged=(0.7833,0.8865) D=0.0488 [3s]
+2026-09-25 19:37:01 KST | stage2 cola-mrpc: lam*=0.7 merged=(0.7862,0.8064) D=0.0628 [4s]
+2026-09-25 19:37:51 KST | stage2 cola-qqp: lam*=0.7 merged=(0.7498,0.8762) D=0.0633 [50s]
+2026-09-25 19:38:09 KST | stage2 cola-mnli: lam*=1.0 merged=(0.7220,0.7934) D=0.0782 [18s]
+2026-09-25 19:38:24 KST | stage2 cola-qnli: lam*=1.0 merged=(0.7881,0.8929) D=0.0387 [14s]
+2026-09-25 19:38:29 KST | stage2 cola-rte: lam*=1.0 merged=(0.8351,0.5668) D=0.0405 [5s]
+2026-09-25 19:38:34 KST | stage2 sst2-mrpc: lam*=0.7 merged=(0.9060,0.7941) D=0.0435 [5s]
+2026-09-25 19:39:25 KST | stage2 sst2-qqp: lam*=1.0 merged=(0.8750,0.8827) D=0.0284 [52s]
+2026-09-25 19:39:44 KST | stage2 sst2-mnli: lam*=0.7 merged=(0.8991,0.7795) D=0.0259 [19s]
+2026-09-25 19:39:59 KST | stage2 sst2-qnli: lam*=1.0 merged=(0.9025,0.8975) D=0.0127 [15s]
+2026-09-25 19:40:05 KST | stage2 sst2-rte: lam*=0.7 merged=(0.9140,0.5993) D=0.0124 [6s]
+2026-09-25 19:40:58 KST | stage2 mrpc-qqp: lam*=0.5 merged=(0.7819,0.8433) D=0.0741 [54s]
+2026-09-25 19:41:19 KST | stage2 mrpc-mnli: lam*=0.7 merged=(0.7843,0.7972) D=0.0503 [20s]
+2026-09-25 19:41:35 KST | stage2 mrpc-qnli: lam*=0.7 merged=(0.7966,0.8947) D=0.0444 [17s]
+2026-09-25 19:41:43 KST | stage2 mrpc-rte: lam*=0.7 merged=(0.8162,0.5523) D=0.0756 [7s]
+2026-09-25 19:42:50 KST | stage2 qqp-mnli: lam*=0.7 merged=(0.8101,0.7797) D=0.0640 [67s]
+2026-09-25 19:43:54 KST | stage2 qqp-qnli: lam*=0.5 merged=(0.8454,0.6731) D=0.1567 [64s]
+2026-09-25 19:44:48 KST | stage2 qqp-rte: lam*=0.7 merged=(0.8733,0.5776) D=0.0412 [54s]
+2026-09-25 19:45:18 KST | stage2 mnli-qnli: lam*=0.5 merged=(0.7566,0.7009) D=0.1454 [30s]
+2026-09-25 19:45:39 KST | stage2 mnli-rte: lam*=1.0 merged=(0.8036,0.6751) D=-0.0478 [21s]
+2026-09-25 19:45:57 KST | stage2 qnli-rte: lam*=1.0 merged=(0.9026,0.5451) D=0.0589 [17s]
+2026-09-25 19:45:57 KST | stage2 done: 21 pairs; excluded=[]
+2026-09-25 19:45:57 KST | === e1.py stage=stage3 argv=['artifacts/e1_predictive/e1.py', '--out', 'artifacts/e1_predictive', '--stage', 'stage3', '--repo-root', '.']
+2026-09-25 19:46:02 KST | stage3 O_A: rho=0.1675 p1=0.2572 p2=0.5577 ci=[-0.4874334784712144, 0.9377431906614788]
+2026-09-25 19:46:04 KST | stage3 O_B: rho=0.1675 p1=0.2520 p2=0.5601 ci=[-0.4874334784712144, 0.9377431906614788]
+2026-09-25 19:46:05 KST | stage3 mean_theta_min_A_deg: rho=-0.2403 p1=0.7943 p2=0.3948 ci=[-0.9610894941634242, 0.450064850843061]
+2026-09-25 19:46:07 KST | stage3 null_z_O_A: rho=0.1675 p1=0.2584 p2=0.5560 ci=[-0.4874334784712144, 0.9377431906614788]
+2026-09-25 19:46:09 KST | stage3 tv_cosine: rho=0.4351 p1=0.0278 p2=0.0539 ci=[-0.47034533584298605, 0.9487179487179488]
+2026-09-25 19:46:11 KST | stage3 sign_conflict_top20: rho=-0.4273 p1=0.9666 p2=0.0624 ci=[-0.9299610894941636, 0.4157716026723446]
+2026-09-25 19:46:11 KST | stage3 n_layers_theta_min_lt30_A: rho=nan p1=0.0001 p2=0.0001 ci=[nan, nan]
+2026-09-25 19:46:13 KST | stage3 min_theta_min_A_deg: rho=-0.0974 p1=0.6637 p2=0.7311 ci=[-0.6566775567138977, 0.6186913589310624]
+2026-09-25 19:46:15 KST | stage3 sign_conflict_all: rho=-0.4519 p1=0.9797 p2=0.0371 ci=[-0.9622641509433962, 0.6186770428015566]
+2026-09-25 19:46:17 KST | stage3 norm_ratio: rho=-0.0974 p1=0.6609 p2=0.7061 ci=[-0.7812109683315563, 0.557003891050584]
+2026-09-25 19:46:19 KST | stage3 done verdict=INVALID (stat=INCONCLUSIVE)
+2026-09-25 19:50:15 KST | === e1.py stage=stage3 argv=['artifacts/e1_predictive/e1.py', '--out', 'artifacts/e1_predictive', '--stage', 'stage3']
+2026-09-25 19:50:20 KST | stage3 O_A: rho=0.1675 p1=0.2572 p2=0.5577 ci=[-0.4874334784712144, 0.9377431906614788]
+2026-09-25 19:50:21 KST | stage3 O_B: rho=0.1675 p1=0.2520 p2=0.5601 ci=[-0.4874334784712144, 0.9377431906614788]
+2026-09-25 19:50:23 KST | stage3 mean_theta_min_A_deg: rho=-0.2403 p1=0.7943 p2=0.3948 ci=[-0.9610894941634242, 0.450064850843061]
+2026-09-25 19:50:25 KST | stage3 null_z_O_A: rho=0.1675 p1=0.2584 p2=0.5560 ci=[-0.4874334784712144, 0.9377431906614788]
+2026-09-25 19:50:27 KST | stage3 tv_cosine: rho=0.4351 p1=0.0278 p2=0.0539 ci=[-0.47034533584298605, 0.9487179487179488]
+2026-09-25 19:50:29 KST | stage3 sign_conflict_top20: rho=-0.4273 p1=0.9666 p2=0.0624 ci=[-0.9299610894941636, 0.4157716026723446]
+2026-09-25 19:50:29 KST | stage3 n_layers_theta_min_lt30_A: rho=nan p1=0.0001 p2=0.0001 ci=[nan, nan]
+2026-09-25 19:50:31 KST | stage3 min_theta_min_A_deg: rho=-0.0974 p1=0.6637 p2=0.7311 ci=[-0.6566775567138977, 0.6186913589310624]
+2026-09-25 19:50:33 KST | stage3 sign_conflict_all: rho=-0.4519 p1=0.9797 p2=0.0371 ci=[-0.9622641509433962, 0.6186770428015566]
+2026-09-25 19:50:35 KST | stage3 norm_ratio: rho=-0.0974 p1=0.6609 p2=0.7061 ci=[-0.7812109683315563, 0.557003891050584]
+2026-09-25 19:50:37 KST | stage3 done verdict=INVALID (stat=INCONCLUSIVE)
+2026-09-25 19:52:29 KST | === e1.py stage=stage3 argv=['artifacts/e1_predictive/e1.py', '--out', 'artifacts/e1_predictive', '--stage', 'stage3']
+2026-09-25 19:52:34 KST | stage3 O_A: rho=0.1675 p1=0.2572 p2=0.5577 ci=[-0.4874334784712144, 0.9377431906614788]
+2026-09-25 19:52:35 KST | stage3 O_B: rho=0.1675 p1=0.2520 p2=0.5601 ci=[-0.4874334784712144, 0.9377431906614788]
+2026-09-25 19:52:37 KST | stage3 mean_theta_min_A_deg: rho=-0.2403 p1=0.7943 p2=0.3948 ci=[-0.9610894941634242, 0.450064850843061]
+2026-09-25 19:52:39 KST | stage3 null_z_O_A: rho=0.1675 p1=0.2584 p2=0.5560 ci=[-0.4874334784712144, 0.9377431906614788]
+2026-09-25 19:52:41 KST | stage3 tv_cosine: rho=0.4351 p1=0.0278 p2=0.0539 ci=[-0.47034533584298605, 0.9487179487179488]
+2026-09-25 19:52:43 KST | stage3 sign_conflict_top20: rho=-0.4273 p1=0.9666 p2=0.0624 ci=[-0.9299610894941636, 0.4157716026723446]
+2026-09-25 19:52:43 KST | stage3 n_layers_theta_min_lt30_A: rho=nan p1=nan p2=nan ci=[nan, nan]
+2026-09-25 19:52:45 KST | stage3 min_theta_min_A_deg: rho=-0.0974 p1=0.6637 p2=0.7311 ci=[-0.6566775567138977, 0.6186913589310624]
+2026-09-25 19:52:47 KST | stage3 sign_conflict_all: rho=-0.4519 p1=0.9797 p2=0.0371 ci=[-0.9622641509433962, 0.6186770428015566]
+2026-09-25 19:52:49 KST | stage3 norm_ratio: rho=-0.0974 p1=0.6609 p2=0.7061 ci=[-0.7812109683315563, 0.557003891050584]
+2026-09-25 19:52:51 KST | stage3 done verdict=INVALID (stat=INCONCLUSIVE)

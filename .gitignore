@@ -20,3 +20,20 @@ adapters/
 
 !adapters/conflict_full_mnli/
 !adapters/conflict_full_shared/
+
+# regenerable tokenized-dataset caches
+artifacts/*/cache/
+
+# experiment pipelines (artifacts/<study>/): keep code + small metadata only
+adapters_*/
+artifacts/**/cache/
+artifacts/**/logs/
+artifacts/e1b_confirmatory/preds/
+artifacts/e1c_seed_diverse/**/preds/
+artifacts/e3_baselines/**/preds/
+artifacts/e3_baselines/e1b_run/results.jsonl
+*.tgz
+*.ckpt
+checkpoint-*/
+._*
+.ro_marker

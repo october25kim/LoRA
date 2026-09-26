@@ -1,0 +1,33 @@
+{
+ "note": "EXPLORATORY post-verdict sensitivity check; capped adapters are not part of the confirmatory analysis",
+ "tasks": {
+  "mnli": {
+   "cap60k_eval": {
+    "main": 0.7921548650025472,
+    "accuracy": 0.7921548650025472,
+    "n": 9815
+   },
+   "a_threshold": 0.4273560876209883,
+   "a_ok": true,
+   "b_threshold": 0.7890999999999999,
+   "b_ok": true,
+   "full_data_D1_eval": 0.8237391747325522,
+   "train_loss_cap60k": 0.5893887529161241
+  },
+  "qqp": {
+   "cap60k_eval": {
+    "main": 0.8551,
+    "accuracy": 0.8551,
+    "n": 10000,
+    "f1": 0.8069287141905397,
+    "mcc": 0.6909666049839558
+   },
+   "a_threshold": 0.724,
+   "a_ok": true,
+   "b_threshold": 0.8571,
+   "b_ok": false,
+   "full_data_D1_eval": 0.624,
+   "train_loss_cap60k": 0.35744541363186305
+  }
+ }
+}

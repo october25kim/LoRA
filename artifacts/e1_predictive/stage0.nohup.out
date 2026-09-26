@@ -1,0 +1,158 @@
+2026-09-25 19:31:50 KST | === e1.py stage=stage0 argv=['artifacts/e1_predictive/e1.py', '--out', 'artifacts/e1_predictive', '--stage', 'stage0', '--repo-root', '.']
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 14056.36it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 12491.83it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+2026-09-25 19:32:00 KST | stage0 peft-equivalence cola: maxdiff=5.45e-06
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 16326.63it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+2026-09-25 19:32:02 KST | stage0 peft-equivalence sst2: maxdiff=2.03e-06
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 13528.48it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+2026-09-25 19:32:04 KST | stage0 peft-equivalence mrpc: maxdiff=7.09e-06
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 15437.92it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+2026-09-25 19:32:08 KST | stage0 peft-equivalence qqp: maxdiff=3.34e-06
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 13299.97it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+2026-09-25 19:32:10 KST | stage0 peft-equivalence mnli: maxdiff=5.96e-06
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 18306.90it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+2026-09-25 19:32:13 KST | stage0 peft-equivalence qnli: maxdiff=4.17e-06
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 13213.02it/s]
+[transformers] [1mBertForSequenceClassification LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     | 
+-------------------------------------------+------------+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED | 
+cls.predictions.bias                       | UNEXPECTED | 
+cls.seq_relationship.weight                | UNEXPECTED | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED | 
+cls.predictions.transform.dense.bias       | UNEXPECTED | 
+cls.predictions.transform.dense.weight     | UNEXPECTED | 
+cls.seq_relationship.bias                  | UNEXPECTED | 
+classifier.bias                            | MISSING    | 
+classifier.weight                          | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+2026-09-25 19:32:15 KST | stage0 peft-equivalence rte: maxdiff=1.25e-06
+2026-09-25 19:32:17 KST | stage0 single cola: val={'accuracy': 0.8389261744966443, 'n': 1043, 'f1': 0.8900523560209425, 'mcc': 0.605839001376474} sel={'accuracy': 0.993, 'n': 1000, 'f1': 0.9951287404314544, 'mcc': 0.9826983720330358}
+2026-09-25 19:32:18 KST | stage0 single sst2: val={'accuracy': 0.9151376146788991, 'n': 872, 'f1': 0.918141592920354, 'mcc': 0.830664274872183} sel={'accuracy': 0.981, 'n': 1000, 'f1': 0.983435047951177, 'mcc': 0.9611627699148907}
+2026-09-25 19:32:20 KST | stage0 single mrpc: val={'accuracy': 0.8602941176470589, 'n': 408, 'f1': 0.9008695652173913, 'mcc': 0.6683969971351622} sel={'accuracy': 0.993, 'n': 1000, 'f1': 0.9948642699926632, 'mcc': 0.9838778879343125}
+2026-09-25 19:32:36 KST | stage0 single qqp: val={'accuracy': 0.8942864209745238, 'n': 40430, 'f1': 0.8594171436089731, 'mcc': 0.7752017248611419} sel={'accuracy': 0.923, 'n': 1000, 'f1': 0.8974700399467377, 'mcc': 0.8359224001019351}
+2026-09-25 19:32:42 KST | stage0 single mnli: val={'accuracy': 0.8071319409067753, 'n': 9815} sel={'accuracy': 0.822, 'n': 1000}
+2026-09-25 19:32:47 KST | stage0 single qnli: val={'accuracy': 0.9081090975654402, 'n': 5463, 'f1': 0.9083607155896313, 'mcc': 0.8163346366271459} sel={'accuracy': 0.938, 'n': 1000, 'f1': 0.9356846473029046, 'mcc': 0.8764485839491741}
+2026-09-25 19:32:50 KST | stage0 single rte: val={'accuracy': 0.6137184115523465, 'n': 277, 'f1': 0.5158371040723982, 'mcc': 0.22289343154360475} sel={'accuracy': 0.784, 'n': 1000, 'f1': 0.7458823529411764, 'mcc': 0.580962900228105}
+2026-09-25 19:32:50 KST | stage0 self-reproduction: {'mnli': {'n_first_val': 512, 'accuracy': 0.811, 'source': "lora-paper/hubish_report.md 'Hub MNLI control' n=512 (4070 pipeline)", 'ours': 0.810546875, 'shortfall_pp': 0.04531250000000542, 'flag_gt2pp': False}}
+2026-09-25 19:32:51 KST | stage0 card cola: card={'mcc': 0.6347} fullval_short=2.89pp exact=[]
+2026-09-25 19:32:53 KST | stage0 card sst2: card={'accuracy': 0.98} fullval_short=6.49pp exact=['train_test_split(test_size=100,seed=0)']
+2026-09-25 19:32:54 KST | stage0 card mrpc: card={'accuracy': 0.8, 'f1': 0.8611} fullval_short=-6.03pp exact=[]
+2026-09-25 19:32:56 KST | stage0 card qqp: card={'accuracy': 0.95, 'f1': 0.9333} fullval_short=5.57pp exact=[]
+2026-09-25 19:32:58 KST | stage0 card mnli: card={'accuracy': 0.85} fullval_short=4.29pp exact=[]
+2026-09-25 19:33:00 KST | stage0 card qnli: card={'accuracy': 0.92} fullval_short=1.19pp exact=[]
+2026-09-25 19:33:02 KST | stage0 card rte: card={'accuracy': 0.63} fullval_short=1.63pp exact=[]
+2026-09-25 19:33:02 KST | stage0 done pass=True fail=[] card_flags=['cola', 'sst2', 'qqp', 'mnli']

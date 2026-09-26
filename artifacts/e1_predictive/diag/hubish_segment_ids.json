@@ -1,0 +1,14 @@
+{
+ "mnli_s7_hubish": {
+  "bert_segment_ids": 0.8209882832399389,
+  "zero_segment_ids": 0.4524707080998472
+ },
+ "mnli_s42_hubish": {
+  "bert_segment_ids": 0.8239429444727457,
+  "zero_segment_ids": 0.4902699949057565
+ },
+ "rte_s42_hubish": {
+  "bert_segment_ids": 0.6750902527075813,
+  "zero_segment_ids": 0.4332129963898917
+ }
+}

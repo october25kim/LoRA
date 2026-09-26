@@ -1,0 +1,17 @@
+2026-09-26 00:36:23 KST | === e3.py ['e3.py', '--setting', 'e1b', '--stage', 'run', '--out', '../smoke_e1b', '--mem-frac', '0.8', '--max-pairs', '1']
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 12070.20it/s]
+[transformers] [1mBertModel LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-09-26 00:37:24 KST | cola-sst2: TA=0.9370(lam 0.7) TIES=0.9264 DARE_TA=0.9341 DARE_TIES=0.9236 TSVM=0.9432 KNOTS=0.9344 PICO_TA=0.9374 GATE=0.9370 FORCEGATE=0.9374 PICO_TIES=0.9182 SOFTGATE=0.9363 [58s]
+2026-09-26 00:37:24 KST | run done

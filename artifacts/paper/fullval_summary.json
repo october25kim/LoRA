@@ -1,0 +1,67 @@
+[
+  {
+    "pair": "hub_mnli_sst2",
+    "method": "cert_A",
+    "subspace": "A",
+    "n_fail": 0,
+    "theta_min": 65.84419839146017,
+    "theta_median": 78.10937398972716,
+    "retain_sum": 0.7798267957208355,
+    "retain_corr": 0.7798267957208355,
+    "n": 9815
+  },
+  {
+    "pair": "hub_mnli_sst2",
+    "method": "ties_lite",
+    "subspace": "A",
+    "retain_acc": 0.7861436576668365,
+    "n": 9815
+  },
+  {
+    "pair": "hub_mnli_sst2",
+    "method": "cert_then_trim",
+    "subspace": "A",
+    "retain_acc": 0.780539989811513,
+    "n": 9815
+  },
+  {
+    "pair": "hub_mnli_sst2",
+    "method": "arithmetic",
+    "subspace": "A",
+    "retain_acc": 0.7798267957208355,
+    "n": 9815
+  },
+  {
+    "pair": "hub_mnli_sst2",
+    "method": "cert_B",
+    "subspace": "B",
+    "n_fail": 0,
+    "theta_min": 65.84419839146017,
+    "theta_median": 78.10936715953798,
+    "retain_sum": 0.7798267957208355,
+    "retain_corr": 0.7798267957208355,
+    "n": 9815
+  },
+  {
+    "pair": "seed_hubish",
+    "method": "cert_A",
+    "subspace": "A",
+    "n_fail": 2,
+    "theta_min": 20.59858353666742,
+    "theta_median": 69.99669385963945,
+    "retain_sum": 0.42903718797758533,
+    "retain_corr": 0.42730514518593987,
+    "n": 9815
+  },
+  {
+    "pair": "seed_hubish",
+    "method": "cert_B",
+    "subspace": "B",
+    "n_fail": 2,
+    "theta_min": 20.598622810255147,
+    "theta_median": 69.99669385963945,
+    "retain_sum": 0.42903718797758533,
+    "retain_corr": 0.42730514518593987,
+    "n": 9815
+  }
+]

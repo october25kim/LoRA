@@ -18,7 +18,7 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer
 from peft import PeftModel
 
 from lora_merge_cert.merge import merge_lora_models, apply_deltas_to_base
-from lora_merge_cert.eval import evaluate_glue
+from lora_merge_cert.eval import evaluate_glue, resolve_pair_segment_ids
 
 
 def parse_args():
@@ -38,6 +38,8 @@ def parse_args():
     p.add_argument("--device", default="cpu")
     p.add_argument("--output-dir", default="artifacts/theta_sweep")
     p.add_argument("--skip-eval", action="store_true")
+    p.add_argument("--segment-ids", choices=["auto", "bert", "none"], default="auto",
+                   help="token_type_ids convention: auto = per adapter via lora_merge_cert.eval.resolve_segment_ids")
     return p.parse_args()
 
 
@@ -54,6 +56,8 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     device = torch.device(args.device)
     thetas = [float(x) for x in args.thetas.split(",")]
+    seg1 = resolve_pair_segment_ids([args.lora1, args.lora2], args.segment_ids)  # task1 uses lora1 head
+    seg2 = resolve_pair_segment_ids([args.lora2, args.lora1], args.segment_ids)  # task2 uses lora2 head
 
     print(f"Loading pair {args.pair_name}: {args.lora1} + {args.lora2}")
     m1 = PeftModel.from_pretrained(
@@ -89,8 +93,8 @@ def main():
         print("Evaluating arithmetic sum ...")
         m_t1_a = build(args.n_labels1, m1, arith_deltas)
         m_t2_a = build(args.n_labels2, m2, arith_deltas)
-        r1a = evaluate_glue(m_t1_a, tok, args.task1, device=device, num_samples=args.num_samples)
-        r2a = evaluate_glue(m_t2_a, tok, args.task2, device=device, num_samples=args.num_samples)
+        r1a = evaluate_glue(m_t1_a, tok, args.task1, device=device, num_samples=args.num_samples, segment_ids=seg1)
+        r2a = evaluate_glue(m_t2_a, tok, args.task2, device=device, num_samples=args.num_samples, segment_ids=seg2)
         t1_sum, t2_sum = r1a["accuracy"], r2a["accuracy"]
         del m_t1_a, m_t2_a
         print(f"  {args.task1}_sum={t1_sum:.4f} {args.task2}_sum={t2_sum:.4f}")
@@ -111,8 +115,8 @@ def main():
         if not args.skip_eval:
             m_t1_c = build(args.n_labels1, m1, merged)
             m_t2_c = build(args.n_labels2, m2, merged)
-            r1c = evaluate_glue(m_t1_c, tok, args.task1, device=device, num_samples=args.num_samples)
-            r2c = evaluate_glue(m_t2_c, tok, args.task2, device=device, num_samples=args.num_samples)
+            r1c = evaluate_glue(m_t1_c, tok, args.task1, device=device, num_samples=args.num_samples, segment_ids=seg1)
+            r2c = evaluate_glue(m_t2_c, tok, args.task2, device=device, num_samples=args.num_samples, segment_ids=seg2)
             t1_c, t2_c = r1c["accuracy"], r2c["accuracy"]
             del m_t1_c, m_t2_c
             print(f"  pass={n_pass} fail={n_fail} minθ={amin:.2f} "

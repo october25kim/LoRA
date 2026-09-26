@@ -1,0 +1,20 @@
+{
+  "written": "2026-09-25 19:40 KST, after Stage 0, before Stage 1 predictors and before any merge evaluation",
+  "tasks": ["cola", "sst2", "mrpc", "qqp", "mnli", "qnli", "rte"],
+  "n_pairs": 21,
+  "validation": "full GLUE validation (mnli = validation_matched), no cap",
+  "metric": "accuracy for every task (CoLA accuracy, not MCC; MRPC/QQP accuracy, not F1)",
+  "zero_segment_ids": true,
+  "lam_grid": [0.3, 0.5, 0.7, 1.0],
+  "lam_selection": "argmax over lam of mean(merged/single) on seed-0 1000-example TRAIN subsets; ties -> smallest lam",
+  "primary_p": "perm_p_two_sided_10000",
+  "loto_required": 6,
+  "loto_rule": ">= 6 of 7 leave-one-task-out rho > 0.3 (keeps the pre-registered >= 75% fraction, rounded up)",
+  "card_rule_invalidates": true,
+  "card_rule_note": "Applied literally as instructed: a single-adapter full-val score > 2pp below the model-card number flags INVALID. The statistical verdict is reported separately.",
+  "holm_family": ["O_B", "mean_theta_min_A_deg", "null_z_O_A", "tv_cosine", "sign_conflict_top20"],
+  "sign_conflict_definition": "TIES trim: keep top-20% |dW| entries per flattened task vector; fraction of jointly kept coordinates with opposite sign",
+  "bootstrap": "task-block, 2000 reps, seed 0; reps with < 4 distinct pairs skipped",
+  "permutation": "task-label permutation of D, 10000 random reps (seed 0); exact enumeration over 7! = 5040 also reported",
+  "exploratory_extra": "validation scores at all 4 lam (not used for selection); n_layers_theta_min_lt30, min theta_min, untrimmed sign conflict, norm ratio (uncorrected)"
+}

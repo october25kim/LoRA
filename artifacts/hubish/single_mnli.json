@@ -1,0 +1,39 @@
+{
+  "device": "cuda",
+  "base_model": "bert-base-uncased",
+  "runs": [
+    {
+      "name": "base_no_adapter",
+      "n": 512,
+      "task": "mnli",
+      "accuracy": 0.306640625,
+      "full_val": {
+        "task": "mnli",
+        "accuracy": 0.32776362710137547,
+        "n": 9815
+      }
+    },
+    {
+      "name": "adapters/mnli_s7_hubish",
+      "n": 512,
+      "task": "mnli",
+      "accuracy": 0.4609375,
+      "full_val": {
+        "task": "mnli",
+        "accuracy": 0.4524707080998472,
+        "n": 9815
+      }
+    },
+    {
+      "name": "adapters/mnli_s42_hubish",
+      "n": 512,
+      "task": "mnli",
+      "accuracy": 0.5234375,
+      "full_val": {
+        "task": "mnli",
+        "accuracy": 0.4902699949057565,
+        "n": 9815
+      }
+    }
+  ]
+}

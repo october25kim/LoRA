@@ -1,0 +1,118 @@
+{
+ "grids": {
+  "TA": [
+   {
+    "lam": 0.3
+   },
+   {
+    "lam": 0.5
+   },
+   {
+    "lam": 0.7
+   },
+   {
+    "lam": 0.85
+   },
+   {
+    "lam": 1.0
+   },
+   {
+    "lam": 1.15
+   },
+   {
+    "lam": 1.3
+   },
+   {
+    "lam": 1.5
+   }
+  ],
+  "TSVM": [
+   {
+    "kmode": "lora",
+    "r": 8,
+    "lam": 0.5
+   },
+   {
+    "kmode": "lora",
+    "r": 8,
+    "lam": 0.7
+   },
+   {
+    "kmode": "lora",
+    "r": 8,
+    "lam": 1.0
+   },
+   {
+    "kmode": "lora",
+    "r": 8,
+    "lam": 1.3
+   },
+   {
+    "kmode": "official",
+    "r": 8,
+    "lam": 0.5
+   },
+   {
+    "kmode": "official",
+    "r": 8,
+    "lam": 0.7
+   },
+   {
+    "kmode": "official",
+    "r": 8,
+    "lam": 1.0
+   },
+   {
+    "kmode": "official",
+    "r": 8,
+    "lam": 1.3
+   }
+  ],
+  "PICO_TA": [
+   {
+    "c": 0.6
+   },
+   {
+    "c": 0.75
+   },
+   {
+    "c": 0.9
+   },
+   {
+    "c": 1.0
+   },
+   {
+    "c": 1.1
+   },
+   {
+    "c": 1.25
+   },
+   {
+    "c": 1.4
+   },
+   {
+    "c": 1.6
+   }
+  ]
+ },
+ "grid_sizes": {
+  "TA": 8,
+  "TSVM": 8,
+  "PICO_TA": 8
+ },
+ "setting": "e1",
+ "tasks": [
+  "cola",
+  "sst2",
+  "mrpc",
+  "qqp",
+  "mnli",
+  "qnli",
+  "rte"
+ ],
+ "n_pairs": 1,
+ "bs": 128,
+ "mem_frac": 0.22,
+ "merges_sha256": "0669410975c4bf612ea1cc3ae9b37cc4a331ffb1fbe0b807ffa38d9e0e0680b8",
+ "e3_sha256": "9d3fc199290fd23c33cc549ec9476fd03956eb1182041e1af7c62ad5249b4dbb"
+}

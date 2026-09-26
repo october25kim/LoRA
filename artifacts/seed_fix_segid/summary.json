@@ -1,0 +1,371 @@
+{
+  "reproduction": {
+    "single/mnli_s7_hubish/mnli": {
+      "old": 0.4524707080998472,
+      "rerun": 0.4524707080998472,
+      "abs_diff": 0.0,
+      "source": "artifacts/hubish/single_mnli.json (full val)"
+    },
+    "single/mnli_s42_hubish/mnli": {
+      "old": 0.4902699949057565,
+      "rerun": 0.4902699949057565,
+      "abs_diff": 0.0,
+      "source": "artifacts/hubish/single_mnli.json (full val)"
+    },
+    "seed_hubish/arith_sum/mnli": {
+      "old": 0.42903718797758533,
+      "rerun": 0.42903718797758533,
+      "abs_diff": 0.0,
+      "source": "artifacts/paper/seed_hubish_A_th30/summary.json retain_sum"
+    },
+    "seed_hubish/cert_A/mnli": {
+      "old": 0.42730514518593987,
+      "rerun": 0.42730514518593987,
+      "abs_diff": 0.0,
+      "source": "artifacts/paper/TABLE_REQUIRED.md retain_corr"
+    },
+    "seed_hubish/cert_B/mnli": {
+      "old": 0.42730514518593987,
+      "rerun": 0.42730514518593987,
+      "abs_diff": 0.0,
+      "source": "artifacts/paper/TABLE_REQUIRED.md retain_corr"
+    },
+    "single/mnli_s7_hubish_n512/mnli": {
+      "old": 0.4609375,
+      "rerun": 0.4609375,
+      "abs_diff": 0.0,
+      "source": "artifacts/hubish/single_mnli.json (n=512)"
+    },
+    "mnli_rte_hubish/arith_sum_n512/mnli": {
+      "old": 0.46484375,
+      "rerun": 0.46484375,
+      "abs_diff": 0.0,
+      "source": "artifacts/hubish/mnli_rte_theta30/summary.json mnli_sum (n=512)"
+    },
+    "mnli_rte_hubish/cert_A_n512/mnli": {
+      "old": 0.46484375,
+      "rerun": 0.46484375,
+      "abs_diff": 0.0,
+      "source": "artifacts/hubish/mnli_rte_theta30/summary.json mnli_corrected (n=512)"
+    }
+  },
+  "cert_check": {
+    "seed_hubish_A": {
+      "n_fail": 2,
+      "n_layers": 73,
+      "theta_min": 20.59858353666742,
+      "theta_median": 69.99669385963945,
+      "fail_layers": [
+        [
+          "base_model.model.bert.encoder.layer.11.output.dense",
+          26.455443429196674,
+          1
+        ],
+        [
+          "base_model.model.bert.pooler.dense",
+          20.59858353666742,
+          1
+        ]
+      ],
+      "same_none_vs_bert": true,
+      "vs_original": "yes: 73 layers, statuses identical=True, max |d theta|=0.0e+00 deg"
+    },
+    "seed_hubish_B": {
+      "n_fail": 2,
+      "n_layers": 73,
+      "theta_min": 20.598622810255147,
+      "theta_median": 69.99669385963945,
+      "fail_layers": [
+        [
+          "base_model.model.bert.encoder.layer.11.output.dense",
+          26.455513438635666,
+          1
+        ],
+        [
+          "base_model.model.bert.pooler.dense",
+          20.598622810255147,
+          1
+        ]
+      ],
+      "same_none_vs_bert": true,
+      "vs_original": "yes: 73 layers, statuses identical=True, max |d theta|=0.0e+00 deg"
+    },
+    "mnli_rte_hubish_A": {
+      "n_fail": 0,
+      "n_layers": 73,
+      "theta_min": 66.31480525546321,
+      "theta_median": 78.38628351905781,
+      "fail_layers": [],
+      "same_none_vs_bert": true,
+      "vs_original": "yes: 73 layers, statuses identical=True, max |d theta|=0.0e+00 deg"
+    },
+    "mnli_rte_hubish_B": {
+      "n_fail": 0,
+      "n_layers": 73,
+      "theta_min": 66.31480525546321,
+      "theta_median": 78.38628351905781,
+      "fail_layers": [],
+      "same_none_vs_bert": true,
+      "vs_original": "no original table for this subspace"
+    }
+  },
+  "bootstrap": {
+    "seed_hubish/mnli/mnli_s7_hubish/cert_A-arith_sum": {
+      "none": {
+        "diff": -0.0017320427916454407,
+        "ci95": [
+          -0.004279164544065206,
+          0.0009169638308711156
+        ]
+      },
+      "bert": {
+        "diff": -0.0020376974019358125,
+        "ci95": [
+          -0.0033622007131940907,
+          -0.0007131940906775344
+        ]
+      }
+    },
+    "seed_hubish/mnli/mnli_s7_hubish/cert_B-arith_sum": {
+      "none": {
+        "diff": -0.0017320427916454407,
+        "ci95": [
+          -0.004279164544065206,
+          0.0009169638308711156
+        ]
+      },
+      "bert": {
+        "diff": -0.0020376974019358125,
+        "ci95": [
+          -0.0033622007131940907,
+          -0.0007131940906775344
+        ]
+      }
+    },
+    "seed_hubish/mnli/mnli_s7_hubish/ties_lite-arith_sum": {
+      "none": {
+        "diff": 0.02221090168110036,
+        "ci95": [
+          0.01436321956189506,
+          0.0293428425878757
+        ]
+      },
+      "bert": {
+        "diff": 0.014263881813550688,
+        "ci95": [
+          0.008863983698420785,
+          0.01987009679062659
+        ]
+      }
+    },
+    "seed_hubish/mnli/mnli_s7_hubish/cert_then_trim-arith_sum": {
+      "none": {
+        "diff": 0.016505348955680083,
+        "ci95": [
+          0.010290371879775854,
+          0.022824758023433516
+        ]
+      },
+      "bert": {
+        "diff": 0.011716760061130923,
+        "ci95": [
+          0.007845134997452879,
+          0.015489047376464593
+        ]
+      }
+    },
+    "seed_hubish/mnli/mnli_s42_hubish/cert_A-arith_sum": {
+      "none": {
+        "diff": -0.0032603158430973,
+        "ci95": [
+          -0.007643912379011716,
+          0.0009195109526235331
+        ]
+      },
+      "bert": {
+        "diff": -0.0022414671421293938,
+        "ci95": [
+          -0.004584819154355578,
+          -9.933774834437318e-05
+        ]
+      }
+    },
+    "seed_hubish/mnli/mnli_s42_hubish/cert_B-arith_sum": {
+      "none": {
+        "diff": -0.0032603158430973,
+        "ci95": [
+          -0.007643912379011716,
+          0.0009195109526235331
+        ]
+      },
+      "bert": {
+        "diff": -0.0022414671421293938,
+        "ci95": [
+          -0.004584819154355578,
+          -9.933774834437318e-05
+        ]
+      }
+    },
+    "seed_hubish/mnli/mnli_s42_hubish/ties_lite-arith_sum": {
+      "none": {
+        "diff": 0.014263881813550688,
+        "ci95": [
+          0.006622516556291391,
+          0.022007131940906775
+        ]
+      },
+      "bert": {
+        "diff": 0.006826286296484972,
+        "ci95": [
+          0.0014263881813550688,
+          0.012228731533367293
+        ]
+      }
+    },
+    "seed_hubish/mnli/mnli_s42_hubish/cert_then_trim-arith_sum": {
+      "none": {
+        "diff": 0.010799796230259806,
+        "ci95": [
+          0.004378502292409578,
+          0.017322975038206824
+        ]
+      },
+      "bert": {
+        "diff": 0.007641365257259297,
+        "ci95": [
+          0.003665308201732043,
+          0.011614875191034131
+        ]
+      }
+    },
+    "mnli_rte_hubish/mnli/mnli_s7_hubish/cert_A-arith_sum": {
+      "none": {
+        "diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "bert": {
+        "diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "mnli_rte_hubish/mnli/mnli_s7_hubish/cert_B-arith_sum": {
+      "none": {
+        "diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "bert": {
+        "diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "mnli_rte_hubish/mnli/mnli_s7_hubish/ties_lite-arith_sum": {
+      "none": {
+        "diff": 0.002954661232806928,
+        "ci95": [
+          -0.004179826795720835,
+          0.009887926642893527
+        ]
+      },
+      "bert": {
+        "diff": 0.0260825267447784,
+        "ci95": [
+          0.021395822720326033,
+          0.030667345899133978
+        ]
+      }
+    },
+    "mnli_rte_hubish/mnli/mnli_s7_hubish/cert_then_trim-arith_sum": {
+      "none": {
+        "diff": -0.002139582272032603,
+        "ci95": [
+          -0.007947019867549669,
+          0.0026490066225165563
+        ]
+      },
+      "bert": {
+        "diff": 0.012633723892002038,
+        "ci95": [
+          0.009067753438614367,
+          0.015792154865002548
+        ]
+      }
+    },
+    "mnli_rte_hubish/rte/rte_s42_hubish/cert_A-arith_sum": {
+      "none": {
+        "diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "bert": {
+        "diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "mnli_rte_hubish/rte/rte_s42_hubish/cert_B-arith_sum": {
+      "none": {
+        "diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "bert": {
+        "diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "mnli_rte_hubish/rte/rte_s42_hubish/ties_lite-arith_sum": {
+      "none": {
+        "diff": 0.0036101083032490976,
+        "ci95": [
+          0.0,
+          0.010830324909747292
+        ]
+      },
+      "bert": {
+        "diff": 0.039711191335740074,
+        "ci95": [
+          -0.021660649819494584,
+          0.09386281588447654
+        ]
+      }
+    },
+    "mnli_rte_hubish/rte/rte_s42_hubish/cert_then_trim-arith_sum": {
+      "none": {
+        "diff": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ]
+      },
+      "bert": {
+        "diff": 0.039711191335740074,
+        "ci95": [
+          0.007220216606498195,
+          0.07220216606498195
+        ]
+      }
+    }
+  },
+  "reproduction_exact": true
+}

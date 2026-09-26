@@ -1,0 +1,21 @@
+{
+  "arith": {
+    "task": "mnli",
+    "accuracy": 0.42903718797758533,
+    "n": 9815
+  },
+  "cert": {
+    "task": "mnli",
+    "accuracy": 0.42730514518593987,
+    "n": 9815
+  },
+  "pair": "seed_hubish",
+  "method": "cert_A",
+  "subspace": "A",
+  "n_fail": 2,
+  "theta_min": 20.59858353666742,
+  "theta_median": 69.99669385963945,
+  "retain_sum": 0.42903718797758533,
+  "retain_corr": 0.42730514518593987,
+  "n": 9815
+}

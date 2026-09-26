@@ -1,0 +1,29 @@
+2026-09-26 06:35:51 KST | === e1c.py ['e1c.py', '--stage', 'stage2', '--pop', 'S2']
+[transformers] [1mBertModel LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-09-26 06:36:04 KST | e1c stage2[S2] cola@s0__cola@s1: lam*=0.5 D=0.0016 TIES(atTA/own)=0.9493/0.9983 GATE(0 layers)=0.9984 [9s]
+2026-09-26 06:36:18 KST | e1c stage2[S2] sst2@s0__sst2@s1: lam*=0.5 D=-0.0125 TIES(atTA/own)=0.9919/0.9963 GATE(0 layers)=1.0125 [15s]
+2026-09-26 06:36:46 KST | e1c stage2[S2] mrpc@s0__mrpc@s1: lam*=0.5 D=-0.0043 TIES(atTA/own)=0.8662/1.0115 GATE(0 layers)=1.0043 [28s]
+2026-09-26 06:37:15 KST | e1c stage2[S2] stsb@s0__stsb@s1: lam*=0.5 D=-0.0012 TIES(atTA/own)=1.0005/1.0028 GATE(0 layers)=1.0012 [28s]
+2026-09-26 06:39:15 KST | e1c stage2[S2] mnli@s0__mnli@s1: lam*=0.5 D=0.0005 TIES(atTA/own)=0.7465/0.9732 GATE(0 layers)=0.9995 [120s]
+2026-09-26 06:40:50 KST | e1c stage2[S2] qnli@s0__qnli@s1: lam*=0.5 D=-0.0079 TIES(atTA/own)=0.9045/0.9968 GATE(0 layers)=1.0079 [95s]
+2026-09-26 06:41:25 KST | e1c stage2[S2] rte@s0__rte@s1: lam*=0.5 D=-0.0222 TIES(atTA/own)=0.9250/1.0336 GATE(0 layers)=1.0222 [35s]
+2026-09-26 06:41:41 KST | e1c stage2[S2] wic@s0__wic@s1: lam*=0.5 D=0.0022 TIES(atTA/own)=0.9854/1.0112 GATE(0 layers)=0.9978 [16s]
+2026-09-26 06:43:01 KST | e1c stage2[S2] snli@s0__snli@s1: lam*=0.5 D=0.0030 TIES(atTA/own)=0.8479/0.9933 GATE(0 layers)=0.9970 [80s]
+2026-09-26 06:43:36 KST | e1c stage2[S2] scitail@s0__scitail@s1: lam*=0.5 D=-0.0098 TIES(atTA/own)=0.8447/1.0086 GATE(0 layers)=1.0098 [35s]
+2026-09-26 06:45:36 KST | e1c stage2[S2] ag_news@s0__ag_news@s1: lam*=0.7 D=0.0054 TIES(atTA/own)=0.9613/0.9878 GATE(0 layers)=0.9946 [121s]
+2026-09-26 06:51:23 KST | e1c stage2[S2] imdb@s0__imdb@s1: lam*=0.5 D=-0.0039 TIES(atTA/own)=0.9784/0.9998 GATE(0 layers)=1.0039 [347s]
+2026-09-26 06:51:33 KST | e1c stage2[S2] trec@s0__trec@s1: lam*=0.5 D=0.0010 TIES(atTA/own)=0.9578/0.9970 GATE(0 layers)=0.9990 [10s]
+2026-09-26 06:56:16 KST | e1c stage2[S2] yelp_polarity@s0__yelp_polarity@s1: lam*=0.7 D=-0.0009 TIES(atTA/own)=1.0007/1.0005 GATE(0 layers)=1.0009 [283s]
+2026-09-26 06:56:16 KST | e1c stage2 S2 done

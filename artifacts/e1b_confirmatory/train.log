@@ -1,0 +1,41 @@
+2026-09-25 20:56:25 KST === run_train start pid 3734601 tasks: cola sst2 mrpc qqp stsb mnli qnli rte boolq wic snli scitail ag_news imdb trec yelp_polarity
+2026-09-25 20:56:25 KST start cola attempt 1
+2026-09-25 20:57:25 KST end cola rc=0 cola: done steps=2360 wall=52s loss=0.2113
+2026-09-25 20:57:25 KST start sst2 attempt 1
+2026-09-25 20:59:53 KST end sst2 rc=0 sst2: done steps=5625 wall=136s loss=0.1932
+2026-09-25 20:59:53 KST start mrpc attempt 1
+2026-09-25 21:00:35 KST end mrpc rc=0 mrpc: done steps=840 wall=33s loss=0.1755
+2026-09-25 21:00:35 KST start qqp attempt 1
+2026-09-25 21:04:05 KST end qqp rc=0 qqp: done steps=5625 wall=196s loss=0.3574
+2026-09-25 21:04:05 KST start stsb attempt 1
+2026-09-25 21:05:06 KST end stsb rc=0 stsb: done steps=1490 wall=52s loss=0.4388
+2026-09-25 21:05:06 KST start mnli attempt 1
+2026-09-25 21:12:13 KST end mnli rc=0 mnli: done steps=5625 wall=413s loss=0.5894
+2026-09-25 21:12:13 KST start qnli attempt 1
+2026-09-25 21:17:54 KST end qnli rc=0 qnli: done steps=5625 wall=326s loss=0.3304
+2026-09-25 21:17:54 KST start rte attempt 1
+2026-09-25 21:18:31 KST end rte rc=0 rte: done steps=470 wall=28s loss=0.2894
+2026-09-25 21:18:31 KST start boolq attempt 1
+2026-09-25 21:21:22 KST end boolq rc=0 boolq: done steps=2640 wall=160s loss=0.6733
+2026-09-25 21:21:22 KST start wic attempt 1
+2026-09-25 21:22:04 KST end wic rc=0 wic: done steps=1390 wall=34s loss=0.1950
+2026-09-25 21:22:04 KST start snli attempt 1
+2026-09-25 21:24:46 KST end snli rc=0 snli: done steps=5625 wall=149s loss=0.4817
+2026-09-25 21:24:46 KST start scitail attempt 1
+2026-09-25 21:26:13 KST end scitail rc=0 scitail: done steps=2073 wall=77s loss=0.1707
+2026-09-25 21:26:13 KST start ag_news attempt 1
+2026-09-25 21:31:13 KST end ag_news rc=0 ag_news: done steps=5625 wall=286s loss=0.2415
+2026-09-25 21:31:13 KST start imdb attempt 1
+2026-09-25 21:33:44 KST end imdb rc=0 imdb: done steps=2250 wall=136s loss=0.2737
+2026-09-25 21:33:44 KST start trec attempt 1
+2026-09-25 21:34:22 KST end trec rc=0 trec: done steps=1400 wall=29s loss=0.1656
+2026-09-25 21:34:22 KST start yelp_polarity attempt 1
+2026-09-25 21:40:24 KST end yelp_polarity rc=0 yelp_polarity: done steps=5625 wall=342s loss=0.1790
+2026-09-25 21:40:24 KST === run_train finished
+2026-09-25 21:40:41 KST D1: renamed adapters/mnli -> adapters/mnli_cap60k
+2026-09-25 21:40:41 KST D1: renamed adapters/qqp -> adapters/qqp_cap60k
+2026-09-25 21:40:41 KST D1 start mnli (full data) attempt 1
+2026-09-25 22:11:37 KST D1 end mnli rc=0 mnli: done steps=36723 wall=1809s loss=0.6054
+2026-09-25 22:11:37 KST D1 start qqp (full data) attempt 1
+2026-09-25 22:31:58 KST D1 end qqp rc=0 qqp: done steps=34017 wall=1182s loss=0.6230
+2026-09-25 22:31:58 KST === D1 run finished

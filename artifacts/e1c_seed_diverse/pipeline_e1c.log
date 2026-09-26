@@ -1,0 +1,22 @@
+PREREG_E1C.md: OK
+prereg_e1c.json: OK
+train_e1c.py: OK
+run_train_e1c.sh: OK
+e1c.py: OK
+run_pipeline_e1c.sh: OK
+../e1b_confirmatory/e1b.py: OK
+../e1b_confirmatory/tasks.py: OK
+../e3_baselines/code/e3.py: OK
+../e3_baselines/code/merges.py: OK
+2026-09-26 06:32:29 KST pipeline start
+2026-09-26 06:34:22 KST stage0 rc=0
+2026-09-26 06:35:50 KST stage1 rc=0
+predictors_e1c.csv: OK
+predictors_layers_e1c.csv: OK
+predictors_null_e1c.json: OK
+predictors_aux_e1c.json: OK
+2026-09-26 06:56:17 KST stage2 S2 attempt 1 rc=0
+2026-09-26 07:30:48 KST e3same rc=0
+2026-09-26 08:45:49 KST stage2 P attempt 1 rc=0
+2026-09-26 09:13:38 KST stage2 S1 attempt 1 rc=0
+2026-09-26 09:13:38 KST === merges finished

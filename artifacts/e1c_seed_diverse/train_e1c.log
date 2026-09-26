@@ -1,0 +1,32 @@
+2026-09-26 05:41:26 KST [A] === start pid 2650213 tasks: mnli
+2026-09-26 05:41:26 KST [A] start mnli attempt 1
+2026-09-26 05:41:27 KST [B] === start pid 2650252 tasks: cola sst2 mrpc stsb qnli rte wic snli scitail ag_news imdb trec yelp_polarity
+2026-09-26 05:41:27 KST [B] start cola attempt 1
+2026-09-26 05:42:37 KST [B] end cola rc=0 cola: done steps=2360 wall=61s loss=0.2183
+2026-09-26 05:42:37 KST [B] start sst2 attempt 1
+2026-09-26 05:47:13 KST [B] end sst2 rc=0 sst2: done steps=5625 wall=264s loss=0.1959
+2026-09-26 05:47:13 KST [B] start mrpc attempt 1
+2026-09-26 05:48:25 KST [B] end mrpc rc=0 mrpc: done steps=840 wall=64s loss=0.1965
+2026-09-26 05:48:25 KST [B] start stsb attempt 1
+2026-09-26 05:50:15 KST [B] end stsb rc=0 stsb: done steps=1490 wall=101s loss=0.4165
+2026-09-26 05:50:15 KST [B] start qnli attempt 1
+2026-09-26 05:58:51 KST [B] end qnli rc=0 qnli: done steps=5625 wall=501s loss=0.3338
+2026-09-26 05:58:51 KST [B] start rte attempt 1
+2026-09-26 05:59:52 KST [B] end rte rc=0 rte: done steps=470 wall=52s loss=0.3485
+2026-09-26 05:59:52 KST [B] start wic attempt 1
+2026-09-26 06:01:06 KST [B] end wic rc=0 wic: done steps=1390 wall=65s loss=0.2140
+2026-09-26 06:01:06 KST [B] start snli attempt 1
+2026-09-26 06:06:10 KST [B] end snli rc=0 snli: done steps=5625 wall=290s loss=0.4830
+2026-09-26 06:06:10 KST [B] start scitail attempt 1
+2026-09-26 06:08:49 KST [B] end scitail rc=0 scitail: done steps=2073 wall=148s loss=0.1654
+2026-09-26 06:08:49 KST [B] start ag_news attempt 1
+2026-09-26 06:17:51 KST [B] end ag_news rc=0 ag_news: done steps=5625 wall=529s loss=0.2386
+2026-09-26 06:17:51 KST [B] start imdb attempt 1
+2026-09-26 06:22:18 KST [B] end imdb rc=0 imdb: done steps=2250 wall=251s loss=0.2718
+2026-09-26 06:22:18 KST [B] start trec attempt 1
+2026-09-26 06:23:22 KST [B] end trec rc=0 trec: done steps=1400 wall=55s loss=0.1705
+2026-09-26 06:23:22 KST [B] start yelp_polarity attempt 1
+2026-09-26 06:30:19 KST [A] end mnli rc=0 mnli: done steps=36723 wall=2886s loss=0.6052
+2026-09-26 06:30:19 KST [A] === finished
+2026-09-26 06:32:25 KST [B] end yelp_polarity rc=0 yelp_polarity: done steps=5625 wall=522s loss=0.1766
+2026-09-26 06:32:25 KST [B] === finished

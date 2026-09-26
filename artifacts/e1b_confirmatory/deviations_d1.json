@@ -1,0 +1,5 @@
+{"deviation": "D1", "reason": "60k cap made the pre-registered published-reference check (-5pp vs HF run_glue bert-base dev) structurally unreachable for MNLI and QQP; decided before any evaluation-set scoring",
+ "budgets": {
+  "mnli": {"n_train_total": 392702, "n_holdout": 1000, "n_pool": 391702, "n_train_used": 391702, "epochs": 3, "steps_per_epoch": 12241, "max_steps": 36723, "warmup_steps": 500, "n_eval_total": 9815, "n_eval_used": 9815, "eval_split": "validation_matched", "num_labels": 3, "metric": "accuracy"},
+  "qqp":  {"n_train_total": 363846, "n_holdout": 1000, "n_pool": 362846, "n_train_used": 362846, "epochs": 3, "steps_per_epoch": 11339, "max_steps": 34017, "warmup_steps": 500, "n_eval_total": 40430, "n_eval_used": 10000, "eval_split": "validation", "num_labels": 2, "metric": "accuracy"}},
+ "capped_adapters_renamed_to": {"mnli": "adapters/mnli_cap60k", "qqp": "adapters/qqp_cap60k"}}

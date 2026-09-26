@@ -1,0 +1,985 @@
+{
+  "stage": 0,
+  "started": "2026-09-25 19:31:53 KST",
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+  "versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.17.0",
+    "peft": "0.21.0",
+    "datasets": "5.0.1"
+  },
+  "prereg_tasks": [
+    "cola",
+    "sst2",
+    "mrpc",
+    "qqp",
+    "stsb",
+    "mnli",
+    "qnli",
+    "rte"
+  ],
+  "checks": {
+    "peft_equivalence": {
+      "cola": {
+        "max_abs_logit_diff": 5.453824996948242e-06,
+        "argmax_agree": 1.0,
+        "ok": true
+      },
+      "sst2": {
+        "max_abs_logit_diff": 2.0265579223632812e-06,
+        "argmax_agree": 1.0,
+        "ok": true
+      },
+      "mrpc": {
+        "max_abs_logit_diff": 7.092952728271484e-06,
+        "argmax_agree": 1.0,
+        "ok": true
+      },
+      "qqp": {
+        "max_abs_logit_diff": 3.337860107421875e-06,
+        "argmax_agree": 1.0,
+        "ok": true
+      },
+      "mnli": {
+        "max_abs_logit_diff": 5.9604644775390625e-06,
+        "argmax_agree": 1.0,
+        "ok": true
+      },
+      "qnli": {
+        "max_abs_logit_diff": 4.172325134277344e-06,
+        "argmax_agree": 1.0,
+        "ok": true
+      },
+      "rte": {
+        "max_abs_logit_diff": 1.2516975402832031e-06,
+        "argmax_agree": 1.0,
+        "ok": true
+      }
+    },
+    "accuracy_thresholds": {
+      "cola": {
+        "val_accuracy": 0.8389261744966443,
+        "threshold": 0.55,
+        "ok": true
+      },
+      "sst2": {
+        "val_accuracy": 0.9151376146788991,
+        "threshold": 0.55,
+        "ok": true
+      },
+      "mrpc": {
+        "val_accuracy": 0.8602941176470589,
+        "threshold": 0.55,
+        "ok": true
+      },
+      "qqp": {
+        "val_accuracy": 0.8942864209745238,
+        "threshold": 0.55,
+        "ok": true
+      },
+      "mnli": {
+        "val_accuracy": 0.8071319409067753,
+        "threshold": 0.6,
+        "ok": true
+      },
+      "qnli": {
+        "val_accuracy": 0.9081090975654402,
+        "threshold": 0.55,
+        "ok": true
+      },
+      "rte": {
+        "val_accuracy": 0.6137184115523465,
+        "threshold": 0.55,
+        "ok": true
+      }
+    }
+  },
+  "fail_reasons": [],
+  "hub_listing_bert_base_uncased": [
+    "prateeky2806/bert-base-uncased-cola-epochs-10-lr-5e-05",
+    "prateeky2806/bert-base-uncased-cola-ia3-epochs-10-lr-0.005",
+    "prateeky2806/bert-base-uncased-cola-lora-epochs-10-lr-0.0005",
+    "prateeky2806/bert-base-uncased-mnli-epochs-2-lr-1e-05",
+    "prateeky2806/bert-base-uncased-mnli-ia3-epochs-2-lr-0.005",
+    "prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001",
+    "prateeky2806/bert-base-uncased-mrpc-epochs-10-lr-5e-05",
+    "prateeky2806/bert-base-uncased-mrpc-ia3-epochs-10-lr-0.005",
+    "prateeky2806/bert-base-uncased-mrpc-ia3-epochs-2-lr-2e-05",
+    "prateeky2806/bert-base-uncased-mrpc-lora-epochs-10-lr-0.0005",
+    "prateeky2806/bert-base-uncased-qnli-epochs-2-lr-5e-05",
+    "prateeky2806/bert-base-uncased-qnli-ia3-epochs-2-lr-0.005",
+    "prateeky2806/bert-base-uncased-qnli-lora-epochs-2-lr-0.0005",
+    "prateeky2806/bert-base-uncased-qqp-epochs-2-lr-0.0001",
+    "prateeky2806/bert-base-uncased-qqp-ia3-epochs-2-lr-0.001",
+    "prateeky2806/bert-base-uncased-qqp-lora-epochs-2-lr-0.0005",
+    "prateeky2806/bert-base-uncased-rte-epochs-10-lr-1e-05",
+    "prateeky2806/bert-base-uncased-rte-ia3-epochs-10-lr-0.005",
+    "prateeky2806/bert-base-uncased-rte-lora-epochs-10-lr-0.0005",
+    "prateeky2806/bert-base-uncased-sst2-epochs-2-lr-0.0001",
+    "prateeky2806/bert-base-uncased-sst2-ia3-epochs-2-lr-0.005",
+    "prateeky2806/bert-base-uncased-sst2-lora-epochs-2-lr-0.0005",
+    "prateeky2806/bert-base-uncased-wnli-epochs-10-lr-0.0001",
+    "prateeky2806/bert-base-uncased-wnli-ia3-epochs-10-lr-5e-05",
+    "prateeky2806/bert-base-uncased-wnli-lora-epochs-10-lr-1e-06"
+  ],
+  "hub_listing_lora": [
+    "prateeky2806/bert-base-uncased-cola-lora-epochs-10-lr-0.0005",
+    "prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001",
+    "prateeky2806/bert-base-uncased-mrpc-lora-epochs-10-lr-0.0005",
+    "prateeky2806/bert-base-uncased-qnli-lora-epochs-2-lr-0.0005",
+    "prateeky2806/bert-base-uncased-qqp-lora-epochs-2-lr-0.0005",
+    "prateeky2806/bert-base-uncased-rte-lora-epochs-10-lr-0.0005",
+    "prateeky2806/bert-base-uncased-sst2-lora-epochs-2-lr-0.0005",
+    "prateeky2806/bert-base-uncased-wnli-lora-epochs-10-lr-1e-06"
+  ],
+  "task_availability": {
+    "cola": [
+      "prateeky2806/bert-base-uncased-cola-lora-epochs-10-lr-0.0005"
+    ],
+    "sst2": [
+      "prateeky2806/bert-base-uncased-sst2-lora-epochs-2-lr-0.0005"
+    ],
+    "mrpc": [
+      "prateeky2806/bert-base-uncased-mrpc-lora-epochs-10-lr-0.0005"
+    ],
+    "qqp": [
+      "prateeky2806/bert-base-uncased-qqp-lora-epochs-2-lr-0.0005"
+    ],
+    "stsb": [],
+    "mnli": [
+      "prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001"
+    ],
+    "qnli": [
+      "prateeky2806/bert-base-uncased-qnli-lora-epochs-2-lr-0.0005"
+    ],
+    "rte": [
+      "prateeky2806/bert-base-uncased-rte-lora-epochs-10-lr-0.0005"
+    ]
+  },
+  "excluded_tasks": {
+    "stsb": "no prateeky2806 bert-base-uncased LoRA adapter exists on the Hub"
+  },
+  "final_tasks": [
+    "cola",
+    "sst2",
+    "mrpc",
+    "qqp",
+    "mnli",
+    "qnli",
+    "rte"
+  ],
+  "n_pairs": 21,
+  "base_model": {
+    "id": "bert-base-uncased",
+    "revision": "86b5e0934494bd15c9632b12f734a8a67f723594"
+  },
+  "adapters": {
+    "cola": {
+      "repo": "prateeky2806/bert-base-uncased-cola-lora-epochs-10-lr-0.0005",
+      "pinned_revision": "04c81291b864f34668bf3936892f7a0280c7926d",
+      "hub_head_revision_now": "04c81291b864f34668bf3936892f7a0280c7926d",
+      "revision_matches": true,
+      "safetensors_sha256": "dbadbaacd746ab95d5337e4642680eca3350d999175a6ac03b5a37636fddcfa9",
+      "cfg_modules_to_save": null,
+      "cfg_task_type": "SEQ_CLS",
+      "r": 8,
+      "lora_alpha": 16,
+      "scaling": 2.0,
+      "target_modules": [
+        "query",
+        "key",
+        "value",
+        "dense"
+      ],
+      "n_lora_layers": 73,
+      "classifier_keys": [
+        "base_model.model.classifier.bias",
+        "base_model.model.classifier.weight"
+      ],
+      "head_shape": [
+        2,
+        768
+      ],
+      "head_weight_norm": 0.8246126174926758,
+      "head_bias_norm": 0.001400971319526434,
+      "other_keys": [],
+      "head_present": true
+    },
+    "sst2": {
+      "repo": "prateeky2806/bert-base-uncased-sst2-lora-epochs-2-lr-0.0005",
+      "pinned_revision": "b29cf70753ccbb7135cb55c5c1358592efe92886",
+      "hub_head_revision_now": "b29cf70753ccbb7135cb55c5c1358592efe92886",
+      "revision_matches": true,
+      "safetensors_sha256": "33ceab508934facc55bdf2e1dc1fa85b1f02abb490a383ac7cb3d41f2c7b3608",
+      "cfg_modules_to_save": null,
+      "cfg_task_type": "SEQ_CLS",
+      "r": 8,
+      "lora_alpha": 16,
+      "scaling": 2.0,
+      "target_modules": [
+        "query",
+        "key",
+        "value",
+        "dense"
+      ],
+      "n_lora_layers": 73,
+      "classifier_keys": [
+        "base_model.model.classifier.bias",
+        "base_model.model.classifier.weight"
+      ],
+      "head_shape": [
+        2,
+        768
+      ],
+      "head_weight_norm": 0.8010590672492981,
+      "head_bias_norm": 0.0013035563752055168,
+      "other_keys": [],
+      "head_present": true
+    },
+    "mrpc": {
+      "repo": "prateeky2806/bert-base-uncased-mrpc-lora-epochs-10-lr-0.0005",
+      "pinned_revision": "519fa53ae41bc614f0138bbe22c20d08066f0653",
+      "hub_head_revision_now": "519fa53ae41bc614f0138bbe22c20d08066f0653",
+      "revision_matches": true,
+      "safetensors_sha256": "048a9656bb5498afd13d3ff9714f1cc205de251fd0f248d0bf47a86ec2c2197b",
+      "cfg_modules_to_save": null,
+      "cfg_task_type": "SEQ_CLS",
+      "r": 8,
+      "lora_alpha": 16,
+      "scaling": 2.0,
+      "target_modules": [
+        "query",
+        "key",
+        "value",
+        "dense"
+      ],
+      "n_lora_layers": 73,
+      "classifier_keys": [
+        "base_model.model.classifier.bias",
+        "base_model.model.classifier.weight"
+      ],
+      "head_shape": [
+        2,
+        768
+      ],
+      "head_weight_norm": 0.8192993998527527,
+      "head_bias_norm": 0.0006198927294462919,
+      "other_keys": [],
+      "head_present": true
+    },
+    "qqp": {
+      "repo": "prateeky2806/bert-base-uncased-qqp-lora-epochs-2-lr-0.0005",
+      "pinned_revision": "3055be41e42a2bbc59656ca627104521178d10f8",
+      "hub_head_revision_now": "3055be41e42a2bbc59656ca627104521178d10f8",
+      "revision_matches": true,
+      "safetensors_sha256": "94a268784ed7eb9976695500e0222e529455a7f403c3eee0f601f1a116c35828",
+      "cfg_modules_to_save": null,
+      "cfg_task_type": "SEQ_CLS",
+      "r": 8,
+      "lora_alpha": 16,
+      "scaling": 2.0,
+      "target_modules": [
+        "query",
+        "key",
+        "value",
+        "dense"
+      ],
+      "n_lora_layers": 73,
+      "classifier_keys": [
+        "base_model.model.classifier.bias",
+        "base_model.model.classifier.weight"
+      ],
+      "head_shape": [
+        2,
+        768
+      ],
+      "head_weight_norm": 0.7774316668510437,
+      "head_bias_norm": 0.01371273584663868,
+      "other_keys": [],
+      "head_present": true
+    },
+    "mnli": {
+      "repo": "prateeky2806/bert-base-uncased-mnli-lora-epochs-2-lr-0.001",
+      "pinned_revision": "7b635f33ca31d5464bf31df2f8a54cf007151fee",
+      "hub_head_revision_now": "7b635f33ca31d5464bf31df2f8a54cf007151fee",
+      "revision_matches": true,
+      "safetensors_sha256": "151d2081b74c589bdc5437f85321107062d37f0eaa5487d68cb2cd5d8623fde1",
+      "cfg_modules_to_save": null,
+      "cfg_task_type": "SEQ_CLS",
+      "r": 8,
+      "lora_alpha": 16,
+      "scaling": 2.0,
+      "target_modules": [
+        "query",
+        "key",
+        "value",
+        "dense"
+      ],
+      "n_lora_layers": 73,
+      "classifier_keys": [
+        "base_model.model.classifier.bias",
+        "base_model.model.classifier.weight"
+      ],
+      "head_shape": [
+        3,
+        768
+      ],
+      "head_weight_norm": 1.2316174507141113,
+      "head_bias_norm": 0.04490451514720917,
+      "other_keys": [],
+      "head_present": true
+    },
+    "qnli": {
+      "repo": "prateeky2806/bert-base-uncased-qnli-lora-epochs-2-lr-0.0005",
+      "pinned_revision": "2af1d25dab0487c29b4a3f0e585e305054a15cee",
+      "hub_head_revision_now": "2af1d25dab0487c29b4a3f0e585e305054a15cee",
+      "revision_matches": true,
+      "safetensors_sha256": "d95e186ef402c66f67801b69e21ccb823189c45d881cdccc08044c4de2f05cba",
+      "cfg_modules_to_save": null,
+      "cfg_task_type": "SEQ_CLS",
+      "r": 8,
+      "lora_alpha": 16,
+      "scaling": 2.0,
+      "target_modules": [
+        "query",
+        "key",
+        "value",
+        "dense"
+      ],
+      "n_lora_layers": 73,
+      "classifier_keys": [
+        "base_model.model.classifier.bias",
+        "base_model.model.classifier.weight"
+      ],
+      "head_shape": [
+        2,
+        768
+      ],
+      "head_weight_norm": 0.7878567576408386,
+      "head_bias_norm": 0.0032510850578546524,
+      "other_keys": [],
+      "head_present": true
+    },
+    "rte": {
+      "repo": "prateeky2806/bert-base-uncased-rte-lora-epochs-10-lr-0.0005",
+      "pinned_revision": "eb4723dadf546c21abbd0045a8811805238bf4c9",
+      "hub_head_revision_now": "eb4723dadf546c21abbd0045a8811805238bf4c9",
+      "revision_matches": true,
+      "safetensors_sha256": "bc4b8f1c504a390b1343ad4f1b35e7061948d1306208155cb8c650268cb25d26",
+      "cfg_modules_to_save": null,
+      "cfg_task_type": "SEQ_CLS",
+      "r": 8,
+      "lora_alpha": 16,
+      "scaling": 2.0,
+      "target_modules": [
+        "query",
+        "key",
+        "value",
+        "dense"
+      ],
+      "n_lora_layers": 73,
+      "classifier_keys": [
+        "base_model.model.classifier.bias",
+        "base_model.model.classifier.weight"
+      ],
+      "head_shape": [
+        2,
+        768
+      ],
+      "head_weight_norm": 0.7885118722915649,
+      "head_bias_norm": 0.0018226861720904708,
+      "other_keys": [],
+      "head_present": true
+    }
+  },
+  "lora_layers": [
+    "encoder.layer.0.attention.output.dense",
+    "encoder.layer.0.attention.self.key",
+    "encoder.layer.0.attention.self.query",
+    "encoder.layer.0.attention.self.value",
+    "encoder.layer.0.intermediate.dense",
+    "encoder.layer.0.output.dense",
+    "encoder.layer.1.attention.output.dense",
+    "encoder.layer.1.attention.self.key",
+    "encoder.layer.1.attention.self.query",
+    "encoder.layer.1.attention.self.value",
+    "encoder.layer.1.intermediate.dense",
+    "encoder.layer.1.output.dense",
+    "encoder.layer.10.attention.output.dense",
+    "encoder.layer.10.attention.self.key",
+    "encoder.layer.10.attention.self.query",
+    "encoder.layer.10.attention.self.value",
+    "encoder.layer.10.intermediate.dense",
+    "encoder.layer.10.output.dense",
+    "encoder.layer.11.attention.output.dense",
+    "encoder.layer.11.attention.self.key",
+    "encoder.layer.11.attention.self.query",
+    "encoder.layer.11.attention.self.value",
+    "encoder.layer.11.intermediate.dense",
+    "encoder.layer.11.output.dense",
+    "encoder.layer.2.attention.output.dense",
+    "encoder.layer.2.attention.self.key",
+    "encoder.layer.2.attention.self.query",
+    "encoder.layer.2.attention.self.value",
+    "encoder.layer.2.intermediate.dense",
+    "encoder.layer.2.output.dense",
+    "encoder.layer.3.attention.output.dense",
+    "encoder.layer.3.attention.self.key",
+    "encoder.layer.3.attention.self.query",
+    "encoder.layer.3.attention.self.value",
+    "encoder.layer.3.intermediate.dense",
+    "encoder.layer.3.output.dense",
+    "encoder.layer.4.attention.output.dense",
+    "encoder.layer.4.attention.self.key",
+    "encoder.layer.4.attention.self.query",
+    "encoder.layer.4.attention.self.value",
+    "encoder.layer.4.intermediate.dense",
+    "encoder.layer.4.output.dense",
+    "encoder.layer.5.attention.output.dense",
+    "encoder.layer.5.attention.self.key",
+    "encoder.layer.5.attention.self.query",
+    "encoder.layer.5.attention.self.value",
+    "encoder.layer.5.intermediate.dense",
+    "encoder.layer.5.output.dense",
+    "encoder.layer.6.attention.output.dense",
+    "encoder.layer.6.attention.self.key",
+    "encoder.layer.6.attention.self.query",
+    "encoder.layer.6.attention.self.value",
+    "encoder.layer.6.intermediate.dense",
+    "encoder.layer.6.output.dense",
+    "encoder.layer.7.attention.output.dense",
+    "encoder.layer.7.attention.self.key",
+    "encoder.layer.7.attention.self.query",
+    "encoder.layer.7.attention.self.value",
+    "encoder.layer.7.intermediate.dense",
+    "encoder.layer.7.output.dense",
+    "encoder.layer.8.attention.output.dense",
+    "encoder.layer.8.attention.self.key",
+    "encoder.layer.8.attention.self.query",
+    "encoder.layer.8.attention.self.value",
+    "encoder.layer.8.intermediate.dense",
+    "encoder.layer.8.output.dense",
+    "encoder.layer.9.attention.output.dense",
+    "encoder.layer.9.attention.self.key",
+    "encoder.layer.9.attention.self.query",
+    "encoder.layer.9.attention.self.value",
+    "encoder.layer.9.intermediate.dense",
+    "encoder.layer.9.output.dense",
+    "pooler.dense"
+  ],
+  "throughput_examples_per_s": 1871.2234317443626,
+  "singles": {
+    "cola": {
+      "val": {
+        "accuracy": 0.8389261744966443,
+        "n": 1043,
+        "f1": 0.8900523560209425,
+        "mcc": 0.605839001376474
+      },
+      "sel": {
+        "accuracy": 0.993,
+        "n": 1000,
+        "f1": 0.9951287404314544,
+        "mcc": 0.9826983720330358
+      },
+      "val_split": "validation",
+      "sel_idx_sha256": "7ce4857a65ba5833b9465dd7671cf05261ccce8f5897c4b5c1f6984cea469e30"
+    },
+    "sst2": {
+      "val": {
+        "accuracy": 0.9151376146788991,
+        "n": 872,
+        "f1": 0.918141592920354,
+        "mcc": 0.830664274872183
+      },
+      "sel": {
+        "accuracy": 0.981,
+        "n": 1000,
+        "f1": 0.983435047951177,
+        "mcc": 0.9611627699148907
+      },
+      "val_split": "validation",
+      "sel_idx_sha256": "b129416b15fc229abcee410816b7f4e6796ecc53609e0b82831e508dc96a4efd"
+    },
+    "mrpc": {
+      "val": {
+        "accuracy": 0.8602941176470589,
+        "n": 408,
+        "f1": 0.9008695652173913,
+        "mcc": 0.6683969971351622
+      },
+      "sel": {
+        "accuracy": 0.993,
+        "n": 1000,
+        "f1": 0.9948642699926632,
+        "mcc": 0.9838778879343125
+      },
+      "val_split": "validation",
+      "sel_idx_sha256": "f19be02f1a5232351e7c0f3625a445b7fc4511acffed29516c0fa94687cd3dfb"
+    },
+    "qqp": {
+      "val": {
+        "accuracy": 0.8942864209745238,
+        "n": 40430,
+        "f1": 0.8594171436089731,
+        "mcc": 0.7752017248611419
+      },
+      "sel": {
+        "accuracy": 0.923,
+        "n": 1000,
+        "f1": 0.8974700399467377,
+        "mcc": 0.8359224001019351
+      },
+      "val_split": "validation",
+      "sel_idx_sha256": "40f3abf2467e0dec519eebcd23d3383852be6fe1c84aee2182bf7e77784a9efb"
+    },
+    "mnli": {
+      "val": {
+        "accuracy": 0.8071319409067753,
+        "n": 9815
+      },
+      "sel": {
+        "accuracy": 0.822,
+        "n": 1000
+      },
+      "val_split": "validation_matched",
+      "sel_idx_sha256": "cf809d672031165315660d153db167fa6cd13ca62139a016d1fdcfd9b451dc5b"
+    },
+    "qnli": {
+      "val": {
+        "accuracy": 0.9081090975654402,
+        "n": 5463,
+        "f1": 0.9083607155896313,
+        "mcc": 0.8163346366271459
+      },
+      "sel": {
+        "accuracy": 0.938,
+        "n": 1000,
+        "f1": 0.9356846473029046,
+        "mcc": 0.8764485839491741
+      },
+      "val_split": "validation",
+      "sel_idx_sha256": "34184e0525a9c6b510e3faee2ec030104c7c3a747c91b4ff956ddd07a7a23f75"
+    },
+    "rte": {
+      "val": {
+        "accuracy": 0.6137184115523465,
+        "n": 277,
+        "f1": 0.5158371040723982,
+        "mcc": 0.22289343154360475
+      },
+      "sel": {
+        "accuracy": 0.784,
+        "n": 1000,
+        "f1": 0.7458823529411764,
+        "mcc": 0.580962900228105
+      },
+      "val_split": "validation",
+      "sel_idx_sha256": "8dce8629c0239fae987a5c35ddfed2b84f92513177df4783dee0c76472fe58bc"
+    }
+  },
+  "zero_segment_ids": true,
+  "self_reproduction": {
+    "mnli": {
+      "n_first_val": 512,
+      "accuracy": 0.811,
+      "source": "lora-paper/hubish_report.md 'Hub MNLI control' n=512 (4070 pipeline)",
+      "ours": 0.810546875,
+      "shortfall_pp": 0.04531250000000542,
+      "flag_gt2pp": false
+    }
+  },
+  "card_comparison": {
+    "cola": {
+      "card": {
+        "mcc": 0.6347
+      },
+      "full_val": {
+        "mcc": 0.605839001376474
+      },
+      "probe_train_slices": {
+        "train[:100]": {
+          "accuracy": 1.0,
+          "n": 100,
+          "f1": 1.0,
+          "mcc": 1.0
+        },
+        "train[-100:]": {
+          "accuracy": 0.96,
+          "n": 100,
+          "f1": 0.9726027397260274,
+          "mcc": 0.9033780792243016
+        },
+        "train_test_split(test_size=100,seed=28)": {
+          "accuracy": 0.99,
+          "n": 100,
+          "f1": 0.9932885906040269,
+          "mcc": 0.9740215340114143
+        },
+        "train_test_split(test_size=100,seed=42)": {
+          "accuracy": 1.0,
+          "n": 100,
+          "f1": 1.0,
+          "mcc": 1.0
+        },
+        "train_test_split(test_size=100,seed=0)": {
+          "accuracy": 0.99,
+          "n": 100,
+          "f1": 0.9929078014184397,
+          "mcc": 0.9762436392584016
+        }
+      },
+      "card_metric": "mcc",
+      "shortfall_fullval_pp": 2.886099862352609,
+      "flag_gt2pp_fullval": true,
+      "exact_match_slices": []
+    },
+    "sst2": {
+      "card": {
+        "accuracy": 0.98
+      },
+      "full_val": {
+        "accuracy": 0.9151376146788991
+      },
+      "probe_train_slices": {
+        "train[:100]": {
+          "accuracy": 1.0,
+          "n": 100,
+          "f1": 1.0,
+          "mcc": 1.0
+        },
+        "train[-100:]": {
+          "accuracy": 0.97,
+          "n": 100,
+          "f1": 0.9739130434782609,
+          "mcc": 0.9388216926474974
+        },
+        "train_test_split(test_size=100,seed=28)": {
+          "accuracy": 0.99,
+          "n": 100,
+          "f1": 0.991869918699187,
+          "mcc": 0.9791034199871859
+        },
+        "train_test_split(test_size=100,seed=42)": {
+          "accuracy": 0.95,
+          "n": 100,
+          "f1": 0.9572649572649573,
+          "mcc": 0.8988334310581164
+        },
+        "train_test_split(test_size=100,seed=0)": {
+          "accuracy": 0.98,
+          "n": 100,
+          "f1": 0.9772727272727273,
+          "mcc": 0.9594155844155844
+        }
+      },
+      "card_metric": "accuracy",
+      "shortfall_fullval_pp": 6.4862385321100895,
+      "flag_gt2pp_fullval": true,
+      "exact_match_slices": [
+        "train_test_split(test_size=100,seed=0)"
+      ]
+    },
+    "mrpc": {
+      "card": {
+        "accuracy": 0.8,
+        "f1": 0.8611
+      },
+      "full_val": {
+        "accuracy": 0.8602941176470589,
+        "f1": 0.9008695652173913
+      },
+      "probe_train_slices": {
+        "train[:100]": {
+          "accuracy": 0.98,
+          "n": 100,
+          "f1": 0.9841269841269841,
+          "mcc": 0.9579995604877577
+        },
+        "train[-100:]": {
+          "accuracy": 1.0,
+          "n": 100,
+          "f1": 1.0,
+          "mcc": 1.0
+        },
+        "train_test_split(test_size=100,seed=28)": {
+          "accuracy": 0.99,
+          "n": 100,
+          "f1": 0.9922480620155039,
+          "mcc": 0.9783991809404572
+        },
+        "train_test_split(test_size=100,seed=42)": {
+          "accuracy": 0.99,
+          "n": 100,
+          "f1": 0.9923664122137404,
+          "mcc": 0.9781155129686661
+        },
+        "train_test_split(test_size=100,seed=0)": {
+          "accuracy": 0.98,
+          "n": 100,
+          "f1": 0.9863013698630136,
+          "mcc": 0.9492643328259767
+        }
+      },
+      "card_metric": "accuracy",
+      "shortfall_fullval_pp": -6.029411764705883,
+      "flag_gt2pp_fullval": false,
+      "exact_match_slices": []
+    },
+    "qqp": {
+      "card": {
+        "accuracy": 0.95,
+        "f1": 0.9333
+      },
+      "full_val": {
+        "accuracy": 0.8942864209745238,
+        "f1": 0.8594171436089731
+      },
+      "probe_train_slices": {
+        "train[:100]": {
+          "accuracy": 0.88,
+          "n": 100,
+          "f1": 0.8285714285714286,
+          "mcc": 0.7395800507424896
+        },
+        "train[-100:]": {
+          "accuracy": 0.88,
+          "n": 100,
+          "f1": 0.8285714285714286,
+          "mcc": 0.7496197051919585
+        },
+        "train_test_split(test_size=100,seed=28)": {
+          "accuracy": 0.93,
+          "n": 100,
+          "f1": 0.8955223880597015,
+          "mcc": 0.8486610470014057
+        },
+        "train_test_split(test_size=100,seed=42)": {
+          "accuracy": 0.88,
+          "n": 100,
+          "f1": 0.8235294117647058,
+          "mcc": 0.7360147612366005
+        },
+        "train_test_split(test_size=100,seed=0)": {
+          "accuracy": 0.9,
+          "n": 100,
+          "f1": 0.8529411764705882,
+          "mcc": 0.7780551102739998
+        }
+      },
+      "card_metric": "accuracy",
+      "shortfall_fullval_pp": 5.571357902547613,
+      "flag_gt2pp_fullval": true,
+      "exact_match_slices": []
+    },
+    "mnli": {
+      "card": {
+        "accuracy": 0.85
+      },
+      "full_val": {
+        "accuracy": 0.8071319409067753
+      },
+      "probe_train_slices": {
+        "train[:100]": {
+          "accuracy": 0.84,
+          "n": 100
+        },
+        "train[-100:]": {
+          "accuracy": 0.84,
+          "n": 100
+        },
+        "train_test_split(test_size=100,seed=28)": {
+          "accuracy": 0.76,
+          "n": 100
+        },
+        "train_test_split(test_size=100,seed=42)": {
+          "accuracy": 0.83,
+          "n": 100
+        },
+        "train_test_split(test_size=100,seed=0)": {
+          "accuracy": 0.83,
+          "n": 100
+        }
+      },
+      "card_metric": "accuracy",
+      "shortfall_fullval_pp": 4.286805909322466,
+      "flag_gt2pp_fullval": true,
+      "exact_match_slices": []
+    },
+    "qnli": {
+      "card": {
+        "accuracy": 0.92
+      },
+      "full_val": {
+        "accuracy": 0.9081090975654402
+      },
+      "probe_train_slices": {
+        "train[:100]": {
+          "accuracy": 0.89,
+          "n": 100,
+          "f1": 0.897196261682243,
+          "mcc": 0.7805340218295159
+        },
+        "train[-100:]": {
+          "accuracy": 0.89,
+          "n": 100,
+          "f1": 0.8817204301075269,
+          "mcc": 0.7834166200281422
+        },
+        "train_test_split(test_size=100,seed=28)": {
+          "accuracy": 0.94,
+          "n": 100,
+          "f1": 0.9375,
+          "mcc": 0.8805622538869414
+        },
+        "train_test_split(test_size=100,seed=42)": {
+          "accuracy": 0.94,
+          "n": 100,
+          "f1": 0.9375,
+          "mcc": 0.8798076923076923
+        },
+        "train_test_split(test_size=100,seed=0)": {
+          "accuracy": 0.93,
+          "n": 100,
+          "f1": 0.9292929292929293,
+          "mcc": 0.8616618170714668
+        }
+      },
+      "card_metric": "accuracy",
+      "shortfall_fullval_pp": 1.1890902434559814,
+      "flag_gt2pp_fullval": false,
+      "exact_match_slices": []
+    },
+    "rte": {
+      "card": {
+        "accuracy": 0.63
+      },
+      "full_val": {
+        "accuracy": 0.6137184115523465
+      },
+      "probe_train_slices": {
+        "train[:100]": {
+          "accuracy": 0.77,
+          "n": 100,
+          "f1": 0.7472527472527473,
+          "mcc": 0.5439146366832609
+        },
+        "train[-100:]": {
+          "accuracy": 0.79,
+          "n": 100,
+          "f1": 0.7341772151898734,
+          "mcc": 0.5996103338694695
+        },
+        "train_test_split(test_size=100,seed=28)": {
+          "accuracy": 0.85,
+          "n": 100,
+          "f1": 0.8351648351648352,
+          "mcc": 0.6991022054044606
+        },
+        "train_test_split(test_size=100,seed=42)": {
+          "accuracy": 0.8,
+          "n": 100,
+          "f1": 0.7674418604651163,
+          "mcc": 0.625
+        },
+        "train_test_split(test_size=100,seed=0)": {
+          "accuracy": 0.85,
+          "n": 100,
+          "f1": 0.8623853211009175,
+          "mcc": 0.706035243742355
+        }
+      },
+      "card_metric": "accuracy",
+      "shortfall_fullval_pp": 1.6281588447653483,
+      "flag_gt2pp_fullval": false,
+      "exact_match_slices": []
+    }
+  },
+  "card_note": "Card 'evaluation set' metrics have 2-decimal granularity and steps/epoch equal ceil((n_train-100)/32) for cola/mrpc/rte/mnli, i.e. the card eval set is a 100-example hold-out from GLUE TRAIN, not GLUE validation.",
+  "hubish_item4": {
+    "adapters": {
+      "mnli_s7_hubish": {
+        "cfg_modules_to_save": [
+          "classifier",
+          "score",
+          "classifier",
+          "score"
+        ],
+        "task_type": "SEQ_CLS",
+        "head_keys": [
+          "base_model.model.classifier.bias",
+          "base_model.model.classifier.weight"
+        ],
+        "head_saved": true,
+        "head_weight_norm": 0.9237740635871887,
+        "expected_norm_at_init_std0.02": 0.96,
+        "head_bias_norm": 0.05517841875553131,
+        "bias_nonzero_(init=0)": true,
+        "mean_lora_B_norm": 5.3177490789596344,
+        "n_keys": 148
+      },
+      "mnli_s42_hubish": {
+        "cfg_modules_to_save": [
+          "classifier",
+          "score",
+          "classifier",
+          "score"
+        ],
+        "task_type": "SEQ_CLS",
+        "head_keys": [
+          "base_model.model.classifier.bias",
+          "base_model.model.classifier.weight"
+        ],
+        "head_saved": true,
+        "head_weight_norm": 0.9200888276100159,
+        "expected_norm_at_init_std0.02": 0.96,
+        "head_bias_norm": 0.045481715351343155,
+        "bias_nonzero_(init=0)": true,
+        "mean_lora_B_norm": 5.30799041382254,
+        "n_keys": 148
+      },
+      "rte_s42_hubish": {
+        "cfg_modules_to_save": [
+          "classifier",
+          "score",
+          "classifier",
+          "score"
+        ],
+        "task_type": "SEQ_CLS",
+        "head_keys": [
+          "base_model.model.classifier.bias",
+          "base_model.model.classifier.weight"
+        ],
+        "head_saved": true,
+        "head_weight_norm": 0.786841630935669,
+        "expected_norm_at_init_std0.02": 0.7838367176906169,
+        "head_bias_norm": 0.004305125679820776,
+        "bias_nonzero_(init=0)": true,
+        "mean_lora_B_norm": 1.2824137247588536,
+        "n_keys": 148
+      }
+    },
+    "hub_reference": {
+      "mnli": {
+        "head_weight_norm": 1.2316174507141113,
+        "head_bias_norm": 0.04490451514720917,
+        "mean_lora_B_norm": 4.850188670093066
+      },
+      "rte": {
+        "head_weight_norm": 0.7885118722915649,
+        "head_bias_norm": 0.0018226861720904708,
+        "mean_lora_B_norm": 0.7705056067198923
+      }
+    }
+  },
+  "stage0_pass": true,
+  "card_flags_gt2pp": [
+    "cola",
+    "sst2",
+    "qqp",
+    "mnli"
+  ],
+  "finished": "2026-09-25 19:33:02 KST",
+  "wall_s": 69.18151068687439
+}

@@ -1,0 +1,11 @@
+2026-09-26 09:14:05 KST | === e1c.py ['e1c.py', '--stage', 'stage3']
+/home/sanghoon/Desktop/Workspace/LoRA/artifacts/e1c_seed_diverse/e1c_analysis.py:135: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  r0 = Pr0.merge(Rr0.drop(columns=["t1", "t2"]), on="pair"); r0["t1_task"] = r0.t1; r0["t2_task"] = r0.t2
+/home/sanghoon/Desktop/Workspace/LoRA/artifacts/e1c_seed_diverse/e1c_analysis.py:135: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  r0 = Pr0.merge(Rr0.drop(columns=["t1", "t2"]), on="pair"); r0["t1_task"] = r0.t1; r0["t2_task"] = r0.t2
+2026-09-26 09:14:19 KST | e1c stage3: analysis equivalence on E1b R0: {'per_hypothesis': {'H1': {'rho_diff': 0.0, 'ci_diff': 0.0, 'p_diff': 0.0, 'holm_diff': 0.0, 'verdict_equal': True}, 'H2': {'rho_diff': 0.0, 'ci_diff': 0.0, 'p_diff': 0.0, 'holm_diff': 0.0, 'verdict_equal': True}}, 'ok': True}
+2026-09-26 09:14:33 KST | e1c stage3 P: H1c INCONCLUSIVE rho=-0.0249 ci=[-0.5065812369720074, 0.4258233083079398] holm=0.5658 loto=0.07, H2c INCONCLUSIVE rho=0.1270 ci=[-0.35449450834842794, 0.48890403514503245] holm=0.4134 loto=0.07
+2026-09-26 09:14:47 KST | e1c stage3 S1: H1c INCONCLUSIVE rho=-0.0295 ci=[-0.43680267755679053, 0.3907122851912608] holm=0.6699 loto=0.00, H2c INCONCLUSIVE rho=0.0574 ci=[-0.3646594957565283, 0.4162238412796474] holm=0.6699 loto=0.00
+/home/sanghoon/Desktop/Workspace/LoRA/artifacts/e1c_seed_diverse/e1c_analysis.py:167: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  tabs = {"R0": r0.assign(u=[upair(x, y) for x, y in zip(r0.t1_task, r0.t2_task)]).set_index("u")}
+2026-09-26 09:14:48 KST | e1c stage3 done in 43s

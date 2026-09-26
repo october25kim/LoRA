@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""Minimal: train a PEFT LoRA on GLUE tasks (MNLI/SST-2/RTE/QNLI/QQP)."""
-
+"""Train PEFT LoRA on GLUE (Hub-matched defaults: lr=1e-3, r=8, alpha=16)."""
 from __future__ import annotations
 
 import argparse
@@ -8,28 +7,25 @@ import argparse
 
 def parse_args():
     p = argparse.ArgumentParser(description="Train LoRA on GLUE")
-    p.add_argument(
-        "--task",
-        choices=["mnli", "sst2", "rte", "qnli", "qqp", "cola"],
-        required=True,
-    )
+    p.add_argument("--task", choices=["mnli", "sst2", "rte", "qnli", "qqp", "cola"], required=True)
     p.add_argument("--base-model", default="bert-base-uncased")
     p.add_argument("--output-dir", required=True)
     p.add_argument("--r", type=int, default=8)
     p.add_argument("--alpha", type=int, default=16)
-    p.add_argument("--epochs", type=int, default=1)
-    p.add_argument("--lr", type=float, default=2e-4)
-    p.add_argument("--batch-size", type=int, default=8)
+    p.add_argument("--epochs", type=int, default=3)
+    p.add_argument("--lr", type=float, default=1e-3, help="Hub MNLI used 1e-3")
+    p.add_argument("--batch-size", type=int, default=32)
     p.add_argument("--max-length", type=int, default=128)
-    p.add_argument("--max-steps", type=int, default=-1, help="Early stop for smoke/CPU")
+    p.add_argument("--max-steps", type=int, default=-1)
     p.add_argument("--seed", type=int, default=42)
-    p.add_argument("--train-samples", type=int, default=-1, help="Subsample train set")
+    p.add_argument("--train-samples", type=int, default=-1)
+    p.add_argument("--warmup-steps", type=int, default=500)
+    p.add_argument("--weight-decay", type=float, default=0.01)
     return p.parse_args()
 
 
 def main():
     args = parse_args()
-
     import torch
     from datasets import load_dataset
     from peft import LoraConfig, TaskType, get_peft_model
@@ -43,7 +39,6 @@ def main():
     )
 
     set_seed(args.seed)
-
     task_map = {
         "mnli": ("nyu-mll/glue", "mnli", 3, ("premise", "hypothesis")),
         "sst2": ("nyu-mll/glue", "sst2", 2, ("sentence",)),
@@ -55,15 +50,14 @@ def main():
     ds_name, subset, num_labels, fields = task_map[args.task]
 
     tok = AutoTokenizer.from_pretrained(args.base_model)
-    model = AutoModelForSequenceClassification.from_pretrained(
-        args.base_model, num_labels=num_labels
-    )
+    model = AutoModelForSequenceClassification.from_pretrained(args.base_model, num_labels=num_labels)
     lora = LoraConfig(
         task_type=TaskType.SEQ_CLS,
         r=args.r,
         lora_alpha=args.alpha,
-        lora_dropout=0.1,
+        lora_dropout=0.05,
         target_modules=["query", "value", "key", "dense"],
+        modules_to_save=["classifier", "score"],
     )
     model = get_peft_model(model, lora)
     model.print_trainable_parameters()
@@ -77,26 +71,29 @@ def main():
     def tokenize(batch):
         if len(fields) == 1:
             return tok(batch[fields[0]], truncation=True, max_length=args.max_length)
-        return tok(
-            batch[fields[0]], batch[fields[1]], truncation=True, max_length=args.max_length
-        )
+        return tok(batch[fields[0]], batch[fields[1]], truncation=True, max_length=args.max_length)
 
     cols = [c for c in train_split.column_names if c not in ("label",)]
     train_ds = train_split.map(tokenize, batched=True, remove_columns=cols)
     train_ds = train_ds.rename_column("label", "labels")
 
+    use_fp16 = torch.cuda.is_available()
     targs = TrainingArguments(
         output_dir=args.output_dir,
         per_device_train_batch_size=args.batch_size,
         num_train_epochs=args.epochs,
         learning_rate=args.lr,
-        logging_steps=20,
+        warmup_steps=args.warmup_steps,
+        weight_decay=args.weight_decay,
+        logging_steps=50,
         save_strategy="no",
         report_to=[],
         max_steps=args.max_steps if args.max_steps > 0 else -1,
         seed=args.seed,
         remove_unused_columns=False,
-        dataloader_pin_memory=False,
+        dataloader_pin_memory=bool(use_fp16),
+        fp16=use_fp16,
+        lr_scheduler_type="linear",
     )
     trainer = Trainer(
         model=model,
@@ -107,6 +104,12 @@ def main():
     trainer.train()
     model.save_pretrained(args.output_dir)
     tok.save_pretrained(args.output_dir)
+    # record the segment-id convention (tokenizer token_type_ids are kept by DataCollatorWithPadding)
+    import sys as _sys
+    from pathlib import Path as _P
+    _sys.path.insert(0, str(_P(__file__).resolve().parents[1]))
+    from lora_merge_cert.eval import write_segment_meta
+    write_segment_meta(args.output_dir, "bert", "trained by scripts/train_lora_glue.py with standard BERT token_type_ids")
     print(f"Saved LoRA adapter to {args.output_dir}")
 
 
