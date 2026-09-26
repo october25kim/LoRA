@@ -1,0 +1,17 @@
+PREREG.md: OK
+prereg.json: OK
+deviations.md: OK
+deviations_d1.json: OK
+train_e1b_d1.py: OK
+run_train_d1.sh: OK
+37 MiB, 0 %
+2026-09-25 22:32:35 KST pipeline start
+2026-09-25 22:34:58 KST stage0 rc=0
+2026-09-25 22:36:01 KST stage1 rc=0
+predictors.csv: OK
+predictors_layers.csv: OK
+predictors_null.json: OK
+predictors_aux.json: OK
+2026-09-26 00:22:04 KST stage2 attempt 1 rc=0
+2026-09-26 00:22:20 KST stage3 rc=0
+2026-09-26 00:22:20 KST === pipeline finished

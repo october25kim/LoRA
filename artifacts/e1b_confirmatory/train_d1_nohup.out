@@ -1,0 +1,4 @@
+deviations.md: OK
+deviations_d1.json: OK
+train_e1b_d1.py: OK
+run_train_d1.sh: OK

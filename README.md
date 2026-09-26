@@ -128,3 +128,39 @@ Evaluate every adapter with the segment-id convention it was **trained** with. `
 `resolve_segment_ids(adapter)` picks the mode in this order: a `segment_ids.json` file in the adapter dir (`train_lora_glue.py` now writes one), then `SEGMENT_ID_REGISTRY`, then `conflict_meta.json` provenance. If none of these apply, it falls back to `"bert"` and issues a loud warning. Calling with `segment_ids=None` keeps the legacy behaviour (`"none"`) and also warns. The scripts accept `--segment-ids {auto,bert,none}`.
 
 Before this fix (2026-09-25), the evaluator always used `"none"`. The locally trained adapters were therefore mis-evaluated (mnli_s7_hubish 0.452 → 0.821, mnli_s42_hubish 0.490 → 0.824, rte_s42_hubish 0.433 → 0.675). Details: `artifacts/seed_fix_segid/`, `artifacts/e1_predictive/diag/`.
+
+## Experiments
+
+Pre-registered studies live under `artifacts/<study>/`. They are kept at their original paths because the pre-registration
+hash manifests (`*.sha256`) use relative paths (e.g. `e1c_seed_diverse/code_e1c.sha256` hashes `../e1b_confirmatory/e1b.py`).
+Every file listed in a manifest is committed **byte-identical** to the run machine; verify with
+`cd artifacts/<study>/<dir> && shasum -a 256 -c <manifest>.sha256`.
+
+Only code and small metadata are committed. **Not** included (regenerable or too large): trained adapters (`adapters/`, `adapters_s1/`),
+tokenized-dataset caches (`cache/`), per-example prediction dumps (`preds/`), training logs (`logs/`), and the raw
+`e3_baselines/e1b_run/results.jsonl` (1.5 MB; aggregated in `method_by_pair.csv` / `analysis.json`). Launch scripts assume the
+repo at `~/Desktop/Workspace/LoRA` (hard-coded in hashed files, so left unchanged; pass `--repo-root` / edit `REPO` to run elsewhere).
+
+| study | question | verdict | start here |
+|---|---|---|---|
+| `artifacts/e1_predictive/` | E1: does per-layer principal-angle overlap O_A predict task-arithmetic merge loss D on 21 Hub GLUE adapter pairs? | **INVALID** (single adapters >2 pp below model card); statistical outcome would be INCONCLUSIVE (ρ = 0.17) | `VERDICT.md`, `e1.py`, `analysis.json`, `pair_results.csv`, `predictors.csv`, `diag/` (segment-id diagnosis) |
+| `artifacts/e1b_confirmatory/` | E1b: confirmatory re-run with 18 self-trained BERT LoRA tasks (14 valid → 91 pairs), held-out selection | H1 (O_A) **FAIL** (ρ = −0.19, CI [−0.52, 0.20]); H2 (task-vector cosine) **INCONCLUSIVE** | `PREREG.md`/`prereg.json` (+`prereg.sha256`), `deviations.md`, `VERDICT.md`, `post_run_notes.md`, `analysis.json`, `stage0.json`, `predictors.csv`, `pair_results.csv`, `method_comparison.md`, `fig_f1_scatter.png`, `fig_f2_heatmap.png`; code `e1b.py`, `tasks.py`, `train_e1b*.py`, `run_*.sh` |
+| `artifacts/e3_baselines/` | E3: pre-registered merge-method baselines (TA, TIES, DARE, TSVM, KNOTS, PICO, GATE, …) on the E1b adapters | No method meets the pre-registered improvement rule vs TA; GATE ≡ TA (gate never active) | `code/PREREG_E3.md`, `code/PREREG_E3_AMENDMENTS.md`, `PREREG_E3_AMENDMENTS_ERRATUM.md` (+`.sha256`), `code/IMPLEMENTATION_NOTES.md`, `e1b_run/E3_E1B_REPORT.md`, `e1b_run/analysis.json`, `e1b_run/method_by_pair.csv`; pilot in `pilot_e1/`; code `code/e3.py`, `code/merges.py`, `code/test_merges.py` |
+| `artifacts/e1c_seed_diverse/` | E1c: E1b replicated on mixed-seed cross-task pairs (seed-0 × seed-1 adapters) | H1c (O_A) **INCONCLUSIVE** (ρ = −0.02); H2c **INCONCLUSIVE** (ρ = 0.13) | `PREREG_E1C.md`/`prereg_e1c.json` (+`.sha256`), `DEVIATIONS_E1C.md`, `VERDICT_E1C.md`, `analysis_e1c.json`, `predictors_e1c.csv`, `pair_results_e1c.csv`, `fig_e1c_*.png`; code `e1c.py`, `e1c_analysis.py`, `make_verdict_e1c.py`, `train_e1c.py`, `run_*_e1c.sh` |
+| `artifacts/seed_fix_segid/` | Re-evaluation of the seed-pair / MNLI×RTE certificates after the segment-id fix (`seg_bert` vs `seg_none`) | see `TABLE_SEED_FIXED.md` | `TABLE_SEED_FIXED.md`, `summary.json`, `seed_fix_segid.py` |
+| `artifacts/lemma_check/` | Per-layer certificate for the `mnli_s7_hubish` × `mnli_s42_hubish` seed pair (θ★ = 30°, subspace A) | 2 / 73 layers FAIL | `seed_pair.json` |
+
+Hash-manifest status: all manifests verify except those superseded by later, documented versions — `e1b_confirmatory/code_pipeline.sha256`
+(`e1b.py` was patched for the stage-3 NaN-p guard; current hash in `code_stage3_rerun.sha256`, see `post_run_notes.md`) and
+`e3_baselines/pilot_e1/code_at_launch.sha256` (pilot ran an earlier `code/` version). `e3_baselines/*/code_at_launch.sha256`
+paths are relative to `e3_baselines/code/`.
+
+### Software / hardware
+
+Runs were produced with Python 3.11.15, torch 2.11.0+cu128, transformers 5.17.0, peft 0.21.0, datasets 5.0.1,
+NVIDIA driver 570.211.01, NVIDIA GeForce RTX 4070 Ti SUPER (16 GB), Ubuntu 24.04.4.
+
+### Withdrawn result
+
+The constructed-conflict result stated in commit `80f5ec7` ("MNLI sum 0.398 → corrected 0.510") is **withdrawn** and should not be
+cited; see `CHANGELOG.md`.

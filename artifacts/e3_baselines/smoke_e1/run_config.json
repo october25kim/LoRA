@@ -1,0 +1,393 @@
+{
+ "grids": {
+  "TA": [
+   {
+    "lam": 0.3
+   },
+   {
+    "lam": 0.5
+   },
+   {
+    "lam": 0.7
+   },
+   {
+    "lam": 0.85
+   },
+   {
+    "lam": 1.0
+   },
+   {
+    "lam": 1.15
+   },
+   {
+    "lam": 1.3
+   },
+   {
+    "lam": 1.5
+   }
+  ],
+  "TIES": [
+   {
+    "k": 10,
+    "lam": 1.5
+   },
+   {
+    "k": 10,
+    "lam": 2.0
+   },
+   {
+    "k": 10,
+    "lam": 2.5
+   },
+   {
+    "k": 20,
+    "lam": 1.0
+   },
+   {
+    "k": 20,
+    "lam": 1.5
+   },
+   {
+    "k": 20,
+    "lam": 2.0
+   },
+   {
+    "k": 30,
+    "lam": 1.0
+   },
+   {
+    "k": 30,
+    "lam": 1.5
+   }
+  ],
+  "DARE_TA": [
+   {
+    "p": 0.5,
+    "lam": 0.5,
+    "seed": 0
+   },
+   {
+    "p": 0.5,
+    "lam": 0.7,
+    "seed": 0
+   },
+   {
+    "p": 0.5,
+    "lam": 1.0,
+    "seed": 0
+   },
+   {
+    "p": 0.5,
+    "lam": 1.3,
+    "seed": 0
+   },
+   {
+    "p": 0.9,
+    "lam": 0.5,
+    "seed": 0
+   },
+   {
+    "p": 0.9,
+    "lam": 0.7,
+    "seed": 0
+   },
+   {
+    "p": 0.9,
+    "lam": 1.0,
+    "seed": 0
+   },
+   {
+    "p": 0.9,
+    "lam": 1.3,
+    "seed": 0
+   }
+  ],
+  "DARE_TIES": [
+   {
+    "p": 0.5,
+    "k": 20,
+    "lam": 0.7,
+    "seed": 0
+   },
+   {
+    "p": 0.5,
+    "k": 20,
+    "lam": 1.0,
+    "seed": 0
+   },
+   {
+    "p": 0.5,
+    "k": 20,
+    "lam": 1.5,
+    "seed": 0
+   },
+   {
+    "p": 0.5,
+    "k": 20,
+    "lam": 2.0,
+    "seed": 0
+   },
+   {
+    "p": 0.9,
+    "k": 20,
+    "lam": 0.7,
+    "seed": 0
+   },
+   {
+    "p": 0.9,
+    "k": 20,
+    "lam": 1.0,
+    "seed": 0
+   },
+   {
+    "p": 0.9,
+    "k": 20,
+    "lam": 1.5,
+    "seed": 0
+   },
+   {
+    "p": 0.9,
+    "k": 20,
+    "lam": 2.0,
+    "seed": 0
+   }
+  ],
+  "TSVM": [
+   {
+    "kmode": "lora",
+    "r": 8,
+    "lam": 0.5
+   },
+   {
+    "kmode": "lora",
+    "r": 8,
+    "lam": 0.7
+   },
+   {
+    "kmode": "lora",
+    "r": 8,
+    "lam": 1.0
+   },
+   {
+    "kmode": "lora",
+    "r": 8,
+    "lam": 1.3
+   },
+   {
+    "kmode": "official",
+    "r": 8,
+    "lam": 0.5
+   },
+   {
+    "kmode": "official",
+    "r": 8,
+    "lam": 0.7
+   },
+   {
+    "kmode": "official",
+    "r": 8,
+    "lam": 1.0
+   },
+   {
+    "kmode": "official",
+    "r": 8,
+    "lam": 1.3
+   }
+  ],
+  "KNOTS": [
+   {
+    "topK": 20,
+    "lam": 1.0,
+    "mask": "ties",
+    "merging_type": "mean"
+   },
+   {
+    "topK": 20,
+    "lam": 1.4,
+    "mask": "ties",
+    "merging_type": "mean"
+   },
+   {
+    "topK": 20,
+    "lam": 1.8,
+    "mask": "ties",
+    "merging_type": "mean"
+   },
+   {
+    "topK": 20,
+    "lam": 2.2,
+    "mask": "ties",
+    "merging_type": "mean"
+   },
+   {
+    "topK": 100,
+    "lam": 1.0,
+    "mask": "ties",
+    "merging_type": "mean"
+   },
+   {
+    "topK": 100,
+    "lam": 1.4,
+    "mask": "ties",
+    "merging_type": "mean"
+   },
+   {
+    "topK": 100,
+    "lam": 1.8,
+    "mask": "ties",
+    "merging_type": "mean"
+   },
+   {
+    "topK": 100,
+    "lam": 2.2,
+    "mask": "ties",
+    "merging_type": "mean"
+   }
+  ],
+  "PICO_TA": [
+   {
+    "c": 0.6
+   },
+   {
+    "c": 0.75
+   },
+   {
+    "c": 0.9
+   },
+   {
+    "c": 1.0
+   },
+   {
+    "c": 1.1
+   },
+   {
+    "c": 1.25
+   },
+   {
+    "c": 1.4
+   },
+   {
+    "c": 1.6
+   }
+  ],
+  "GATE": [
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 0.3
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 0.5
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 0.7
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 0.85
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 1.0
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 1.15
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 1.3
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 1.5
+   }
+  ],
+  "PICO_TIES": [
+   {
+    "k": 20,
+    "c": 0.75
+   },
+   {
+    "k": 20,
+    "c": 1.0
+   },
+   {
+    "k": 20,
+    "c": 1.25
+   },
+   {
+    "k": 20,
+    "c": 1.5
+   }
+  ],
+  "SOFTGATE": [
+   {
+    "theta": 30.0,
+    "beta": 0.25,
+    "lam": 0.7
+   },
+   {
+    "theta": 30.0,
+    "beta": 0.25,
+    "lam": 1.0
+   },
+   {
+    "theta": 30.0,
+    "beta": 0.5,
+    "lam": 0.7
+   },
+   {
+    "theta": 30.0,
+    "beta": 0.5,
+    "lam": 1.0
+   },
+   {
+    "theta": 30.0,
+    "beta": 0.75,
+    "lam": 0.7
+   },
+   {
+    "theta": 30.0,
+    "beta": 0.75,
+    "lam": 1.0
+   }
+  ]
+ },
+ "grid_sizes": {
+  "TA": 8,
+  "TIES": 8,
+  "DARE_TA": 8,
+  "DARE_TIES": 8,
+  "TSVM": 8,
+  "KNOTS": 8,
+  "PICO_TA": 8,
+  "GATE": 8,
+  "PICO_TIES": 4,
+  "SOFTGATE": 6
+ },
+ "setting": "e1",
+ "tasks": [
+  "cola",
+  "sst2",
+  "mrpc",
+  "qqp",
+  "mnli",
+  "qnli",
+  "rte"
+ ],
+ "n_pairs": 1,
+ "bs": 128,
+ "mem_frac": 0.22,
+ "merges_sha256": "7a59889616cc23c23e624979e0c3ad13d25f358360a16f1cc48658ec72faf8c1",
+ "e3_sha256": "aff0c8fda755124b6523f1ffa06c9502c555644a70f26099ff46ac9f9122b0a2"
+}

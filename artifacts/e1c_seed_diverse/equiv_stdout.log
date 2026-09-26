@@ -1,0 +1,18 @@
+2026-09-26 05:39:47 KST | === e1c.py ['e1c.py', '--stage', 'equiv']
+2026-09-26 05:40:50 KST | equiv stage1: {'n_ref': 91, 'n_matched': 91, 'max_rel_diff': {'O_A': 0.0, 'O_B': 0.0, 'tv_cosine': 0.0, 'mean_theta_min_A_deg': 0.0, 'min_theta_min_A_deg': 0.0, 'n_layers_theta_min_lt30_A': 0.0, 'mean_theta_min_B_deg': 0.0, 'null_z_O_A': 0.0, 'sign_conflict_top20': 0.0, 'sign_conflict_all': 0.0, 'norm_ratio': 0.0, 'tvnorm_t1': 0.0, 'tvnorm_t2': 0.0}, 'stage1_ok': True}
+[transformers] [1mBertModel LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+2026-09-26 05:40:58 KST | e1c stage2[equiv] cola@s0__sst2@s0: lam*=0.7 D=0.0630 TIES(atTA/own)=0.8975/0.9206 GATE(0 layers)=0.9370 [5s]
+2026-09-26 05:41:09 KST | e1c stage2[equiv] rte@s0__wic@s0: lam*=0.7 D=0.0557 TIES(atTA/own)=0.9207/0.9398 GATE(0 layers)=0.9443 [12s]
+2026-09-26 05:41:09 KST | equiv done: ok=True stage2={'cola-sst2': {'max_abs_diff': np.float64(4.899336492059092e-11), 'lam_equal': True}, 'rte-wic': {'max_abs_diff': np.float64(4.2599257454867256e-11), 'lam_equal': True}}

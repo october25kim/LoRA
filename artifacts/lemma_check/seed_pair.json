@@ -1,0 +1,1187 @@
+{
+ "adapter_1": "adapters/mnli_s7_hubish",
+ "adapter_2": "adapters/mnli_s42_hubish",
+ "theta_star_deg": 30.0,
+ "subspace": "A",
+ "n_layers": 73,
+ "layers": [
+  {
+   "layer": "base_model.model.bert.encoder.layer.0.attention.output.dense",
+   "theta_deg": [
+    73.965,
+    79.129,
+    80.015,
+    82.236,
+    85.349,
+    86.368,
+    86.682,
+    88.427
+   ],
+   "theta_min_deg": 73.96463065037902,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.0.attention.self.key",
+   "theta_deg": [
+    65.779,
+    70.599,
+    80.54,
+    83.117,
+    83.783,
+    85.477,
+    88.279,
+    89.563
+   ],
+   "theta_min_deg": 65.77918804509869,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.0.attention.self.query",
+   "theta_deg": [
+    68.32,
+    74.355,
+    80.959,
+    83.671,
+    84.668,
+    86.083,
+    86.635,
+    87.402
+   ],
+   "theta_min_deg": 68.31977420459228,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.0.attention.self.value",
+   "theta_deg": [
+    59.56,
+    72.431,
+    80.668,
+    82.089,
+    85.541,
+    86.569,
+    88.671,
+    89.127
+   ],
+   "theta_min_deg": 59.55996499747329,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.0.intermediate.dense",
+   "theta_deg": [
+    81.628,
+    83.171,
+    84.298,
+    86.923,
+    87.788,
+    88.629,
+    89.294,
+    89.646
+   ],
+   "theta_min_deg": 81.62822737986465,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.0.output.dense",
+   "theta_deg": [
+    73.173,
+    77.659,
+    80.317,
+    82.14,
+    84.104,
+    85.494,
+    86.785,
+    88.409
+   ],
+   "theta_min_deg": 73.17289090791022,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.1.attention.output.dense",
+   "theta_deg": [
+    71.25,
+    78.178,
+    79.142,
+    83.562,
+    85.351,
+    86.717,
+    88.677,
+    89.488
+   ],
+   "theta_min_deg": 71.25034326471591,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.1.attention.self.key",
+   "theta_deg": [
+    62.03,
+    79.729,
+    82.074,
+    84.054,
+    84.902,
+    87.554,
+    88.337,
+    89.68
+   ],
+   "theta_min_deg": 62.029545891828235,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.1.attention.self.query",
+   "theta_deg": [
+    70.4,
+    76.096,
+    80.333,
+    83.045,
+    85.491,
+    85.609,
+    87.24,
+    89.22
+   ],
+   "theta_min_deg": 70.40042041736783,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.1.attention.self.value",
+   "theta_deg": [
+    54.136,
+    76.382,
+    79.012,
+    81.072,
+    82.944,
+    85.814,
+    86.925,
+    89.407
+   ],
+   "theta_min_deg": 54.13557576802975,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.1.intermediate.dense",
+   "theta_deg": [
+    81.648,
+    85.142,
+    85.398,
+    86.654,
+    87.764,
+    88.155,
+    88.924,
+    89.736
+   ],
+   "theta_min_deg": 81.64834597693675,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.1.output.dense",
+   "theta_deg": [
+    76.069,
+    77.722,
+    80.792,
+    82.109,
+    85.36,
+    86.997,
+    89.118,
+    89.931
+   ],
+   "theta_min_deg": 76.06865974665703,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.10.attention.output.dense",
+   "theta_deg": [
+    49.477,
+    63.187,
+    72.762,
+    74.323,
+    76.945,
+    82.059,
+    85.329,
+    87.302
+   ],
+   "theta_min_deg": 49.47660291713357,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.10.attention.self.key",
+   "theta_deg": [
+    61.609,
+    70.832,
+    76.306,
+    77.03,
+    78.802,
+    82.524,
+    86.868,
+    89.497
+   ],
+   "theta_min_deg": 61.60864837729546,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.10.attention.self.query",
+   "theta_deg": [
+    63.102,
+    66.599,
+    69.873,
+    71.572,
+    74.592,
+    79.856,
+    80.559,
+    85.764
+   ],
+   "theta_min_deg": 63.10153947429277,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.10.attention.self.value",
+   "theta_deg": [
+    63.029,
+    67.4,
+    73.031,
+    78.404,
+    79.115,
+    82.38,
+    87.732,
+    89.383
+   ],
+   "theta_min_deg": 63.029162535263545,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.10.intermediate.dense",
+   "theta_deg": [
+    68.003,
+    83.021,
+    83.21,
+    85.74,
+    86.502,
+    87.079,
+    89.5,
+    89.812
+   ],
+   "theta_min_deg": 68.00286781489936,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.10.output.dense",
+   "theta_deg": [
+    72.045,
+    80.628,
+    82.14,
+    82.832,
+    83.331,
+    85.159,
+    86.585,
+    89.664
+   ],
+   "theta_min_deg": 72.04540070553901,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.11.attention.output.dense",
+   "theta_deg": [
+    68.598,
+    77.566,
+    78.615,
+    81.603,
+    85.87,
+    86.586,
+    87.78,
+    88.29
+   ],
+   "theta_min_deg": 68.5980239151645,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.11.attention.self.key",
+   "theta_deg": [
+    61.937,
+    65.939,
+    74.026,
+    78.747,
+    83.009,
+    84.8,
+    88.364,
+    89.392
+   ],
+   "theta_min_deg": 61.93708044619277,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.11.attention.self.query",
+   "theta_deg": [
+    53.243,
+    74.044,
+    76.155,
+    80.176,
+    81.666,
+    83.603,
+    88.264,
+    89.888
+   ],
+   "theta_min_deg": 53.24328070414296,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.11.attention.self.value",
+   "theta_deg": [
+    47.62,
+    56.435,
+    59.879,
+    66.806,
+    72.435,
+    80.497,
+    83.353,
+    89.755
+   ],
+   "theta_min_deg": 47.62048403627336,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.11.intermediate.dense",
+   "theta_deg": [
+    46.995,
+    82.764,
+    86.741,
+    87.113,
+    87.709,
+    88.397,
+    89.71,
+    89.768
+   ],
+   "theta_min_deg": 46.99548446899105,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.11.output.dense",
+   "theta_deg": [
+    26.455,
+    74.884,
+    79.074,
+    81.549,
+    85.843,
+    87.401,
+    88.401,
+    89.043
+   ],
+   "theta_min_deg": 26.4554646528133,
+   "status": "FAIL",
+   "k": 1,
+   "c": 0.10181651416646331,
+   "cos_X1_X2": 0.1071872835761904,
+   "mu_equiv": 0.9075921327577046,
+   "eps_rel_residual": 0.8571491727225506,
+   "regime": "aligned (c>0): coefficient reduction mu in (0,1)",
+   "norm_X1": 14.372456310096307,
+   "norm_X2": 13.652304197667451,
+   "share_dW2_energy_removed": 0.4298932604468294,
+   "share_dW1_energy_in_U": 0.496259738294817,
+   "edit_size_rel_to_merge": 0.4569609421764616,
+   "identity_residuals": [
+    1.2005136634309379e-14,
+    1.3803952765162052e-14,
+    8.565439644873773e-15
+   ],
+   "per_direction": [
+    {
+     "c_j": 0.10181651416646328,
+     "cos_j": 0.10718728357619038,
+     "norm_ratio_X2_over_X1": 0.9498935952984622
+    }
+   ],
+   "frac_entries_sign_flipped_by_gate": 0.08619944254557292,
+   "entrywise_sign_conflict_dW1_vs_dW2": 0.4936269124348958,
+   "entrywise_sign_conflict_dW1_vs_gated_dW2": 0.5023676554361979
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.2.attention.output.dense",
+   "theta_deg": [
+    73.801,
+    77.87,
+    82.239,
+    82.505,
+    84.626,
+    86.594,
+    88.416,
+    89.693
+   ],
+   "theta_min_deg": 73.80066780594277,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.2.attention.self.key",
+   "theta_deg": [
+    72.042,
+    78.802,
+    80.572,
+    83.141,
+    85.013,
+    86.459,
+    87.672,
+    89.422
+   ],
+   "theta_min_deg": 72.04235904658954,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.2.attention.self.query",
+   "theta_deg": [
+    66.446,
+    74.698,
+    80.019,
+    83.74,
+    85.344,
+    86.691,
+    88.322,
+    89.624
+   ],
+   "theta_min_deg": 66.44620571698945,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.2.attention.self.value",
+   "theta_deg": [
+    73.931,
+    81.033,
+    82.315,
+    83.923,
+    85.016,
+    86.037,
+    87.634,
+    88.827
+   ],
+   "theta_min_deg": 73.93106309746402,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.2.intermediate.dense",
+   "theta_deg": [
+    77.49,
+    84.806,
+    85.032,
+    86.316,
+    87.201,
+    87.726,
+    89.032,
+    89.471
+   ],
+   "theta_min_deg": 77.48967328176775,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.2.output.dense",
+   "theta_deg": [
+    74.205,
+    78.882,
+    81.906,
+    84.553,
+    86.492,
+    86.71,
+    88.375,
+    89.873
+   ],
+   "theta_min_deg": 74.2052644643493,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.3.attention.output.dense",
+   "theta_deg": [
+    62.756,
+    74.722,
+    80.093,
+    82.801,
+    85.317,
+    86.009,
+    88.806,
+    89.425
+   ],
+   "theta_min_deg": 62.75576481102428,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.3.attention.self.key",
+   "theta_deg": [
+    71.343,
+    76.513,
+    82.379,
+    82.996,
+    84.123,
+    86.394,
+    88.558,
+    89.521
+   ],
+   "theta_min_deg": 71.34256866803459,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.3.attention.self.query",
+   "theta_deg": [
+    74.218,
+    77.936,
+    79.605,
+    80.799,
+    84.794,
+    85.724,
+    87.544,
+    89.439
+   ],
+   "theta_min_deg": 74.21757065943211,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.3.attention.self.value",
+   "theta_deg": [
+    74.38,
+    74.628,
+    77.694,
+    81.574,
+    84.147,
+    84.571,
+    88.357,
+    89.712
+   ],
+   "theta_min_deg": 74.37966080448457,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.3.intermediate.dense",
+   "theta_deg": [
+    75.111,
+    85.252,
+    85.902,
+    86.821,
+    88.079,
+    88.556,
+    89.427,
+    89.601
+   ],
+   "theta_min_deg": 75.11118792454772,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.3.output.dense",
+   "theta_deg": [
+    74.835,
+    76.26,
+    81.526,
+    84.877,
+    86.207,
+    87.78,
+    88.486,
+    89.545
+   ],
+   "theta_min_deg": 74.834951877329,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.4.attention.output.dense",
+   "theta_deg": [
+    66.736,
+    76.521,
+    82.256,
+    83.428,
+    85.585,
+    87.475,
+    88.523,
+    89.81
+   ],
+   "theta_min_deg": 66.73641484646464,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.4.attention.self.key",
+   "theta_deg": [
+    77.331,
+    79.27,
+    81.357,
+    82.423,
+    85.917,
+    86.174,
+    87.106,
+    88.957
+   ],
+   "theta_min_deg": 77.33080690169118,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.4.attention.self.query",
+   "theta_deg": [
+    69.343,
+    73.786,
+    80.091,
+    81.414,
+    84.967,
+    85.579,
+    88.079,
+    89.588
+   ],
+   "theta_min_deg": 69.34321143063956,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.4.attention.self.value",
+   "theta_deg": [
+    75.034,
+    77.28,
+    78.437,
+    82.012,
+    83.801,
+    84.65,
+    86.4,
+    87.721
+   ],
+   "theta_min_deg": 75.03403692343926,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.4.intermediate.dense",
+   "theta_deg": [
+    73.635,
+    84.549,
+    85.912,
+    86.732,
+    87.145,
+    88.056,
+    89.203,
+    89.668
+   ],
+   "theta_min_deg": 73.63478556083139,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.4.output.dense",
+   "theta_deg": [
+    68.027,
+    74.872,
+    80.935,
+    82.251,
+    85.194,
+    85.716,
+    88.783,
+    89.044
+   ],
+   "theta_min_deg": 68.02708275924844,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.5.attention.output.dense",
+   "theta_deg": [
+    60.64,
+    75.629,
+    79.143,
+    82.244,
+    83.294,
+    86.375,
+    86.77,
+    87.863
+   ],
+   "theta_min_deg": 60.639907120046,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.5.attention.self.key",
+   "theta_deg": [
+    75.289,
+    78.863,
+    80.474,
+    82.704,
+    83.124,
+    85.642,
+    88.267,
+    89.137
+   ],
+   "theta_min_deg": 75.2888227173277,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.5.attention.self.query",
+   "theta_deg": [
+    74.572,
+    77.526,
+    80.499,
+    83.966,
+    84.747,
+    87.257,
+    88.084,
+    89.891
+   ],
+   "theta_min_deg": 74.5715951658369,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.5.attention.self.value",
+   "theta_deg": [
+    76.407,
+    80.377,
+    82.245,
+    83.191,
+    84.08,
+    86.444,
+    87.324,
+    89.848
+   ],
+   "theta_min_deg": 76.40671745490133,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.5.intermediate.dense",
+   "theta_deg": [
+    75.477,
+    84.324,
+    85.375,
+    86.618,
+    87.24,
+    87.976,
+    88.59,
+    89.867
+   ],
+   "theta_min_deg": 75.47685241573878,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.5.output.dense",
+   "theta_deg": [
+    74.508,
+    78.799,
+    81.079,
+    83.814,
+    86.051,
+    86.671,
+    88.007,
+    89.798
+   ],
+   "theta_min_deg": 74.50777622127588,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.6.attention.output.dense",
+   "theta_deg": [
+    62.367,
+    76.533,
+    79.091,
+    81.501,
+    83.018,
+    86.142,
+    88.078,
+    89.987
+   ],
+   "theta_min_deg": 62.366986660819805,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.6.attention.self.key",
+   "theta_deg": [
+    71.943,
+    79.603,
+    80.992,
+    83.211,
+    84.827,
+    85.789,
+    87.795,
+    88.745
+   ],
+   "theta_min_deg": 71.94299754449669,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.6.attention.self.query",
+   "theta_deg": [
+    74.711,
+    79.362,
+    83.19,
+    85.3,
+    85.748,
+    86.652,
+    88.821,
+    89.572
+   ],
+   "theta_min_deg": 74.71097744806355,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.6.attention.self.value",
+   "theta_deg": [
+    71.367,
+    78.426,
+    79.09,
+    83.053,
+    84.87,
+    87.259,
+    88.194,
+    89.4
+   ],
+   "theta_min_deg": 71.36680909781792,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.6.intermediate.dense",
+   "theta_deg": [
+    67.741,
+    84.423,
+    84.58,
+    86.486,
+    87.418,
+    88.468,
+    88.796,
+    89.897
+   ],
+   "theta_min_deg": 67.74141451172677,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.6.output.dense",
+   "theta_deg": [
+    75.373,
+    77.588,
+    80.551,
+    83.436,
+    85.112,
+    87.315,
+    88.299,
+    89.871
+   ],
+   "theta_min_deg": 75.37317908019608,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.7.attention.output.dense",
+   "theta_deg": [
+    70.265,
+    76.035,
+    77.194,
+    80.516,
+    81.966,
+    83.666,
+    88.179,
+    88.645
+   ],
+   "theta_min_deg": 70.26491635712608,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.7.attention.self.key",
+   "theta_deg": [
+    69.997,
+    75.445,
+    81.261,
+    82.26,
+    85.419,
+    86.644,
+    87.506,
+    89.918
+   ],
+   "theta_min_deg": 69.9966922229756,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.7.attention.self.query",
+   "theta_deg": [
+    68.715,
+    78.309,
+    82.409,
+    84.22,
+    84.538,
+    84.963,
+    86.771,
+    89.24
+   ],
+   "theta_min_deg": 68.71534564597195,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.7.attention.self.value",
+   "theta_deg": [
+    70.996,
+    74.647,
+    77.825,
+    82.193,
+    82.595,
+    84.654,
+    87.584,
+    88.843
+   ],
+   "theta_min_deg": 70.99611577115395,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.7.intermediate.dense",
+   "theta_deg": [
+    71.608,
+    82.983,
+    83.833,
+    85.645,
+    86.132,
+    86.427,
+    88.604,
+    89.805
+   ],
+   "theta_min_deg": 71.60842097674066,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.7.output.dense",
+   "theta_deg": [
+    60.486,
+    73.748,
+    76.627,
+    80.03,
+    81.395,
+    84.667,
+    89.273,
+    89.912
+   ],
+   "theta_min_deg": 60.4858714276665,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.8.attention.output.dense",
+   "theta_deg": [
+    66.847,
+    71.056,
+    75.654,
+    78.991,
+    80.628,
+    84.046,
+    87.835,
+    89.792
+   ],
+   "theta_min_deg": 66.84724348208819,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.8.attention.self.key",
+   "theta_deg": [
+    63.938,
+    69.763,
+    78.472,
+    80.828,
+    85.052,
+    86.282,
+    87.632,
+    89.134
+   ],
+   "theta_min_deg": 63.93834761748747,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.8.attention.self.query",
+   "theta_deg": [
+    60.282,
+    70.738,
+    74.075,
+    77.985,
+    80.506,
+    85.987,
+    88.627,
+    89.575
+   ],
+   "theta_min_deg": 60.281788511632435,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.8.attention.self.value",
+   "theta_deg": [
+    67.729,
+    73.319,
+    78.384,
+    80.302,
+    83.804,
+    86.952,
+    88.577,
+    89.568
+   ],
+   "theta_min_deg": 67.72887893224335,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.8.intermediate.dense",
+   "theta_deg": [
+    68.146,
+    82.555,
+    84.19,
+    84.716,
+    86.323,
+    86.964,
+    88.552,
+    89.904
+   ],
+   "theta_min_deg": 68.14608291814048,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.8.output.dense",
+   "theta_deg": [
+    71.841,
+    74.826,
+    75.982,
+    79.11,
+    81.532,
+    86.033,
+    88.446,
+    89.834
+   ],
+   "theta_min_deg": 71.84095614755117,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.9.attention.output.dense",
+   "theta_deg": [
+    63.582,
+    65.995,
+    73.602,
+    80.201,
+    80.679,
+    85.574,
+    87.999,
+    88.698
+   ],
+   "theta_min_deg": 63.58231258239129,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.9.attention.self.key",
+   "theta_deg": [
+    63.61,
+    70.218,
+    71.861,
+    74.065,
+    75.694,
+    80.065,
+    87.05,
+    87.723
+   ],
+   "theta_min_deg": 63.6098681338264,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.9.attention.self.query",
+   "theta_deg": [
+    58.314,
+    65.692,
+    69.538,
+    73.111,
+    76.512,
+    81.838,
+    85.046,
+    89.55
+   ],
+   "theta_min_deg": 58.31386751409224,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.9.attention.self.value",
+   "theta_deg": [
+    59.385,
+    66.416,
+    71.339,
+    77.193,
+    79.811,
+    82.034,
+    87.074,
+    89.744
+   ],
+   "theta_min_deg": 59.385299498612206,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.9.intermediate.dense",
+   "theta_deg": [
+    76.625,
+    84.735,
+    85.509,
+    86.025,
+    87.487,
+    88.318,
+    88.688,
+    89.948
+   ],
+   "theta_min_deg": 76.62454777762241,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.encoder.layer.9.output.dense",
+   "theta_deg": [
+    74.261,
+    78.355,
+    79.699,
+    81.564,
+    84.542,
+    85.98,
+    87.6,
+    88.66
+   ],
+   "theta_min_deg": 74.26107659201666,
+   "status": "PASS"
+  },
+  {
+   "layer": "base_model.model.bert.pooler.dense",
+   "theta_deg": [
+    20.599,
+    38.958,
+    41.783,
+    54.365,
+    69.197,
+    73.206,
+    83.108,
+    86.884
+   ],
+   "theta_min_deg": 20.598605791000445,
+   "status": "FAIL",
+   "k": 1,
+   "c": 0.18952558704645694,
+   "cos_X1_X2": 0.18432058348059357,
+   "mu_equiv": 0.8406712818031589,
+   "eps_rel_residual": 0.8496002195368323,
+   "regime": "aligned (c>0): coefficient reduction mu in (0,1)",
+   "norm_X1": 6.2703606421697,
+   "norm_X2": 6.447428492571654,
+   "share_dW2_energy_removed": 0.1920439598939872,
+   "share_dW1_energy_in_U": 0.1577597769533557,
+   "edit_size_rel_to_merge": 0.26503021501714874,
+   "identity_residuals": [
+    5.266790402610599e-15,
+    6.615426576880146e-15,
+    5.151569049760005e-15
+   ],
+   "per_direction": [
+    {
+     "c_j": 0.18952558704645694,
+     "cos_j": 0.18432058348059357,
+     "norm_ratio_X2_over_X1": 1.0282388622452001
+    }
+   ],
+   "frac_entries_sign_flipped_by_gate": 0.0783810085720486,
+   "entrywise_sign_conflict_dW1_vs_dW2": 0.4178500705295139,
+   "entrywise_sign_conflict_dW1_vs_gated_dW2": 0.4218326144748264
+  }
+ ],
+ "n_fail": 2,
+ "summary_fail_layers": [
+  {
+   "layer": "base_model.model.bert.encoder.layer.11.output.dense",
+   "theta_min_deg": 26.4554646528133,
+   "k": 1,
+   "c": 0.10181651416646331,
+   "cos_X1_X2": 0.1071872835761904,
+   "mu_equiv": 0.9075921327577046,
+   "eps_rel_residual": 0.8571491727225506,
+   "regime": "aligned (c>0): coefficient reduction mu in (0,1)",
+   "edit_size_rel_to_merge": 0.4569609421764616,
+   "frac_entries_sign_flipped_by_gate": 0.08619944254557292,
+   "entrywise_sign_conflict_dW1_vs_dW2": 0.4936269124348958,
+   "entrywise_sign_conflict_dW1_vs_gated_dW2": 0.5023676554361979
+  },
+  {
+   "layer": "base_model.model.bert.pooler.dense",
+   "theta_min_deg": 20.598605791000445,
+   "k": 1,
+   "c": 0.18952558704645694,
+   "cos_X1_X2": 0.18432058348059357,
+   "mu_equiv": 0.8406712818031589,
+   "eps_rel_residual": 0.8496002195368323,
+   "regime": "aligned (c>0): coefficient reduction mu in (0,1)",
+   "edit_size_rel_to_merge": 0.26503021501714874,
+   "frac_entries_sign_flipped_by_gate": 0.0783810085720486,
+   "entrywise_sign_conflict_dW1_vs_dW2": 0.4178500705295139,
+   "entrywise_sign_conflict_dW1_vs_gated_dW2": 0.4218326144748264
+  }
+ ]
+}

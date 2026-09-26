@@ -1,0 +1,3 @@
+2026-09-26 00:36:23 KST | === e3.py ['e3.py', '--setting', 'e1b', '--stage', 'run', '--out', '../smoke_e1b', '--mem-frac', '0.8', '--max-pairs', '1']
+2026-09-26 00:37:24 KST | cola-sst2: TA=0.9370(lam 0.7) TIES=0.9264 DARE_TA=0.9341 DARE_TIES=0.9236 TSVM=0.9432 KNOTS=0.9344 PICO_TA=0.9374 GATE=0.9370 FORCEGATE=0.9374 PICO_TIES=0.9182 SOFTGATE=0.9363 [58s]
+2026-09-26 00:37:24 KST | run done

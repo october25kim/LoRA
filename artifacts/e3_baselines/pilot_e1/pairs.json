@@ -1,0 +1,34 @@
+{
+ "tasks": [
+  "cola",
+  "sst2",
+  "mrpc",
+  "qqp",
+  "mnli",
+  "qnli",
+  "rte"
+ ],
+ "pairs": [
+  "cola-sst2",
+  "cola-mrpc",
+  "cola-qqp",
+  "cola-mnli",
+  "cola-qnli",
+  "cola-rte",
+  "sst2-mrpc",
+  "sst2-qqp",
+  "sst2-mnli",
+  "sst2-qnli",
+  "sst2-rte",
+  "mrpc-qqp",
+  "mrpc-mnli",
+  "mrpc-qnli",
+  "mrpc-rte",
+  "qqp-mnli",
+  "qqp-qnli",
+  "qqp-rte",
+  "mnli-qnli",
+  "mnli-rte",
+  "qnli-rte"
+ ]
+}
