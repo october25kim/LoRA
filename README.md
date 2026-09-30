@@ -136,9 +136,18 @@ A Pre-Registered Study". `artifacts/` holds, per study (E1–E7), the pre-regist
 hashes and time stamps, deviations logs, verdicts, pair-level result files and the analysis scripts that produce
 every number in the paper. E7 is exploratory/post hoc (plan hashed before evaluation).
 
-Trained LoRA adapters: not in this repository (about 1.9 GB of fp32 `adapter_model.safetensors`). They will be
-published on the Hugging Face Hub with a `MANIFEST.sha256`, and the link will be added here. The sha256 of every
-adapter is already recorded in each study's `predictors_aux_*.json` (`adapter_sha256`).
+Trained LoRA adapters (exact fp32 `adapter_model.safetensors` with `adapter_config.json` and `train_meta.json`; 116 adapters,
+about 1.9 GB) are on the Hugging Face Hub, one repository per base model, each with a model card and a `MANIFEST.sha256`:
+
+| base model | studies | adapters | repository |
+|---|---|---:|---|
+| bert-base-uncased | E1b (seed 0), E1c (seed 1); `excluded/` qqp, boolq, 2 cap-60k diagnostics | 32 | https://huggingface.co/october25kim/lora-merge-prereg-bert-base-uncased |
+| roberta-base | E4a (seeds 0, 1); `excluded/` rte | 28 | https://huggingface.co/october25kim/lora-merge-prereg-roberta-base |
+| Qwen2.5-0.5B | E4b (seeds 0, 1), reused by E5 | 28 | https://huggingface.co/october25kim/lora-merge-prereg-qwen2.5-0.5b |
+| Qwen2.5-1.5B | E6 (seeds 0, 1) | 28 | https://huggingface.co/october25kim/lora-merge-prereg-qwen2.5-1.5b |
+
+The adapter hashes match those frozen in the study files (`predictors_aux_*.json` → `adapter_sha256`, and
+`e1b_confirmatory/stage0.json` / `e4a_roberta/s*/stage0.json`) for all adapters except the two unhashed cap-60k diagnostics.
 
 Code: MIT (see `LICENSE`). Base models (bert-base-uncased, roberta-base, Qwen2.5-0.5B/1.5B) and datasets keep their
 own licenses.
