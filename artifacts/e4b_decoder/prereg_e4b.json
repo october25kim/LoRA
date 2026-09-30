@@ -1,0 +1,473 @@
+{
+ "study": "E4b: Qwen2.5-0.5B (decoder LLM) second-backbone replication of E1b/E1c (LoRA merge-overlap paper)",
+ "written_kst": "2026-09-26, before any E4b training (pilot included); see prereg_e4b.sha256 file time",
+ "written_after_results_known": {
+  "E1b": "BERT-base seed 0: H1 FAIL rho=-0.194; H2 INCONCLUSIVE rho=-0.044; gate 0/91",
+  "E1c": "BERT-base mixed seed P: H1c INCONCLUSIVE rho=-0.025; H2c INCONCLUSIVE rho=0.127; min theta 39.8 deg; gate 0/196",
+  "E4a": "RoBERTa-base: pre-registered; pilot chose lr 5e-4 (rte diverged at 1e-3); main training/merges running when this was written; NO E4a eval-set, integrity or merge result was known"
+ },
+ "base_studies": {
+  "E1b_prereg_json_sha256": "f9c43e5140452ea3f1b25e053be16d61b20d8bf47858f545b3e1ddae1646a341",
+  "E1b_e1b_py_sha256": "4610d045fec73b9356481e9c6bb14a8c15a99259b43b0518bd2afe87fff1c9d6",
+  "E1b_tasks_py_sha256": "34dd6bd222880b35a9a8d4bd2be7b907bfa4995ce46e8699539a0978a2e60b53",
+  "E3_e3_py_sha256": "a25e393e60d0e076d0c54a2e41301ebfb7a303b38a94bb9c671cf69e8e1d020c",
+  "E3_merges_py_sha256": "7ec5774b491102bfadeeec68f6e9be429b3f6894b40e1ed6c128b2de1bf68300",
+  "E4a_prereg_md_sha256": "b833c774d3d776d073440e11ecb39b9be7f598414e4542eca79785c38919e542",
+  "E4a_prereg_json_sha256": "c803d8eb7c8522c7197551876c9aae2b6243169f5bd35a6c7b6e8a61c88f3f06",
+  "probe_qwen_json_sha256": "4a3d91d0350a5156aab4df1e2ac1f6b0d012a057c9aa8753f5e2b1d2399b67d4"
+ },
+ "tasks": [
+  "cola",
+  "sst2",
+  "mrpc",
+  "stsb",
+  "mnli",
+  "qnli",
+  "rte",
+  "wic",
+  "snli",
+  "scitail",
+  "ag_news",
+  "imdb",
+  "trec",
+  "yelp_polarity"
+ ],
+ "seeds_max": [
+  0,
+  1
+ ],
+ "seeds_rule": "seeds [0,1] (primary P) iff the pilot-projected core cost <= pilot.cost_rule.two_seed_if_core_h_le hours, else seed [0] only (primary R0); decided automatically in pilot/pilot_decision.json",
+ "recipe": {
+  "base_model": "Qwen/Qwen2.5-0.5B",
+  "base_revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+  "model_class": "AutoModelForSequenceClassification -> Qwen2ForSequenceClassification (pooling: last non-pad token, i.e. the rightmost token != pad_token_id)",
+  "pad_token": "<|endoftext|>",
+  "pad_token_id": 151643,
+  "padding_side": "right",
+  "special_tokens": "none added (Qwen2 tokenizer adds no BOS/EOS); the pooled token is the last text token",
+  "pair_encoding": "tokenizer(a + '\\n', b): concatenation of the two token sequences; truncation longest_first at 256",
+  "max_seq_len": 256,
+  "r": 8,
+  "lora_alpha": 16,
+  "lora_dropout": 0.1,
+  "target_modules": [
+   "q_proj",
+   "k_proj",
+   "v_proj",
+   "o_proj",
+   "gate_proj",
+   "up_proj",
+   "down_proj"
+  ],
+  "lora_layers_expected": 168,
+  "modules_to_save": [
+   "score"
+  ],
+  "head": "score: Linear(896, num_labels, bias=False), randomly initialized (seeded), fully trained, saved with the adapter",
+  "task_type": "SEQ_CLS",
+  "lr": null,
+  "lr_note": "chosen by the pre-registered pilot (pilot.lr_candidates, held-out only)",
+  "batch_size": 32,
+  "micro_batch": {
+   "default": 32,
+   "imdb": 16,
+   "yelp_polarity": 16
+  },
+  "micro_batch_note": "micro-batch x gradient accumulation = 32; OOM fallback: halve the micro-batch (double accumulation), automatic retry",
+  "weight_decay": 0.01,
+  "scheduler": "linear with warmup; warmup_steps = min(500, round(0.1*max_steps))",
+  "optimizer": "AdamW (HF Trainer default)",
+  "precision_training": "fp32 master weights (model loaded in float32) + bf16 autocast (Trainer bf16=True)",
+  "logging_steps": 25,
+  "seed_applies_to": [
+   "transformers.set_seed before model construction (LoRA-A init, head init)",
+   "TrainingArguments.seed (dropout)",
+   "TrainingArguments.data_seed (data order)"
+  ]
+ },
+ "budgets": {
+  "rule": "pool (= n_train_total - 1000 held-out) <= 10,000: full pool, 10 epochs (identical to E1b); otherwise min(pool, 50,000) examples = the first ones of the E1b seed-0 permutation after the held-out 1,000 (nested in E1b's 60k subset), 1 epoch, or 2 epochs if pool < 30,000; steps = ceil(n/32) x epochs",
+  "per_task": {
+   "cola": {
+    "n_pool": 7551,
+    "n_train_used": 7551,
+    "epochs": 10,
+    "steps_per_epoch": 236,
+    "max_steps": 2360,
+    "warmup_steps": 236,
+    "n_eval_total": 1043,
+    "n_eval_used": 1043,
+    "eval_split": "validation",
+    "metric": "accuracy",
+    "num_labels": 2,
+    "E1b_max_steps": 2360
+   },
+   "sst2": {
+    "n_pool": 66349,
+    "n_train_used": 50000,
+    "epochs": 1,
+    "steps_per_epoch": 1563,
+    "max_steps": 1563,
+    "warmup_steps": 156,
+    "n_eval_total": 872,
+    "n_eval_used": 872,
+    "eval_split": "validation",
+    "metric": "accuracy",
+    "num_labels": 2,
+    "E1b_max_steps": 5625
+   },
+   "mrpc": {
+    "n_pool": 2668,
+    "n_train_used": 2668,
+    "epochs": 10,
+    "steps_per_epoch": 84,
+    "max_steps": 840,
+    "warmup_steps": 84,
+    "n_eval_total": 408,
+    "n_eval_used": 408,
+    "eval_split": "validation",
+    "metric": "accuracy",
+    "num_labels": 2,
+    "E1b_max_steps": 840
+   },
+   "stsb": {
+    "n_pool": 4749,
+    "n_train_used": 4749,
+    "epochs": 10,
+    "steps_per_epoch": 149,
+    "max_steps": 1490,
+    "warmup_steps": 149,
+    "n_eval_total": 1500,
+    "n_eval_used": 1500,
+    "eval_split": "validation",
+    "metric": "spearman",
+    "num_labels": 1,
+    "E1b_max_steps": 1490
+   },
+   "mnli": {
+    "n_pool": 391702,
+    "n_train_used": 50000,
+    "epochs": 1,
+    "steps_per_epoch": 1563,
+    "max_steps": 1563,
+    "warmup_steps": 156,
+    "n_eval_total": 9815,
+    "n_eval_used": 5000,
+    "eval_split": "validation_matched",
+    "metric": "accuracy",
+    "num_labels": 3,
+    "E1b_max_steps": 5625
+   },
+   "qnli": {
+    "n_pool": 103743,
+    "n_train_used": 50000,
+    "epochs": 1,
+    "steps_per_epoch": 1563,
+    "max_steps": 1563,
+    "warmup_steps": 156,
+    "n_eval_total": 5463,
+    "n_eval_used": 5000,
+    "eval_split": "validation",
+    "metric": "accuracy",
+    "num_labels": 2,
+    "E1b_max_steps": 5625
+   },
+   "rte": {
+    "n_pool": 1490,
+    "n_train_used": 1490,
+    "epochs": 10,
+    "steps_per_epoch": 47,
+    "max_steps": 470,
+    "warmup_steps": 47,
+    "n_eval_total": 277,
+    "n_eval_used": 277,
+    "eval_split": "validation",
+    "metric": "accuracy",
+    "num_labels": 2,
+    "E1b_max_steps": 470
+   },
+   "wic": {
+    "n_pool": 4428,
+    "n_train_used": 4428,
+    "epochs": 10,
+    "steps_per_epoch": 139,
+    "max_steps": 1390,
+    "warmup_steps": 139,
+    "n_eval_total": 638,
+    "n_eval_used": 638,
+    "eval_split": "validation",
+    "metric": "accuracy",
+    "num_labels": 2,
+    "E1b_max_steps": 1390
+   },
+   "snli": {
+    "n_pool": 548367,
+    "n_train_used": 50000,
+    "epochs": 1,
+    "steps_per_epoch": 1563,
+    "max_steps": 1563,
+    "warmup_steps": 156,
+    "n_eval_total": 9842,
+    "n_eval_used": 5000,
+    "eval_split": "validation",
+    "metric": "accuracy",
+    "num_labels": 3,
+    "E1b_max_steps": 5625
+   },
+   "scitail": {
+    "n_pool": 22097,
+    "n_train_used": 22097,
+    "epochs": 2,
+    "steps_per_epoch": 691,
+    "max_steps": 1382,
+    "warmup_steps": 138,
+    "n_eval_total": 1304,
+    "n_eval_used": 1304,
+    "eval_split": "validation",
+    "metric": "accuracy",
+    "num_labels": 2,
+    "E1b_max_steps": 2073
+   },
+   "ag_news": {
+    "n_pool": 119000,
+    "n_train_used": 50000,
+    "epochs": 1,
+    "steps_per_epoch": 1563,
+    "max_steps": 1563,
+    "warmup_steps": 156,
+    "n_eval_total": 7600,
+    "n_eval_used": 5000,
+    "eval_split": "test",
+    "metric": "accuracy",
+    "num_labels": 4,
+    "E1b_max_steps": 5625
+   },
+   "imdb": {
+    "n_pool": 24000,
+    "n_train_used": 24000,
+    "epochs": 2,
+    "steps_per_epoch": 750,
+    "max_steps": 1500,
+    "warmup_steps": 150,
+    "n_eval_total": 25000,
+    "n_eval_used": 5000,
+    "eval_split": "test",
+    "metric": "accuracy",
+    "num_labels": 2,
+    "E1b_max_steps": 2250
+   },
+   "trec": {
+    "n_pool": 4452,
+    "n_train_used": 4452,
+    "epochs": 10,
+    "steps_per_epoch": 140,
+    "max_steps": 1400,
+    "warmup_steps": 140,
+    "n_eval_total": 500,
+    "n_eval_used": 500,
+    "eval_split": "test",
+    "metric": "accuracy",
+    "num_labels": 6,
+    "E1b_max_steps": 1400
+   },
+   "yelp_polarity": {
+    "n_pool": 559000,
+    "n_train_used": 50000,
+    "epochs": 1,
+    "steps_per_epoch": 1563,
+    "max_steps": 1563,
+    "warmup_steps": 156,
+    "n_eval_total": 38000,
+    "n_eval_used": 5000,
+    "eval_split": "test",
+    "metric": "accuracy",
+    "num_labels": 2,
+    "E1b_max_steps": 5625
+   }
+  },
+  "total_steps_per_seed": 20210,
+  "total_steps_both_seeds": 40420,
+  "eval_subset": "all if n_eval <= 5,000 else sorted(default_rng(1).choice(n_eval, 5000, replace=False))",
+  "held_out": "E1b tasks.split_indices held-out 1,000 TRAIN examples (asserted equal to the E1b adapter hold_idx_sha256)"
+ },
+ "pilot": {
+  "tasks": [
+   "sst2",
+   "rte"
+  ],
+  "seed": 0,
+  "lr_candidates": [
+   0.0001,
+   0.0003,
+   0.001
+  ],
+  "budget": "the E4b budgets of the task (sst2 1,563 steps; rte 470 steps), recipe identical to main; all three lrs are trained",
+  "evaluation": "held-out 1,000 TRAIN examples only (bf16 manual merge, as in the study); NO eval-set scoring",
+  "divergence_rule": "diverged if ANY: (i) a logged loss NaN/inf; (ii) mean logged loss over the last 20% of logged steps >= 0.9 x entropy of the training-label prior; (iii) held-out accuracy < held-out majority baseline + 10pp",
+  "decision": "lr_main = the non-diverged candidate with the highest mean held-out accuracy over sst2 and rte (ties -> smaller lr); if all diverge, the candidate with the highest mean held-out accuracy (documented; the integrity rule then applies)",
+  "cost_rule": {
+   "formula": "sec/step(L) = alpha + beta*L, line through the (mean train tokens, sec/step) points of the sst2 and rte pilot runs at lr_main (floored at the smaller measured value); train_h_per_seed = sum_t max_steps_t * sec/step(L_t) / 3600 (sequential, no concurrency credit); tau = bf16 forward tokens/s measured on the pilot held-out evaluations; pair_s(i,j) = [4*(hold_i+hold_j+eval_i+eval_j) + 4*(hold_i+hold_j) + 2*(eval_i+eval_j)] / tau + pair_overhead_s; merges_core_h = [sum_P pair_s + (1 + e3_pair_cost_factor) * sum_S2 pair_s] / 3600 / merge_parallel_speedup; core_h = pilot_h + 2*train_h_per_seed + stage01_h + merges_core_h",
+   "mean_train_tokens": {
+    "cola": 11.11,
+    "sst2": 12.1,
+    "mrpc": 53.02,
+    "stsb": 19.23,
+    "mnli": 37.53,
+    "qnli": 49.51,
+    "rte": 70.0,
+    "wic": 19.64,
+    "snli": 23.61,
+    "scitail": 39.91,
+    "ag_news": 55.71,
+    "imdb": 202.61,
+    "trec": 11.51,
+    "yelp_polarity": 140.05
+   },
+   "hold_tokens": {
+    "cola": 9397,
+    "sst2": 11843,
+    "mrpc": 53448,
+    "stsb": 25772,
+    "mnli": 37608,
+    "qnli": 50232,
+    "rte": 69734,
+    "wic": 20021,
+    "snli": 23272,
+    "scitail": 36592,
+    "ag_news": 52390,
+    "imdb": 204258,
+    "trec": 11782,
+    "yelp_polarity": 136913
+   },
+   "eval_tokens": {
+    "cola": 10055,
+    "sst2": 20716,
+    "mrpc": 21523,
+    "stsb": 43543,
+    "mnli": 180573,
+    "qnli": 251215,
+    "rte": 18854,
+    "wic": 13303,
+    "snli": 122734,
+    "scitail": 48689,
+    "ag_news": 260890,
+    "imdb": 1008268,
+    "trec": 4134,
+    "yelp_polarity": 701707
+   },
+   "token_source": "probe_qwen.json (CPU-only tokenization probe; no model forward, no training)",
+   "pair_overhead_s": 15,
+   "e3_pair_cost_factor": 3,
+   "merge_parallel_speedup": 1.5,
+   "stage01_h": 0.6,
+   "two_seed_if_core_h_le": 11.0
+  },
+  "pilot_adapters_used_in_study": false
+ },
+ "integrity": {
+  "a": "metric >= majority-class baseline + 0.10 (E1b definition, on the eval subset); stsb Spearman >= 0.70",
+  "b": "NOT APPLICABLE: no citable published Qwen2.5-0.5B dev-set references exist for these classification tasks with this setup",
+  "c": "max |logit(manual merge W0+dW + own head, fp32) - logit(PeftModel fp32)| <= c_tol_rel * max(1, max|PeftModel logit|) on the first 64 eval examples, each unpadded, TF32 disabled",
+  "c_tol_rel": 0.001,
+  "c2": "held-out metric of the single adapter with bf16 merged weights (study precision) vs fp32 merged weights: |diff| <= c2_tol",
+  "c2_tol": 0.01,
+  "structural": "168 LoRA layers; score head (num_labels, 896), no bias; r/alpha; train/held-out index sha256 = train_meta; main-run adapter of the right seed",
+  "exclusion": "a task failing any criterion in ANY used seed is removed with all its pairs from EVERY population",
+  "stop_if_valid_tasks_below": 10
+ },
+ "predictors": {
+  "primary": [
+   "O_A",
+   "tv_cosine"
+  ],
+  "O_A": "mean over the 168 LoRA layers of mean_k cos^2 theta_k, principal angles between orth(B1) and orth(B2), float64",
+  "tv_cosine": "cosine of flattened concatenated dW = 2 B A (168 layers)",
+  "secondary": [
+   "mean_theta_min_A_deg",
+   "min_theta_min_A_deg",
+   "n_layers_theta_min_lt30_A",
+   "sign_conflict_top20",
+   "norm_ratio",
+   "null_z_O_A",
+   "sign_conflict_all"
+  ],
+  "dropped": {
+   "O_B": "identical to O_A (E1c N3.1)",
+   "mean_theta_min_B_deg": "identical"
+  },
+  "null": "1000 random rank-8 subspace pairs per layer (seed 0)",
+  "frozen": "predictors_e4b.sha256 written before any merge"
+ },
+ "merge": {
+  "method": "task arithmetic W0 + lam*(dW1+dW2) on all 168 LoRA layers; each task with its own score head",
+  "lambda_grid": [
+   0.3,
+   0.5,
+   0.7,
+   1.0
+  ],
+  "lambda_selection": "per pair, maximize mean normalized score on the two 1,000-example held-out TRAIN sets; ties -> smaller lam",
+  "normalized_score": "merged / single on the same set (accuracy; stsb Spearman)",
+  "D": "1 - mean of the two normalized eval-set scores at the selected lam",
+  "exploratory": "TIES-lite and theta*=30 deg hard gate exactly as E1b",
+  "precision": "weights = bf16(W0 + delta computed in fp32); W0 = bf16 checkpoint (exact); head in fp32; singles computed identically in stage0",
+  "eval_batch": 128
+ },
+ "populations": {
+  "two_seeds": {
+   "P_primary": "mixed-seed cross-task pairs, alphabetically-first task seed 0 = t1, other seed 1 = t2 (E1c rule)",
+   "R0": "seed-0 cross-task pairs (E1b order)",
+   "S1": "seed-1 cross-task pairs",
+   "S2": "same-task seed pairs t@s0 x t@s1"
+  },
+  "one_seed": {
+   "R0_primary": "seed-0 cross-task pairs (E1b confirmatory design)"
+  },
+  "n_expected_if_14_valid": {
+   "P": 91,
+   "R0": 91,
+   "S1": 91,
+   "S2": 14
+  }
+ },
+ "analysis": {
+  "primary_population": "P if two seeds, else R0",
+  "hypotheses": {
+   "H1": "Spearman rho(O_A, D) > 0",
+   "H2": "Spearman rho(tv_cosine, D) > 0"
+  },
+  "multiplicity": "Holm over {H1, H2} on the one-sided permutation p (primary population only)",
+  "permutation": "10,000 task relabelings, default_rng(0); p = (1 + #{rho_perm >= rho_obs}) / 10001",
+  "bootstrap": "task-block, 2,000 reps, default_rng(0), skip resamples with < 4 distinct pairs, percentile 95% CI",
+  "loto": "rho with each valid task removed",
+  "rule": "PASS iff rho >= 0.4 AND Holm p < 0.05 AND >= 75% LOTO rho > 0.2; FAIL iff not PASS and bootstrap upper < 0.3; else INCONCLUSIVE",
+  "code": "E4a e4a_analysis.py (statistics verbatim from E1c pop_stats) with TAG e4b",
+  "secondary": [
+   "R0/S1 same statistics (rule descriptive)",
+   "pooled 3-population summary (descriptive)",
+   "theta_min distribution, gate firings, O_A vs random null, shared-vs-mixed O_A",
+   "D/O_A/tv_cosine/lam* reliability across seed configurations",
+   "S2: theta_min, gate, D, E1b-stage2 gate vs TA; E3 run() TA/PICO_TA/GATE/FORCEGATE with A2 grids",
+   "fixed-lambda rho, secondary predictors, TIES-lite/gate vs TA",
+   "cross-backbone: per-task-pair D/O_A/tv_cosine Spearman vs E1b R0, E1c P (BERT) and E4a R0/P (RoBERTa)"
+  ]
+ },
+ "compute_budget": {
+  "cap_gpu_hours": 14,
+  "definition": "wall-clock from the start of the first E4b GPU job (pilot) to the end of the last E4b GPU job",
+  "guard": "E4B_DEADLINE_EPOCH = pilot start + 13.6 h: no new merge pair / E3 run starts after it; stage3 (CPU-light) then runs",
+  "max_concurrent_gpu_processes": 2,
+  "priority_if_cap_at_risk": [
+   "pilot",
+   "training",
+   "integrity",
+   "predictors (frozen)",
+   "P merges",
+   "S2 merges + E3 subset",
+   "R0 merges",
+   "S1 merges"
+  ],
+  "unfinished_work": "reported as not run; never used as partial evidence for a verdict"
+ },
+ "files": "artifacts/e4b_decoder/ on ubuntu-4070 (mirror box /workspace/lora-paper/e4b/); nothing written to other artifacts/ folders; no git operations"
+}

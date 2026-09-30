@@ -114,7 +114,7 @@ from lora_merge_cert import (
 
 ## 라이선스
 
-MIT (연구용 Week-1 패키지)
+MIT, see `LICENSE`. Base models and datasets keep their own licenses.
 
 ## Segment-ID (token_type_ids) convention — important for evaluation
 
@@ -128,6 +128,38 @@ Evaluate every adapter with the segment-id convention it was **trained** with. `
 `resolve_segment_ids(adapter)` picks the mode in this order: a `segment_ids.json` file in the adapter dir (`train_lora_glue.py` now writes one), then `SEGMENT_ID_REGISTRY`, then `conflict_meta.json` provenance. If none of these apply, it falls back to `"bert"` and issues a loud warning. Calling with `segment_ids=None` keeps the legacy behaviour (`"none"`) and also warns. The scripts accept `--segment-ids {auto,bert,none}`.
 
 Before this fix (2026-09-25), the evaluator always used `"none"`. The locally trained adapters were therefore mis-evaluated (mnli_s7_hubish 0.452 → 0.821, mnli_s42_hubish 0.490 → 0.824, rte_s42_hubish 0.433 → 0.675). Details: `artifacts/seed_fix_segid/`, `artifacts/e1_predictive/diag/`.
+
+## Data and code availability (Neurocomputing submission)
+
+This repository accompanies "Label-Free Choice of the Merge Coefficient and the Merge Decision for LoRA Adapters:
+A Pre-Registered Study". `artifacts/` holds, per study (E1–E7), the pre-registration documents with their SHA-256
+hashes and time stamps, deviations logs, verdicts, pair-level result files and the analysis scripts that produce
+every number in the paper. E7 is exploratory/post hoc (plan hashed before evaluation).
+
+Trained LoRA adapters: not in this repository (about 1.9 GB of fp32 `adapter_model.safetensors`). They will be
+published on the Hugging Face Hub with a `MANIFEST.sha256`, and the link will be added here. The sha256 of every
+adapter is already recorded in each study's `predictors_aux_*.json` (`adapter_sha256`).
+
+Code: MIT (see `LICENSE`). Base models (bert-base-uncased, roberta-base, Qwen2.5-0.5B/1.5B) and datasets keep their
+own licenses.
+
+### Studies added for the submission (E4–E7)
+
+| study | backbone / scope | start here |
+|---|---|---|
+| `artifacts/e4a_roberta/` | E4a: RoBERTa-base, 14 tasks × 2 seeds | `PREREG_E4A.md` (+`prereg_e4a.sha256`), `DEVIATIONS_E4A.md`, `VERDICT_E4A.md`; code `e4a.py`, `e4a_analysis.py`, `make_verdict_e4a.py` |
+| `artifacts/e4b_decoder/` | E4b: Qwen2.5-0.5B, 14 tasks × 2 seeds | `PREREG_E4B.md` (+`prereg_e4b.sha256`), `DEVIATIONS_E4B.md`, `VERDICT_E4B.md`; code `e4b.py`, `e4b_analysis.py` |
+| `artifacts/e5_decoder_ext/` | E5: decoder extensions (e5a–e5d) | `PREREG_E5.md`, `PREREG_RECORD_E5.txt`, `DEVIATIONS_E5.md`, `VERDICT_E5.md`; code `e5.py`, `e5_analysis.py` |
+| `artifacts/e6_decoder2/` | E6: Qwen2.5-1.5B confirmatory, label-free λ and merge decision | `results/PREREG_E6.md` (+`prereg_e6.sha256`, `PREREG_RECORD_E6.txt`), `VERDICT_E6_DECODER2.md`, `results/lam_confirm_e6.json`; code in `code/` |
+| `artifacts/e6_lambda/` | exploratory label-free rule analysis | `RULES.md` (+`RULES.sha256`, `RULES_timestamp.txt`), `DEVIATIONS_E6.md`, `VERDICT_E6.md`, `OUTPUTS.sha256` |
+| `artifacts/e7_baselines/` | E7 (exploratory/post hoc): label-free baselines, cost, 3-/4-adapter merges | `PLAN_E7.md` + `PLAN_E7.stamp`, `DEVIATIONS_E7.md`, `RESULTS_E7.md`, `summary_e7.json`; code `e7.py`, `e7_q05.py`, `e7_analysis.py` |
+| `artifacts/analysis/` | cross-study numbers in the manuscript | `pooled_backbones.py`, `pooled_rho.py`, `noise_ceiling*.py`, `lambda_decomp*.py`, `compute_cost_u1_m3.py`, `e6_prereg_extract.py`, `e7_extract.py` |
+
+Reproduction: verify the frozen inputs with `cd <dir> && shasum -a 256 -c <manifest>.sha256` (for
+`e6_decoder2/results/code_e6.sha256`, run it from `e6_decoder2/code/`). The analysis and verdict scripts re-derive
+the reported numbers from the committed pair-level files. Re-training needs the adapters or a GPU, and the launch
+scripts assume `~/Desktop/Workspace/LoRA` (paths in hashed files are left unchanged). Logs, tokenized caches and
+per-example prediction dumps are not included.
 
 ## Experiments
 

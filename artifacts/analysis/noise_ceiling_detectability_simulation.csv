@@ -1,0 +1,3 @@
+predictor,latent_rho,attenuation_ceiling,expected_observed_rho,sim_n,task_block_boot_B,mean_observed_rho,mean_ci_lower,detect_positive_ci_lower_gt0,point_rho_ge_0.4,both_rho_ge_0.4_and_ci_lower_gt0
+O_A,0.4,0.793475611,0.3173902444,1000,300,0.3104799968,-0.03551752849,0.369,0.18,0.173
+tv_cosine,0.4,0.6988098378,0.2795239351,1000,300,0.2784514254,-0.06844774097,0.285,0.099,0.098

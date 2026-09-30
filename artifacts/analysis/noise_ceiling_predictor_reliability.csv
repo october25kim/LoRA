@@ -1,0 +1,3 @@
+predictor,n_pairs,spearman_e1b_vs_e1c_seed1
+O_A,91,0.939624144
+tv_cosine,91,0.728794394

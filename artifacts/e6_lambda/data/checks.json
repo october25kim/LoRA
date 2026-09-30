@@ -1,0 +1,38 @@
+{
+ "bert": {
+  "n": 273,
+  "corr_cos_vs_tv_cosine": 0.9999999999999993,
+  "max_abs_cos_diff": 2.5441706250420304e-11,
+  "corr_ratio_vs_norm_ratio": 0.9999999999999992,
+  "max_rel_norm1_diff": 4.362321615047904e-10,
+  "norm_ratio_min": 1.005894608
+ },
+ "roberta": {
+  "n": 234,
+  "corr_cos_vs_tv_cosine": 0.9999999999999997,
+  "max_abs_cos_diff": 2.73371590121807e-11,
+  "corr_ratio_vs_norm_ratio": 0.9999999999999994,
+  "max_rel_norm1_diff": 2.7928814816391423e-10,
+  "norm_ratio_min": 1.00747745
+ },
+ "qwen": {
+  "n": 273,
+  "corr_cos_vs_tv_cosine": 1.0,
+  "max_abs_cos_diff": 1.92542579102728e-11,
+  "corr_ratio_vs_norm_ratio": 1.0,
+  "max_rel_norm1_diff": 4.83533657558155e-10,
+  "norm_ratio_min": 1.001060208
+ },
+ "max_abs_D_vs_Deval_at_lamsel": 0.0,
+ "counts": {
+  "bert_P": 91,
+  "bert_R0": 91,
+  "bert_S1": 91,
+  "qwen_P": 91,
+  "qwen_R0": 91,
+  "qwen_S1": 91,
+  "roberta_P": 78,
+  "roberta_R0": 78,
+  "roberta_S1": 78
+ }
+}

@@ -1,0 +1,180 @@
+{
+ "grids": {
+  "TA": [
+   {
+    "lam": 0.3
+   },
+   {
+    "lam": 0.4
+   },
+   {
+    "lam": 0.5
+   },
+   {
+    "lam": 0.6
+   },
+   {
+    "lam": 0.7
+   },
+   {
+    "lam": 0.85
+   },
+   {
+    "lam": 1.0
+   },
+   {
+    "lam": 1.3
+   }
+  ],
+  "PICO_TA": [
+   {
+    "c": 0.5
+   },
+   {
+    "c": 0.6
+   },
+   {
+    "c": 0.75
+   },
+   {
+    "c": 0.9
+   },
+   {
+    "c": 1.0
+   },
+   {
+    "c": 1.1
+   },
+   {
+    "c": 1.25
+   },
+   {
+    "c": 1.5
+   }
+  ],
+  "GATE": [
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 0.3
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 0.4
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 0.5
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 0.6
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 0.7
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 0.85
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 1.0
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 1.3
+   }
+  ],
+  "FORCEGATE": [
+   {
+    "force_k": 1,
+    "beta": 1.0,
+    "lam": 0.3
+   },
+   {
+    "force_k": 1,
+    "beta": 1.0,
+    "lam": 0.4
+   },
+   {
+    "force_k": 1,
+    "beta": 1.0,
+    "lam": 0.5
+   },
+   {
+    "force_k": 1,
+    "beta": 1.0,
+    "lam": 0.6
+   },
+   {
+    "force_k": 1,
+    "beta": 1.0,
+    "lam": 0.7
+   },
+   {
+    "force_k": 1,
+    "beta": 1.0,
+    "lam": 0.85
+   },
+   {
+    "force_k": 1,
+    "beta": 1.0,
+    "lam": 1.0
+   },
+   {
+    "force_k": 1,
+    "beta": 1.0,
+    "lam": 1.3
+   }
+  ]
+ },
+ "grid_sizes": {
+  "TA": 8,
+  "PICO_TA": 8,
+  "GATE": 8,
+  "FORCEGATE": 8
+ },
+ "setting": "e4a_S2",
+ "tasks": [
+  "ag_news@s0",
+  "ag_news@s1",
+  "cola@s0",
+  "cola@s1",
+  "imdb@s0",
+  "imdb@s1",
+  "mnli@s0",
+  "mnli@s1",
+  "mrpc@s0",
+  "mrpc@s1",
+  "qnli@s0",
+  "qnli@s1",
+  "scitail@s0",
+  "scitail@s1",
+  "snli@s0",
+  "snli@s1",
+  "sst2@s0",
+  "sst2@s1",
+  "stsb@s0",
+  "stsb@s1",
+  "trec@s0",
+  "trec@s1",
+  "wic@s0",
+  "wic@s1",
+  "yelp_polarity@s0",
+  "yelp_polarity@s1"
+ ],
+ "n_pairs": 13,
+ "bs": 256,
+ "mem_frac": 0.45,
+ "merges_sha256": "7ec5774b491102bfadeeec68f6e9be429b3f6894b40e1ed6c128b2de1bf68300",
+ "e3_sha256": "a25e393e60d0e076d0c54a2e41301ebfb7a303b38a94bb9c671cf69e8e1d020c"
+}

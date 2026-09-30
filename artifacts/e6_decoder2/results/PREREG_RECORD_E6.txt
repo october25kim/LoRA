@@ -1,0 +1,43 @@
+E6 (second decoder, Qwen2.5-1.5B) pre-registration record
+hashed_at: 2026-09-27 23:35:10 KST (epoch 1790519710)
+host: ubuntu
+--- prereg_e6.sha256
+8bd91fa52ac3a5189a43926888f5be90f3ed2ce7fd14b7702ad9830138d5a0b8  PREREG_E6.md
+a8442538f2bc6b185027966cabfd395a03b4f4fe87d5532d9c6ad07160150bbf  prereg_e6.json
+--- code_e6.sha256
+052ab60925e6d25ab6092ad1894c26e62cc1e62a704b32a9378d88cd43d1c2ab  tasks_e6.py
+d76ad213f5dc302ba9179d14696647259b955a5afce3dda1ef883b06dac3653f  train_e6.py
+5b2f50b93969ee1ba468fa6ac8d2396c7fc3caa9bba2235b70f2999c07d95c92  e6.py
+61bc0d205eeef41a79cc051806f29abb61ac12aa87cce7ed41c06d4da8f4c89a  e6_analysis.py
+870f93cc81b682991e06b1ea71d77d93f64179e6d84d8213335e043e23623d07  e6_extra.py
+2d2527ba909e9e66d5769fcdea56a14639f5043962569e72692744abc2f29432  lam_confirm_e6.py
+a1d17cd672d8e88286cb3008320ab8af5250fb81acd22cb4de58b5254a81e698  make_verdict_e6.py
+41cef18f664a0c789bffa1b06b945ab3bce1bfbdca4eb5cd1b01bcc01fc34f56  make_prereg_e6.py
+bbcb86c29833a073841fe420e932562342ef2228de36ae5336c16c900b9058c2  run_pilot_e6.sh
+9e260386c0a693bd979026fba0ca33e2b8f01f1da010330ce5c30e5fa7f0af97  run_train_e6.sh
+9837fde20d62eac5a04b11f01758e148756fda1881b9411228af9ff3701937d6  run_pipeline_e6.sh
+ef9125ca89b724fe130dc1977d108ead198dea195e14a91e3697a23b84c20c32  run_all_e6.sh
+026f44facfe33aab051ae99dc9e5cb3eea406300c0c4d09117bd09c3f7ab48e2  e6_lambda_code_frozen/build_dataset.py
+5b0a2124881ed2d9189314c5268e61823e8d43d0c52ce5a7e3dc9dfd092ba0da  e6_lambda_code_frozen/build_unlabeled.py
+9ed611b69531f477f86e959224f133ea0cb047e3e251d92008d6e8e3ae402bc5  e6_lambda_code_frozen/evaluate_addon.py
+3b5c5b665cb4aad1db33d99b977ebc47d059061931d1e901ab6ea7b4803a948f  e6_lambda_code_frozen/evaluate.py
+c977e252b441ef6af7cca5c464f20c17dbdf3e60e22e5e5967b64f25d2a28120  e6_lambda_code_frozen/layer_stats_cpu.py
+084e38702309bbc2bce8ad5daf9e1c51a6d9370474a182306418325430f7244a  e6_lambda_code_frozen/make_verdict_e6.py
+199a9cb7c08d9224c1913b7e12f0059f7f6fcec26ac78bfb54d6724ef0709f0c  e6_lambda_code_frozen/RULES.md
+7a7161c90e5e56de69e9347464ff39a0c47fe9c11310735934141b928847987b  e6_lambda_code_frozen/SHA256SUMS
+--- read-only inputs
+9ff42287a9742620f6df2c71775b900a67a1ceb08f1a7593a5efabeece9b68ff  ../e4b_decoder/prereg_e4b.json
+3bb6565cd482f87d6564f05789fae7a77f2bce6300ed22a92533c2d67cddd532  ../e4b_decoder/PREREG_E4B.md
+6ae16599bc7c55ad7197f4d9bd84679649d3145b4e2b8fee58ac1d835c4ebe2b  ../e4b_decoder/e4b.py
+84fdd9fc118ee23d41acb68b3de9fe6be42c809f0c9ab85a39a343710601d1ca  ../e4b_decoder/e4b_analysis.py
+df95fbac67b44da37a1f57b9a6690aa3949dfc1e82dc2f4845c5a7c367f5e0dc  ../e4b_decoder/train_e4b.py
+eb74fb77ed8cb17d1e32723dbb3b5eec2d20618c22092dc76f5adc2596600f2c  ../e4b_decoder/tasks_e4b.py
+e12e100db0c4e976c772757b042109af1dde20721e074c8a6931d66b3051fe10  ../e4b_decoder/pair_results_P.jsonl
+842cd113eca76b8ff198d8675f2f6fead57936ed5bb6d762ac51eeea5d071e7b  ../e4b_decoder/predictors_e4b.csv
+4610d045fec73b9356481e9c6bb14a8c15a99259b43b0518bd2afe87fff1c9d6  ../e1b_confirmatory/e1b.py
+34dd6bd222880b35a9a8d4bd2be7b907bfa4995ce46e8699539a0978a2e60b53  ../e1b_confirmatory/tasks.py
+a25e393e60d0e076d0c54a2e41301ebfb7a303b38a94bb9c671cf69e8e1d020c  ../e3_baselines/code/e3.py
+7ec5774b491102bfadeeec68f6e9be429b3f6894b40e1ed6c128b2de1bf68300  ../e3_baselines/code/merges.py
+--- e6_lambda frozen code (box /workspace/lora-paper/e6_lambda/code, matches e6_lambda/OUTPUTS.sha256): e6_lambda_code_frozen/SHA256SUMS
+--- preflight (NOT study evidence): preflight_NOT_STUDY/ (feasibility bench; bit-equivalence vs E4b stage0/1/2 + E5b extended lambda: EQUIV_TOTAL_DIFFS 0; Qwen2.5-1.5B smoke with 20-step throwaway adapters, all stages; lam_confirm self-test on E4b/E5b)
+--- no E6 study GPU job had started when this was hashed

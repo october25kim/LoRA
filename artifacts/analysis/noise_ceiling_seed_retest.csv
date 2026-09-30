@@ -1,0 +1,4 @@
+comparison,n_pairs,spearman_D
+E1b~E1c-mixed,91,0.6694855869
+E1b~E1c-seed1,91,0.6700589266
+E1c-mixed~E1c-seed1,91,0.8077560121

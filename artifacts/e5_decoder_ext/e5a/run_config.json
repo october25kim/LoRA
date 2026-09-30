@@ -1,0 +1,250 @@
+{
+ "grids": {
+  "TA": [
+   {
+    "lam": 0.3
+   },
+   {
+    "lam": 0.5
+   },
+   {
+    "lam": 0.7
+   },
+   {
+    "lam": 0.85
+   },
+   {
+    "lam": 1.0
+   },
+   {
+    "lam": 1.15
+   },
+   {
+    "lam": 1.3
+   },
+   {
+    "lam": 1.5
+   }
+  ],
+  "PICO_TA": [
+   {
+    "c": 0.42
+   },
+   {
+    "c": 0.71
+   },
+   {
+    "c": 0.99
+   },
+   {
+    "c": 1.2
+   },
+   {
+    "c": 1.41
+   },
+   {
+    "c": 1.63
+   },
+   {
+    "c": 1.84
+   },
+   {
+    "c": 2.12
+   }
+  ],
+  "GATE": [
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 0.3
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 0.5
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 0.7
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 0.85
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 1.0
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 1.15
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 1.3
+   },
+   {
+    "theta": 30.0,
+    "beta": 1.0,
+    "lam": 1.5
+   }
+  ],
+  "FORCEGATE": [
+   {
+    "force_k": 1,
+    "beta": 1.0,
+    "lam": 0.3
+   },
+   {
+    "force_k": 1,
+    "beta": 1.0,
+    "lam": 0.5
+   },
+   {
+    "force_k": 1,
+    "beta": 1.0,
+    "lam": 0.7
+   },
+   {
+    "force_k": 1,
+    "beta": 1.0,
+    "lam": 0.85
+   },
+   {
+    "force_k": 1,
+    "beta": 1.0,
+    "lam": 1.0
+   },
+   {
+    "force_k": 1,
+    "beta": 1.0,
+    "lam": 1.15
+   },
+   {
+    "force_k": 1,
+    "beta": 1.0,
+    "lam": 1.3
+   },
+   {
+    "force_k": 1,
+    "beta": 1.0,
+    "lam": 1.5
+   }
+  ],
+  "TIES": [
+   {
+    "k": 20,
+    "lam": 0.7
+   },
+   {
+    "k": 20,
+    "lam": 1.0
+   },
+   {
+    "k": 20,
+    "lam": 1.25
+   },
+   {
+    "k": 20,
+    "lam": 1.5
+   },
+   {
+    "k": 20,
+    "lam": 1.75
+   },
+   {
+    "k": 20,
+    "lam": 2.0
+   },
+   {
+    "k": 20,
+    "lam": 2.5
+   },
+   {
+    "k": 20,
+    "lam": 3.0
+   }
+  ],
+  "PICO_GATE": [
+   {
+    "theta": 30.0,
+    "c": 0.42
+   },
+   {
+    "theta": 30.0,
+    "c": 0.71
+   },
+   {
+    "theta": 30.0,
+    "c": 0.99
+   },
+   {
+    "theta": 30.0,
+    "c": 1.2
+   },
+   {
+    "theta": 30.0,
+    "c": 1.41
+   },
+   {
+    "theta": 30.0,
+    "c": 1.63
+   },
+   {
+    "theta": 30.0,
+    "c": 1.84
+   },
+   {
+    "theta": 30.0,
+    "c": 2.12
+   }
+  ]
+ },
+ "grid_sizes": {
+  "TA": 8,
+  "PICO_TA": 8,
+  "GATE": 8,
+  "FORCEGATE": 8,
+  "TIES": 8,
+  "PICO_GATE": 8
+ },
+ "setting": "e5a_P",
+ "tasks": [
+  "ag_news@s0",
+  "cola@s0",
+  "cola@s1",
+  "imdb@s0",
+  "imdb@s1",
+  "mnli@s0",
+  "mnli@s1",
+  "mrpc@s0",
+  "mrpc@s1",
+  "qnli@s0",
+  "qnli@s1",
+  "rte@s0",
+  "rte@s1",
+  "scitail@s0",
+  "scitail@s1",
+  "snli@s0",
+  "snli@s1",
+  "sst2@s0",
+  "sst2@s1",
+  "stsb@s0",
+  "stsb@s1",
+  "trec@s0",
+  "trec@s1",
+  "wic@s0",
+  "wic@s1",
+  "yelp_polarity@s1"
+ ],
+ "n_pairs": 91,
+ "bs": 128,
+ "mem_frac": 0.9,
+ "merges_sha256": "7ec5774b491102bfadeeec68f6e9be429b3f6894b40e1ed6c128b2de1bf68300",
+ "e3_sha256": "a25e393e60d0e076d0c54a2e41301ebfb7a303b38a94bb9c671cf69e8e1d020c"
+}

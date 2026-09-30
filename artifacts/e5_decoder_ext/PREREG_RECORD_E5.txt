@@ -1,0 +1,22 @@
+E5 pre-registration record
+hashed_at: 2026-09-27 14:56:21 KST (epoch 1790488581)
+host: ubuntu
+--- prereg_e5.sha256
+738eb2f985bfb6e96be1ccb483693225a40a02f10450cdd5ba2abd8937d28e90  PREREG_E5.md
+fcdcb0bc59752591e9a950bac8fd793be350be1b4dcfe7243578e1bcb857f34a  prereg_e5.json
+--- code_e5.sha256
+87256f29c673f5fc8afaf0e76408162bd89f3ff7e922eeca78f9f8e7a192dea3  e5.py
+2404483fc2afcd06da8016a49b09a5165d57945f21891be898f73d08033aa90e  e5_analysis.py
+333325900af6694556bdb89883234f892d8b6e7beffb748d94abca9541e22385  e5c_reliability.py
+2657e15212784374b4a315e1c7b0dc8bcfb02635fabd5bb86827bc1535c68792  verify_lemma.py
+c674530cfc71f5505c75629d721c99858ec56be5d474df7c2366a5f054ae5a41  run_e5.sh
+--- box dependency (e5c): b07aa21bd83883238d9ebde97086c99ae232998d31b489ae7cb8fb00d78ca692  /workspace/lora-paper/analysis/noise_ceiling.py
+--- read-only inputs
+e12e100db0c4e976c772757b042109af1dde20721e074c8a6931d66b3051fe10  ../e4b_decoder/pair_results_P.jsonl
+842cd113eca76b8ff198d8675f2f6fead57936ed5bb6d762ac51eeea5d071e7b  ../e4b_decoder/predictors_e4b.csv
+8670a6833be8137621287af20e68f1f8d47a096764d1653bd544efda7f520538  ../e4b_decoder/populations_e4b.json
+a25e393e60d0e076d0c54a2e41301ebfb7a303b38a94bb9c671cf69e8e1d020c  ../e3_baselines/code/e3.py
+7ec5774b491102bfadeeec68f6e9be429b3f6894b40e1ed6c128b2de1bf68300  ../e3_baselines/code/merges.py
+6ae16599bc7c55ad7197f4d9bd84679649d3145b4e2b8fee58ac1d835c4ebe2b  ../e4b_decoder/e4b.py
+84fdd9fc118ee23d41acb68b3de9fe6be42c809f0c9ab85a39a343710601d1ca  ../e4b_decoder/e4b_analysis.py
+smoke test (pilot adapters, NOT study): smoke_pilot_adapters_NOT_STUDY/ (14:53-14:55 KST)

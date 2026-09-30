@@ -1,0 +1,134 @@
+{
+ "study": "E5 (acceptance-odds add-on to E4b; Qwen2.5-0.5B adapters of E4b, read-only)",
+ "prereg_md": "PREREG_E5.md",
+ "e5a": {
+  "population": "P",
+  "n_pairs": 91,
+  "order_seed": 20260927,
+  "order_rule": "pairs processed in numpy default_rng(order_seed).permutation(91) order of populations_e4b.json P; if the deadline stops the run, the completed prefix is the pre-registered random subset",
+  "deadline_h_from_launch": 7.0,
+  "family": [
+   "PICO_TA",
+   "GATE",
+   "FORCEGATE",
+   "TIES",
+   "PICO_GATE"
+  ],
+  "grids": {
+   "TA_lam": [
+    0.3,
+    0.5,
+    0.7,
+    0.85,
+    1.0,
+    1.15,
+    1.3,
+    1.5
+   ],
+   "PICO_c": [
+    0.42,
+    0.71,
+    0.99,
+    1.2,
+    1.41,
+    1.63,
+    1.84,
+    2.12
+   ],
+   "TIES_k": 20,
+   "TIES_lam": [
+    0.7,
+    1.0,
+    1.25,
+    1.5,
+    1.75,
+    2.0,
+    2.5,
+    3.0
+   ]
+  },
+  "grid_size_each": 8,
+  "selection": "per pair and method: first max of mean normalized held-out score (1,000 held-out TRAIN examples per task) in grid order; one eval-set evaluation at the selected config (e3.run unmodified)",
+  "eval_bs": 128,
+  "mem_frac": 0.9
+ },
+ "decision": {
+  "min_gain": 0.005,
+  "alpha": 0.05,
+  "test": "scipy.stats.wilcoxon(g, zero_method='wilcox', alternative='greater') on per-pair gains g = score_m - score_TA (p = 1 if all g == 0)",
+  "multiplicity": "Holm over the 5-method family",
+  "rule": "m beats TA iff mean(g) >= +0.005 AND Holm-adjusted Wilcoxon p < 0.05",
+  "also_reported": "E3 sign-flip permutation test (10,000, one-sided) with Holm, task-block bootstrap 95% CI (2,000), W/T/L, median, boundary rates"
+ },
+ "e5b": {
+  "lambda_ext": [
+   1.3,
+   1.5,
+   2.0
+  ],
+  "lambda_all": [
+   0.3,
+   0.5,
+   0.7,
+   1.0,
+   1.3,
+   1.5,
+   2.0
+  ],
+  "populations_order": [
+   "P",
+   "R0",
+   "S1"
+  ],
+  "selection": "first max of held-out normalized score over lambda_all (ties -> smaller lambda)",
+  "sanity_pairs": 2,
+  "analysis": "e4b_analysis.pop_stats (unmodified) with D replaced by D_ext; H1 (O_A) / H2 (tv_cosine); rule applied DESCRIPTIVELY as a sensitivity; does not replace the E4b primary verdict",
+  "deadline_h_from_launch": 11.5
+ },
+ "e5c": {
+  "experiments": [
+   "e4a",
+   "e4b"
+  ],
+  "populations": [
+   "P",
+   "R0",
+   "S1"
+  ],
+  "bootstrap_R": 1000,
+  "bootstrap_seed": 20260927,
+  "split_half_S": 200,
+  "split_seed": 20260928,
+  "cpu_only": true
+ },
+ "e5d": {
+  "theta_star": 30.0,
+  "populations": [
+   "P",
+   "R0",
+   "S1",
+   "S2"
+  ],
+  "forced_all_layers_P": true,
+  "quantities": [
+   "c",
+   "cos_X1_X2 (collinearity)",
+   "mu_equiv",
+   "eps_rel_residual",
+   "frac_edit_energy_not_coef_change = 1 - cos^2",
+   "edit_size_rel_to_merge",
+   "frac_entries_sign_flipped_by_gate"
+  ]
+ },
+ "budget": {
+  "gpu_hours_target": 12,
+  "serial_gpu_jobs": true,
+  "priority": [
+   "E5a",
+   "E5b-P",
+   "E5d",
+   "E5b-R0",
+   "E5b-S1"
+  ]
+ }
+}

@@ -1,0 +1,690 @@
+{
+ "generated": "2026-09-27 20:15:42 KST",
+ "label": "derived quantities (Lemma 1 / Prop. 2-3 of paper/LEMMA_PROJECTION.md)",
+ "gate30_all": {
+  "n_layers": 351,
+  "n_pairs": 235,
+  "abs_cos_q25_med_q75": [
+   0.046701268000000004,
+   0.17239281,
+   0.42758709500000003
+  ],
+  "c_q25_med_q75": [
+   -0.005880159350000001,
+   0.063890999,
+   0.308536265
+  ],
+  "frac_not_coef_change_q25_med_q75": [
+   0.8171690149999999,
+   0.97028072,
+   0.9978189749999999
+  ],
+  "eps_q25_med_q75": [
+   0.377940455,
+   0.63698545,
+   0.96423141
+  ],
+  "mu_q25_med_q75": [
+   0.76421702,
+   0.93994592,
+   1.0059151499999999
+  ],
+  "edit_size_rel_merge_med": 0.29496272,
+  "mean_frac_not_coef_change": 0.8652723003703704,
+  "frac_layers_c_gt_0": 0.7264957264957265,
+  "frac_layers_abs_cos_ge_0.9": 0.005698005698005698,
+  "frac_layers_abs_cos_ge_0.5": 0.19658119658119658,
+  "frac_entries_sign_flipped_med": 0.080967494,
+  "identity_residual_max": 1.269059e-15,
+  "regimes": {
+   "aligned (c>0): coefficient reduction mu in (0,1)": 255,
+   "partially cancelling (-1<c<0): gate AMPLIFIES the shared block (mu>1)": 96
+  }
+ },
+ "gate30_by_population": {
+  "P": {
+   "n_layers": 72,
+   "n_pairs": 66,
+   "abs_cos_q25_med_q75": [
+    0.012321508,
+    0.026023856499999998,
+    0.046447182499999996
+   ],
+   "c_q25_med_q75": [
+    -0.01103010725,
+    0.00575501365,
+    0.0263923035
+   ],
+   "frac_not_coef_change_q25_med_q75": [
+    0.99783523,
+    0.9993226049999999,
+    0.9998481825
+   ],
+   "eps_q25_med_q75": [
+    0.5412122175,
+    0.78193085,
+    1.068456525
+   ],
+   "mu_q25_med_q75": [
+    0.9742863475,
+    0.99427808,
+    1.01115435
+   ],
+   "edit_size_rel_merge_med": 0.254075315,
+   "mean_frac_not_coef_change": 0.9982269727777778,
+   "frac_layers_c_gt_0": 0.5833333333333334,
+   "frac_layers_abs_cos_ge_0.9": 0.0,
+   "frac_layers_abs_cos_ge_0.5": 0.0,
+   "frac_entries_sign_flipped_med": 0.0704214915,
+   "identity_residual_max": 1.7644416e-16,
+   "regimes": {
+    "aligned (c>0): coefficient reduction mu in (0,1)": 42,
+    "partially cancelling (-1<c<0): gate AMPLIFIES the shared block (mu>1)": 30
+   }
+  },
+  "R0": {
+   "n_layers": 138,
+   "n_pairs": 78,
+   "abs_cos_q25_med_q75": [
+    0.1166134075,
+    0.24202433,
+    0.4398921375
+   ],
+   "c_q25_med_q75": [
+    -0.00025579945000000007,
+    0.121627345,
+    0.3565029475
+   ],
+   "frac_not_coef_change_q25_med_q75": [
+    0.80648041,
+    0.94141757,
+    0.98639937
+   ],
+   "eps_q25_med_q75": [
+    0.350781305,
+    0.6250040649999999,
+    0.9965164
+   ],
+   "mu_q25_med_q75": [
+    0.7371981625,
+    0.8915617849999999,
+    1.000258645
+   ],
+   "edit_size_rel_merge_med": 0.308128055,
+   "mean_frac_not_coef_change": 0.8645371464492753,
+   "frac_layers_c_gt_0": 0.7463768115942029,
+   "frac_layers_abs_cos_ge_0.9": 0.0,
+   "frac_layers_abs_cos_ge_0.5": 0.18115942028985507,
+   "frac_entries_sign_flipped_med": 0.094308036,
+   "identity_residual_max": 1.269059e-15,
+   "regimes": {
+    "aligned (c>0): coefficient reduction mu in (0,1)": 103,
+    "partially cancelling (-1<c<0): gate AMPLIFIES the shared block (mu>1)": 35
+   }
+  },
+  "S1": {
+   "n_layers": 126,
+   "n_pairs": 78,
+   "abs_cos_q25_med_q75": [
+    0.1163185225,
+    0.27509282,
+    0.6113803099999999
+   ],
+   "c_q25_med_q75": [
+    0.0071344892,
+    0.16083071,
+    0.4998010325
+   ],
+   "frac_not_coef_change_q25_med_q75": [
+    0.6262141000000001,
+    0.9243239000000001,
+    0.9864681074999999
+   ],
+   "eps_q25_med_q75": [
+    0.3329177475,
+    0.527631685,
+    0.8455883900000001
+   ],
+   "mu_q25_med_q75": [
+    0.6667551725,
+    0.86145278,
+    0.9929161975
+   ],
+   "edit_size_rel_merge_med": 0.32086187,
+   "mean_frac_not_coef_change": 0.7754772603174603,
+   "frac_layers_c_gt_0": 0.7777777777777778,
+   "frac_layers_abs_cos_ge_0.9": 0.015873015873015872,
+   "frac_layers_abs_cos_ge_0.5": 0.3492063492063492,
+   "frac_entries_sign_flipped_med": 0.083443778,
+   "identity_residual_max": 2.5393835000000004e-16,
+   "regimes": {
+    "aligned (c>0): coefficient reduction mu in (0,1)": 98,
+    "partially cancelling (-1<c<0): gate AMPLIFIES the shared block (mu>1)": 28
+   }
+  },
+  "S2": {
+   "n_layers": 15,
+   "n_pairs": 13,
+   "abs_cos_q25_med_q75": [
+    0.0192147435,
+    0.064383086,
+    0.14695871
+   ],
+   "c_q25_med_q75": [
+    0.0045285613,
+    0.052738795,
+    0.098083472
+   ],
+   "frac_not_coef_change_q25_med_q75": [
+    0.9777562449999999,
+    0.99585482,
+    0.99962594
+   ],
+   "eps_q25_med_q75": [
+    0.63720155,
+    0.67665166,
+    0.8079251199999999
+   ],
+   "mu_q25_med_q75": [
+    0.91072737,
+    0.94990325,
+    0.995492935
+   ],
+   "edit_size_rel_merge_med": 0.28905365,
+   "mean_frac_not_coef_change": 0.9881316253333333,
+   "frac_layers_c_gt_0": 0.8,
+   "frac_layers_abs_cos_ge_0.9": 0.0,
+   "frac_layers_abs_cos_ge_0.5": 0.0,
+   "frac_entries_sign_flipped_med": 0.075055804,
+   "identity_residual_max": 1.5618859e-16,
+   "regimes": {
+    "aligned (c>0): coefficient reduction mu in (0,1)": 12,
+    "partially cancelling (-1<c<0): gate AMPLIFIES the shared block (mu>1)": 3
+   }
+  }
+ },
+ "gate30_by_layer_type": {
+  "down_proj": {
+   "n_layers": 20,
+   "n_pairs": 19,
+   "abs_cos_q25_med_q75": [
+    0.05119721000000001,
+    0.25404983999999997,
+    0.6094094125
+   ],
+   "c_q25_med_q75": [
+    0.0053426115,
+    0.211983445,
+    0.3801841775
+   ],
+   "frac_not_coef_change_q25_med_q75": [
+    0.6283949175,
+    0.93545868,
+    0.9968285475
+   ],
+   "eps_q25_med_q75": [
+    0.351358055,
+    0.64403833,
+    0.9564450475
+   ],
+   "mu_q25_med_q75": [
+    0.7247316,
+    0.82509884,
+    0.9946858275
+   ],
+   "edit_size_rel_merge_med": 0.24740615999999999,
+   "mean_frac_not_coef_change": 0.8043982080000001,
+   "frac_layers_c_gt_0": 0.85,
+   "frac_layers_abs_cos_ge_0.9": 0.0,
+   "frac_layers_abs_cos_ge_0.5": 0.35,
+   "frac_entries_sign_flipped_med": 0.133504195,
+   "identity_residual_max": 4.3242085000000003e-16,
+   "regimes": {
+    "aligned (c>0): coefficient reduction mu in (0,1)": 17,
+    "partially cancelling (-1<c<0): gate AMPLIFIES the shared block (mu>1)": 3
+   }
+  },
+  "k_proj": {
+   "n_layers": 236,
+   "n_pairs": 219,
+   "abs_cos_q25_med_q75": [
+    0.029415618,
+    0.085989306,
+    0.21193605499999998
+   ],
+   "c_q25_med_q75": [
+    -0.0370710705,
+    0.016618208500000002,
+    0.10489229
+   ],
+   "frac_not_coef_change_q25_med_q75": [
+    0.9550825325,
+    0.992605835,
+    0.9991347025
+   ],
+   "eps_q25_med_q75": [
+    0.51891771,
+    0.7430963349999999,
+    1.1524062750000001
+   ],
+   "mu_q25_med_q75": [
+    0.9050658149999999,
+    0.98365364,
+    1.0384994
+   ],
+   "edit_size_rel_merge_med": 0.273384995,
+   "mean_frac_not_coef_change": 0.9640795883474577,
+   "frac_layers_c_gt_0": 0.6186440677966102,
+   "frac_layers_abs_cos_ge_0.9": 0.0,
+   "frac_layers_abs_cos_ge_0.5": 0.029661016949152543,
+   "frac_entries_sign_flipped_med": 0.072627476,
+   "identity_residual_max": 2.3535896000000003e-16,
+   "regimes": {
+    "aligned (c>0): coefficient reduction mu in (0,1)": 146,
+    "partially cancelling (-1<c<0): gate AMPLIFIES the shared block (mu>1)": 90
+   }
+  },
+  "o_proj": {
+   "n_layers": 11,
+   "n_pairs": 8,
+   "abs_cos_q25_med_q75": [
+    0.557089135,
+    0.77160964,
+    0.8169317700000001
+   ],
+   "c_q25_med_q75": [
+    0.427172455,
+    0.71943609,
+    0.81866506
+   ],
+   "frac_not_coef_change_q25_med_q75": [
+    0.33160811,
+    0.40461856,
+    0.6896384600000001
+   ],
+   "eps_q25_med_q75": [
+    0.308830185,
+    0.35464758,
+    0.50312787
+   ],
+   "mu_q25_med_q75": [
+    0.55005265,
+    0.58158602,
+    0.70294792
+   ],
+   "edit_size_rel_merge_med": 0.38574082,
+   "mean_frac_not_coef_change": 0.5189536227272727,
+   "frac_layers_c_gt_0": 1.0,
+   "frac_layers_abs_cos_ge_0.9": 0.18181818181818182,
+   "frac_layers_abs_cos_ge_0.5": 0.8181818181818182,
+   "frac_entries_sign_flipped_med": 0.085202587,
+   "identity_residual_max": 1.2958602e-16,
+   "regimes": {
+    "aligned (c>0): coefficient reduction mu in (0,1)": 11
+   }
+  },
+  "v_proj": {
+   "n_layers": 84,
+   "n_pairs": 66,
+   "abs_cos_q25_med_q75": [
+    0.37520151749999997,
+    0.551986075,
+    0.7614045625
+   ],
+   "c_q25_med_q75": [
+    0.1714803975,
+    0.45299871,
+    0.7549917875
+   ],
+   "frac_not_coef_change_q25_med_q75": [
+    0.4202623475,
+    0.695095325,
+    0.85909614
+   ],
+   "eps_q25_med_q75": [
+    0.28258133750000003,
+    0.34674870999999996,
+    0.505902685
+   ],
+   "mu_q25_med_q75": [
+    0.5698412125,
+    0.688281335,
+    0.8536208875
+   ],
+   "edit_size_rel_merge_med": 0.397262205,
+   "mean_frac_not_coef_change": 0.6475159591666667,
+   "frac_layers_c_gt_0": 0.9642857142857143,
+   "frac_layers_abs_cos_ge_0.9": 0.0,
+   "frac_layers_abs_cos_ge_0.5": 0.5476190476190477,
+   "frac_entries_sign_flipped_med": 0.10053798,
+   "identity_residual_max": 1.269059e-15,
+   "regimes": {
+    "aligned (c>0): coefficient reduction mu in (0,1)": 81,
+    "partially cancelling (-1<c<0): gate AMPLIFIES the shared block (mu>1)": 3
+   }
+  }
+ },
+ "forced_k1_P_all": {
+  "n_layers": 15288,
+  "n_pairs": 91,
+  "abs_cos_q25_med_q75": [
+   0.0106695185,
+   0.0227824305,
+   0.04138830025
+  ],
+  "c_q25_med_q75": [
+   -0.003524796325,
+   0.00092716144,
+   0.0068762886499999995
+  ],
+  "frac_not_coef_change_q25_med_q75": [
+   0.9982870100000001,
+   0.9994809600000001,
+   0.9998861625
+  ],
+  "eps_q25_med_q75": [
+   0.1337465725,
+   0.257775255,
+   0.46455921749999995
+  ],
+  "mu_q25_med_q75": [
+   0.9931706675,
+   0.9990737000000001,
+   1.003537275
+  ],
+  "edit_size_rel_merge_med": 0.0800881425,
+  "mean_frac_not_coef_change": 0.9983644914187598,
+  "frac_layers_c_gt_0": 0.5644296180010465,
+  "frac_layers_abs_cos_ge_0.9": 0.0,
+  "frac_layers_abs_cos_ge_0.5": 0.0,
+  "frac_entries_sign_flipped_med": 0.0204489575,
+  "identity_residual_max": 1.7492049e-15,
+  "regimes": {
+   "aligned (c>0): coefficient reduction mu in (0,1)": 8629,
+   "partially cancelling (-1<c<0): gate AMPLIFIES the shared block (mu>1)": 6659
+  }
+ },
+ "forced_k1_P_by_layer_type": {
+  "down_proj": {
+   "n_layers": 2184,
+   "n_pairs": 91,
+   "abs_cos_q25_med_q75": [
+    0.006500290725,
+    0.0142571725,
+    0.02360547
+   ],
+   "c_q25_med_q75": [
+    -0.001729234325,
+    0.000721660795,
+    0.0043703497
+   ],
+   "frac_not_coef_change_q25_med_q75": [
+    0.9994427850000001,
+    0.9997967299999999,
+    0.9999577475000001
+   ],
+   "eps_q25_med_q75": [
+    0.1487324625,
+    0.236965525,
+    0.3733025975
+   ],
+   "mu_q25_med_q75": [
+    0.99564867,
+    0.99927886,
+    1.001732225
+   ],
+   "edit_size_rel_merge_med": 0.07254955399999999,
+   "mean_frac_not_coef_change": 0.9993870509249085,
+   "frac_layers_c_gt_0": 0.5805860805860806,
+   "frac_layers_abs_cos_ge_0.9": 0.0,
+   "frac_layers_abs_cos_ge_0.5": 0.0,
+   "frac_entries_sign_flipped_med": 0.0182407925,
+   "identity_residual_max": 1.7492049e-15,
+   "regimes": {
+    "aligned (c>0): coefficient reduction mu in (0,1)": 1268,
+    "partially cancelling (-1<c<0): gate AMPLIFIES the shared block (mu>1)": 916
+   }
+  },
+  "gate_proj": {
+   "n_layers": 2184,
+   "n_pairs": 91,
+   "abs_cos_q25_med_q75": [
+    0.01234262125,
+    0.025639618,
+    0.04372842075
+   ],
+   "c_q25_med_q75": [
+    -0.00108386335,
+    0.0006578708499999999,
+    0.002774618225
+   ],
+   "frac_not_coef_change_q25_med_q75": [
+    0.9980878275,
+    0.99934261,
+    0.9998476575
+   ],
+   "eps_q25_med_q75": [
+    0.055573659,
+    0.0800640175,
+    0.11800466
+   ],
+   "mu_q25_med_q75": [
+    0.9972330625,
+    0.99934256,
+    1.001085025
+   ],
+   "edit_size_rel_merge_med": 0.0214295555,
+   "mean_frac_not_coef_change": 0.9983052485302197,
+   "frac_layers_c_gt_0": 0.597985347985348,
+   "frac_layers_abs_cos_ge_0.9": 0.0,
+   "frac_layers_abs_cos_ge_0.5": 0.0,
+   "frac_entries_sign_flipped_med": 0.00544107765,
+   "identity_residual_max": 8.8680332e-16,
+   "regimes": {
+    "aligned (c>0): coefficient reduction mu in (0,1)": 1306,
+    "partially cancelling (-1<c<0): gate AMPLIFIES the shared block (mu>1)": 878
+   }
+  },
+  "k_proj": {
+   "n_layers": 2184,
+   "n_pairs": 91,
+   "abs_cos_q25_med_q75": [
+    0.01106031225,
+    0.024489647500000003,
+    0.04468877575
+   ],
+   "c_q25_med_q75": [
+    -0.009271247825,
+    0.00268613345,
+    0.01791159325
+   ],
+   "frac_not_coef_change_q25_med_q75": [
+    0.998002915,
+    0.99940026,
+    0.9998776675000001
+   ],
+   "eps_q25_med_q75": [
+    0.3813543975,
+    0.57065242,
+    0.84742264
+   ],
+   "mu_q25_med_q75": [
+    0.9824035875,
+    0.99732106,
+    1.009357975
+   ],
+   "edit_size_rel_merge_med": 0.17063235,
+   "mean_frac_not_coef_change": 0.9984024987683151,
+   "frac_layers_c_gt_0": 0.5668498168498168,
+   "frac_layers_abs_cos_ge_0.9": 0.0,
+   "frac_layers_abs_cos_ge_0.5": 0.0,
+   "frac_entries_sign_flipped_med": 0.0464303155,
+   "identity_residual_max": 2.4345517e-16,
+   "regimes": {
+    "aligned (c>0): coefficient reduction mu in (0,1)": 1238,
+    "partially cancelling (-1<c<0): gate AMPLIFIES the shared block (mu>1)": 946
+   }
+  },
+  "o_proj": {
+   "n_layers": 2184,
+   "n_pairs": 91,
+   "abs_cos_q25_med_q75": [
+    0.01100657725,
+    0.022476481,
+    0.0398929425
+   ],
+   "c_q25_med_q75": [
+    -0.004251892825,
+    0.000757293285,
+    0.0065092017500000005
+   ],
+   "frac_not_coef_change_q25_med_q75": [
+    0.998408555,
+    0.999494805,
+    0.9998788525000001
+   ],
+   "eps_q25_med_q75": [
+    0.167079655,
+    0.24157025,
+    0.36345254
+   ],
+   "mu_q25_med_q75": [
+    0.9935328975,
+    0.99924328,
+    1.00427
+   ],
+   "edit_size_rel_merge_med": 0.0628897665,
+   "mean_frac_not_coef_change": 0.9986658467216116,
+   "frac_layers_c_gt_0": 0.5361721611721612,
+   "frac_layers_abs_cos_ge_0.9": 0.0,
+   "frac_layers_abs_cos_ge_0.5": 0.0,
+   "frac_entries_sign_flipped_med": 0.015878483,
+   "identity_residual_max": 2.139186e-16,
+   "regimes": {
+    "aligned (c>0): coefficient reduction mu in (0,1)": 1171,
+    "partially cancelling (-1<c<0): gate AMPLIFIES the shared block (mu>1)": 1013
+   }
+  },
+  "q_proj": {
+   "n_layers": 2184,
+   "n_pairs": 91,
+   "abs_cos_q25_med_q75": [
+    0.012575955,
+    0.028431626,
+    0.050634501
+   ],
+   "c_q25_med_q75": [
+    -0.0056344523,
+    0.00237681055,
+    0.012723414
+   ],
+   "frac_not_coef_change_q25_med_q75": [
+    0.9974361475,
+    0.99919164,
+    0.9998418450000001
+   ],
+   "eps_q25_med_q75": [
+    0.226763145,
+    0.34037631,
+    0.5312475425000001
+   ],
+   "mu_q25_med_q75": [
+    0.9874364375,
+    0.997628825,
+    1.005666425
+   ],
+   "edit_size_rel_merge_med": 0.088649561,
+   "mean_frac_not_coef_change": 0.9971518775549449,
+   "frac_layers_c_gt_0": 0.581959706959707,
+   "frac_layers_abs_cos_ge_0.9": 0.0,
+   "frac_layers_abs_cos_ge_0.5": 0.0,
+   "frac_entries_sign_flipped_med": 0.0233092015,
+   "identity_residual_max": 3.4271779000000003e-16,
+   "regimes": {
+    "aligned (c>0): coefficient reduction mu in (0,1)": 1271,
+    "partially cancelling (-1<c<0): gate AMPLIFIES the shared block (mu>1)": 913
+   }
+  },
+  "up_proj": {
+   "n_layers": 2184,
+   "n_pairs": 91,
+   "abs_cos_q25_med_q75": [
+    0.011781848250000001,
+    0.025157954,
+    0.042992825
+   ],
+   "c_q25_med_q75": [
+    -0.002090581675,
+    0.0007419225299999999,
+    0.0043790865
+   ],
+   "frac_not_coef_change_q25_med_q75": [
+    0.99815161,
+    0.999367075,
+    0.9998611875
+   ],
+   "eps_q25_med_q75": [
+    0.0940498185,
+    0.137033855,
+    0.2047067125
+   ],
+   "mu_q25_med_q75": [
+    0.99564001,
+    0.999258625,
+    1.0020949749999999
+   ],
+   "edit_size_rel_merge_med": 0.043827076,
+   "mean_frac_not_coef_change": 0.9984413669688643,
+   "frac_layers_c_gt_0": 0.5732600732600732,
+   "frac_layers_abs_cos_ge_0.9": 0.0,
+   "frac_layers_abs_cos_ge_0.5": 0.0,
+   "frac_entries_sign_flipped_med": 0.010611971500000001,
+   "identity_residual_max": 8.417846300000001e-16,
+   "regimes": {
+    "aligned (c>0): coefficient reduction mu in (0,1)": 1252,
+    "partially cancelling (-1<c<0): gate AMPLIFIES the shared block (mu>1)": 932
+   }
+  },
+  "v_proj": {
+   "n_layers": 2184,
+   "n_pairs": 91,
+   "abs_cos_q25_med_q75": [
+    0.01233216475,
+    0.024972836999999998,
+    0.0434133535
+   ],
+   "c_q25_med_q75": [
+    -0.00913092725,
+    0.00044124026,
+    0.01176371525
+   ],
+   "frac_not_coef_change_q25_med_q75": [
+    0.9981152824999999,
+    0.99937636,
+    0.999847915
+   ],
+   "eps_q25_med_q75": [
+    0.3003487775,
+    0.453356285,
+    0.6468776775
+   ],
+   "mu_q25_med_q75": [
+    0.98837306,
+    0.9995589549999999,
+    1.0092151
+   ],
+   "edit_size_rel_merge_med": 0.119002805,
+   "mean_frac_not_coef_change": 0.9981975504624543,
+   "frac_layers_c_gt_0": 0.5141941391941391,
+   "frac_layers_abs_cos_ge_0.9": 0.0,
+   "frac_layers_abs_cos_ge_0.5": 0.0,
+   "frac_entries_sign_flipped_med": 0.030840193,
+   "identity_residual_max": 1.0375949e-15,
+   "regimes": {
+    "aligned (c>0): coefficient reduction mu in (0,1)": 1123,
+    "partially cancelling (-1<c<0): gate AMPLIFIES the shared block (mu>1)": 1061
+   }
+  }
+ },
+ "reference_BERT_seed_pair": "paper/verify_lemma_seed_pair.json: 2 FAIL layers, cos 0.107 / 0.184, eps 0.857 / 0.850, c 0.102 / 0.190"
+}
